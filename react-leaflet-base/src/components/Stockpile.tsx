@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
-import { useAppSelector, useAppDispatch } from '../hooks';
+import { useAppSelector } from '../hooks';
 import { selectStockPiles } from '../stores/stockpile-slice';
 
 function preventDefault(event: React.MouseEvent) {

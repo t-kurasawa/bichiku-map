@@ -1,16 +1,14 @@
 
 import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import DirectionsIcon from '@mui/icons-material/Directions';
 import Divider from '@mui/material/Divider';
 import InputBase from '@mui/material/InputBase';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 
 import { useState } from 'react';
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { selectStockPiles, stockpileSearchAsync } from '../stores/stockpile-slice';
+import { useAppDispatch } from '../hooks';
+import { stockpileSearchAsync } from '../stores/stockpile-slice';
 
 
 import Button from '@mui/material/Button';

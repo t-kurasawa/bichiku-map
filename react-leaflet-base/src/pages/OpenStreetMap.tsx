@@ -1,6 +1,6 @@
 import { useAppSelector } from '../hooks';
 import { selectPosition } from '../stores/openstreetmap-slice';
-import { MapContainer, MapContainerProps, TileLayer,useMap } from "react-leaflet";
+import { MapContainer, MapContainerProps, TileLayer } from "react-leaflet";
 import LocationMarker from './LocationMarker';
 import "leaflet/dist/leaflet.css";
 import "../assets/css/OpenStreetMap.css"
