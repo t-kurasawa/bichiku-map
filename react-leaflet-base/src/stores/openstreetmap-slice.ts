@@ -7,7 +7,7 @@ const STORE_NAME = 'openstreetmap';
 
 export interface OpenStreetMapState {
   status: 'idle' | 'loading' | 'failed';
-  copyright:String,
+  copyright:string,
   position: LatLng,
   elements:Array<OpenStreetMapElement>
 }
@@ -32,7 +32,7 @@ export interface OpenStreetMapElement {
   lat: number
   lon: number
   tags?: any
-  type: String  
+  type: string  
 }
 
 

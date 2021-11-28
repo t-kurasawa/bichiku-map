@@ -20,15 +20,15 @@ export const Stockpile = () => {
 
   return (
     <React.Fragment>
-      <Title>stockpiles</Title>
+      <Title>防災備蓄リスト</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>name</TableCell>
             <TableCell>address</TableCell>
+            <TableCell align="right">stockQuantity</TableCell>
             <TableCell>registrationDate</TableCell>
             <TableCell>expiryDate</TableCell>
-            <TableCell align="right">stockQuantity</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

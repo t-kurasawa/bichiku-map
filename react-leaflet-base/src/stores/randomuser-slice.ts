@@ -6,21 +6,21 @@ const STORE_NAME = 'randomuser';
 
 export interface RandomUser {
   id: {
-    name: String,
-    value: String
+    name: string,
+    value: string
   };
   name: {
-    title: String,
-    first: String,
-    last: String,
+    title: string,
+    first: string,
+    last: string,
   };
-  gender: String;
+  gender: string;
   picture: {
-    large: String,
-    medium: String,
-    thumbnail: String
+    large: string,
+    medium: string,
+    thumbnail: string
   },
-  email: String;
+  email: string;
 }
 
 export interface RandomUserState {

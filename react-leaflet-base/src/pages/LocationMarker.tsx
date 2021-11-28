@@ -5,7 +5,9 @@ import { selectStockPiles, stockpileSearchAsync } from '../stores/stockpile-slic
 import { LatLng, LocationEvent } from "leaflet";
 import { useMapEvents, FeatureGroup, Popup, Circle, Tooltip, FeatureGroupProps } from "react-leaflet";
 
-import { Avatar, Card, CardHeader, CardMedia, CardContent, Typography } from '@mui/material';
+import { Avatar, Card, CardHeader, CardMedia, CardContent, CardActions,IconButton, Typography } from '@mui/material';
+import ShareIcon from '@mui/icons-material/Share';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export const LocationMarker = (props: FeatureGroupProps) => {
     const fillBlueOptions = { fillColor: 'blue' }
@@ -34,11 +36,17 @@ export const LocationMarker = (props: FeatureGroupProps) => {
                     />
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">
-                        This impressive paella is a perfect party dish and a fun meal to cook
-                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                        if you like.
+                            災害時の備えをして頂きありがとうございます。この備蓄品は災害時に近隣住民の方と分け合い助け合うために利用して頂けます。
                         </Typography>
                     </CardContent>
+                    <CardActions disableSpacing>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                        <IconButton aria-label="delete">
+                            <DeleteForeverIcon />
+                        </IconButton>
+                    </CardActions>
                 </Card>
             </Popup>
         </Circle>
@@ -53,9 +61,9 @@ export const LocationMarker = (props: FeatureGroupProps) => {
             <Popup>
                 <Card sx={{ maxWidth: 345 }}>
                     <CardHeader
-                        avatar={<Avatar src="https://randomuser.me/api/portraits/thumb/men/75.jpg"/>}
+                        avatar={<Avatar src={stockpile.user.picture.thumbnail} />}
                         title={stockpile.name || '未登録'}
-                        subheader={stockpile.expiryDate}
+                        subheader={'備蓄数: '+ stockpile.stockQuantity}
                     />                    
                     <CardMedia
                         component="img"
@@ -65,11 +73,25 @@ export const LocationMarker = (props: FeatureGroupProps) => {
                     />
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">
-                        This impressive paella is a perfect party dish and a fun meal to cook
-                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                        if you like.
+                            災害時の備えをして頂きありがとうございます。この備蓄品は災害時に近隣住民の方と分け合い助け合うために利用して頂けます。
                         </Typography>
+
+                        <Typography variant="body2" color="text.secondary">
+                            {stockpile.name}（備蓄数: {stockpile.stockQuantity}）
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            賞味期限： {stockpile.expiryDate}
+                        </Typography>
+
                     </CardContent>
+                    <CardActions disableSpacing={true}>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                        <IconButton aria-label="delete">
+                            <DeleteForeverIcon />
+                        </IconButton>
+                    </CardActions>
                 </Card>
             </Popup>
         </Circle>
@@ -91,7 +113,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
                 location: location
             }
             dispatch(searchAsync(condition))
-            dispatch(stockpileSearchAsync({params:''}))
+            dispatch(stockpileSearchAsync({address:''}))
         }
     })
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export interface SearchCondition {
-    params:any
+    address:string
 }
 
 export const search = (condition: SearchCondition) => {

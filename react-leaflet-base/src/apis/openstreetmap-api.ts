@@ -2,7 +2,7 @@ import axios from 'axios';
 import { LatLng } from "leaflet";
 
 export interface SearchCondition {
-    query:String ,
+    query:string ,
     location:LatLng
 }
 

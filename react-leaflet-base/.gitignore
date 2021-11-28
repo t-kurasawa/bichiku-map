@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/src/lib/imi-enrichment-address/node_modules
+
 # testing
 /coverage
 

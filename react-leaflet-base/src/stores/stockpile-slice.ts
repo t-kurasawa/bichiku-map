@@ -15,14 +15,14 @@ export interface StockpilesState {
 
 export interface Stockpile{
   id: number,
-  name: String,
+  name: string,
   user: RandomUser,
-  stockQuantity: Number,
+  stockQuantity: number,
   lat: number,
   lng: number,
-  address: String,
-  registrationDate: String,
-  expiryDate: String,
+  address: string,
+  registrationDate: string,
+  expiryDate: string,
 }
 
 const registrationDate = moment().format('YYYY-MM-DD')
@@ -51,8 +51,8 @@ const initialState: StockpilesState = {
       email: 'brad.gibson@example.com'
     },
     stockQuantity: 100,
-    lat: 0,
-    lng: 0,
+    lat: 35.6809591,
+    lng: 139.7673068,
     address: '東京都千代田区丸の内１丁目',
     registrationDate: registrationDate,
     expiryDate: registrationDate,
@@ -68,6 +68,7 @@ const initialState: StockpilesState = {
 export const stockpileSearchAsync = createAsyncThunk(
   STORE_NAME + '/search',
   async (condition:SearchCondition) => {
+    console.log(condition)
     const response = await search(condition);
     // The value we return becomes the `fulfilled` action payload
     console.log(response)
