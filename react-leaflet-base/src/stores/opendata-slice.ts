@@ -27,25 +27,11 @@ export interface opendata{
   }]
 }
 
+const tokyo_dosekiryu_tokubetsu= require('../mock/data_geoJson/tokyo_dosekiryu_tokubetsu.json')
+
 const initialState: opendatasState = {
   status: 'idle',
-  opendata: {
-    type: '',
-    name: '',
-    crs: {},
-    features: [{
-      type: '',
-      properties: {
-        gid: '',
-        genshoname: '',
-        kubun: ''
-      },
-      geometry: {
-        type: 'Polygon',
-        coordinates: [[[35.810913836510657,139.230962709378929]]]
-      }
-    }]
-  }
+  opendata: tokyo_dosekiryu_tokubetsu
 };
 
 
