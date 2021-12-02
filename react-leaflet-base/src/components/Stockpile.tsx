@@ -24,21 +24,21 @@ export const Stockpile = () => {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>name</TableCell>
-            <TableCell>address</TableCell>
-            <TableCell align="right">stockQuantity</TableCell>
-            <TableCell>registrationDate</TableCell>
-            <TableCell>expiryDate</TableCell>
+            <TableCell>備蓄品名</TableCell>
+            <TableCell>保管場所</TableCell>
+            <TableCell>備蓄数</TableCell>
+            <TableCell>登録日</TableCell>
+            <TableCell>賞味期限</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {stockpiles.map((stockpile) => (
-            <TableRow>
+            <TableRow key={stockpile.id}>
               <TableCell>{stockpile.name}</TableCell>
               <TableCell>{stockpile.address}</TableCell>
               <TableCell>{stockpile.registrationDate}</TableCell>
               <TableCell>{stockpile.expiryDate}</TableCell>
-              <TableCell align="right">{stockpile.stockQuantity}</TableCell>
+              <TableCell>{stockpile.stockQuantity}</TableCell>
             </TableRow>
           ))}
         </TableBody>
