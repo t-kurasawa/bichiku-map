@@ -30,15 +30,17 @@ import Radio from '@mui/material/Radio';
 const SearchForm = () => {
 
     const dispatch = useAppDispatch();
-    const [address, setAddress] = useState('東京都千代田区丸の内１丁目');
+    const [address, setAddress] = useState('東京都八王子市元本郷町３丁目２４−１');
 
     const [open, setOpen] = useState(false);
   
     const handleClickOpen = () => {
+        console.log('handleClickOpen')
       setOpen(true);
     };
     
     const handleClose = () => {
+        console.log('handleClose')
       setOpen(false);
     };
   
@@ -50,32 +52,32 @@ const SearchForm = () => {
         >
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
-                placeholder="東京都千代田区丸の内１丁目"
+                placeholder="東京都八王子市元本郷町３丁目２４−１"
                 inputProps={{ 'aria-label': 'search google maps' }}
                 onChange={(event)=> setAddress(event.target.value)}
             />
             <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-            <IconButton sx={{ p: '10px' }} aria-label="search">
-                <SearchIcon onClick={()=> dispatch(stockpileSearchAsync({address:address}))}  />
+            <IconButton sx={{ p: '10px' }} aria-label="search" onClick={()=> dispatch(stockpileSearchAsync({address:address}))}>
+                <SearchIcon />
             </IconButton>
             <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-            <IconButton sx={{ p: '10px' }} aria-label="subscribe">
-                <AddLocationAltIcon onClick={handleClickOpen}  />
-                <Dialog open={open} onClose={handleClose}>
+            <IconButton sx={{ p: '10px' }} aria-label="subscribe" onClick={handleClickOpen}>
+                <AddLocationAltIcon />
+            </IconButton>
+            <Dialog open={open} onClose={handleClose}>
                     <DialogTitle>備蓄品の登録をお願いします。</DialogTitle>
                     <DialogContent>
                     <DialogContentText>
-                        災害時には備蓄品がどこにいくつあるのかがわかります。
+                        災害時に備蓄を分け合うことは可能ですか？
                     </DialogContentText>
-                    <TextField
-                        autoFocus
-                        margin="dense"
-                        id="name"
-                        label="備蓄倉庫の住所"
-                        type="address"
-                        fullWidth
-                        variant="standard"
-                    />
+
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend"></FormLabel>
+                        <RadioGroup row aria-label="share" name="row-radio-buttons-group">
+                            <FormControlLabel value="yes" control={<Radio />} label="はい" />
+                            <FormControlLabel value="no" control={<Radio />} label="いいえ" />
+                        </RadioGroup>
+                    </FormControl>                    
                     <TextField
                         autoFocus
                         margin="dense"
@@ -103,24 +105,23 @@ const SearchForm = () => {
                         fullWidth
                         variant="standard"
                     />
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">災害時に備蓄を共有できますか？</FormLabel>
-                        <RadioGroup row aria-label="share" name="row-radio-buttons-group">
-                            <FormControlLabel value="yes" control={<Radio />} label="はい" />
-                            <FormControlLabel value="no" control={<Radio />} label="いいえ" />
-                        </RadioGroup>
-                    </FormControl>                    
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="備蓄場所"
+                        type="address"
+                        fullWidth
+                        variant="standard"
+                    />
 
 
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={handleClose}>Cancel</Button>
-                        <Button onClick={handleClose}>Subscribe</Button>
+                        <Button onClick={handleClose}>登録</Button>
                     </DialogActions>
                 </Dialog>
-
-            </IconButton>
-
 
         </Paper>
     )

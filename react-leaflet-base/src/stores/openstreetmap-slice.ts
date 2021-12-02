@@ -12,7 +12,7 @@ export interface OpenStreetMapState {
   elements:Array<OpenStreetMapElement>
 }
 
-const initialPosition = new LatLng(35.6809591, 139.7673068)
+const initialPosition = new LatLng(35.666452, 139.31582)
 
 const initialState: OpenStreetMapState = {
   status: 'idle',
@@ -20,8 +20,8 @@ const initialState: OpenStreetMapState = {
   position: initialPosition,
   elements: [{
     id: 1,
-    lat: 35.6809591,
-    lon: 139.7673068,
+    lat: 35.666452,
+    lon: 139.31582,
     tags: '',
     type: '' 
   }]
@@ -46,7 +46,6 @@ export const searchAsync = createAsyncThunk(
   async (condition:SearchCondition) => {
     const response = await search(condition);
     // The value we return becomes the `fulfilled` action payload
-    console.log(response.data)
     return response.data;
   }
 );
