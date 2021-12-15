@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import App from './App';
-import theme from './theme';
-import { store } from './store';
+import App from 'App';
+import theme from 'theme';
+import { store } from 'store';
 import { Provider } from 'react-redux';
 
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from 'reportWebVitals';
 
-const { worker } = require('./mock/browser')
+const { worker } = require('__mock__/browser')
 worker.start()
 
 ReactDOM.render(

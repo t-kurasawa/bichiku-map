@@ -1,7 +1,7 @@
-import { useAppSelector, useAppDispatch } from '../hooks';
-import { selectElements, selectPosition, searchAsync,locationfound } from '../stores/openstreetmap-slice';
-import { selectStockPiles, stockpileSearchAsync } from '../stores/stockpile-slice';
-import { searchOpendataAsync, selectOpendata } from '../stores/opendata-slice';
+import { useAppSelector, useAppDispatch } from 'hooks';
+import { selectElements, selectPosition, searchAsync,locationfound } from 'stores/openstreetmap-slice';
+import { selectStockPile, stockpileSearchAsync } from 'stores/stockpile-slice';
+import { searchOpendataAsync, selectOpendata } from 'stores/opendata-slice';
 
 import Leaflet, { LatLng } from "leaflet";
 import { useMapEvents, FeatureGroup, Popup, Circle,Marker , Tooltip, FeatureGroupProps } from "react-leaflet";
@@ -26,7 +26,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
 
     const elements = useAppSelector(selectElements);
     const position = useAppSelector(selectPosition);
-    const stockpiles = useAppSelector(selectStockPiles);
+    const stockpile = useAppSelector(selectStockPile);
     const opendata = useAppSelector(selectOpendata);
     const dispatch = useAppDispatch();
 
@@ -86,7 +86,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
     ))
 
 
-    const StockpilesCircle = stockpiles.map(stockpile=>(
+    const StockpilesCircle = stockpile.stockpileList.map(stockpile=>(
         <Circle key={stockpile.id} pathOptions={{ color: 'green' }} center={new LatLng(stockpile.lat,stockpile.lng)} radius={50} >
             <Popup>
                 <Card sx={{ maxWidth: 345 }}>

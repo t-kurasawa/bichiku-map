@@ -1,260 +1,48 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { search, SearchCondition } from '../apis/stockpile-api';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/stockpile-api';
 
-import { RandomUser } from '../stores/randomuser-slice'
-
-import moment from 'moment'
+import { Stockpile } from 'schema';
 
 const STORE_NAME = 'stockpile';
 
 export interface StockpilesState {
   status: 'idle' | 'loading' | 'failed';
-  stockpiles: Array<Stockpile>
+  stockpileList: Array<Stockpile>
 }
-
-export interface Stockpile{
-  id: number,
-  name: string,
-  user: RandomUser,
-  stockQuantity: number,
-  lat: number,
-  lng: number,
-  address: string,
-  registrationDate: string,
-  expiryDate: string,
-}
-
-const registrationDate = moment().format('YYYY-MM-DD')
 
 const initialState: StockpilesState = {
   status: 'idle',
-  stockpiles: [
+  stockpileList: [
     {
       id: 1,
-      name: '尾西の五目ごはん',
+      name: '',
       user: {
         id: {
-          name: 'PPS',
-          value: '0390511T'
+          name: '',
+          value: ''
         },
         name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
+          title: '',
+          first: '',
+          last: '',
         },
-        gender: 'male',
+        gender: '',
         picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/75.jpg'
+          large: '',
+          medium: '',
+          thumbnail: ''
         },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.63504117308411,
-      lng: 139.32518005371097,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 1,
-      name: '尾西の五目ごはん',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/75.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.63504117308411,
-      lng: 139.32518005371097,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 2,
-      name: '尾西の五目ごはん',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.63504117308411,
-      lng: 139.32518005371097,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 3,
-      name: '尾西の五目ごはん',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/3.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.63504117308411,
-      lng: 139.32518005371097,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 4,
-      name: '尾西の五目ごはん',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/4.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.666257135256046,
-      lng: 139.32200431823733,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 5,
-      name: '水５２リットル',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/5.jpg'
-        },
-        email: 'brad.gibson@example.com'
+        email: ''
       },
       stockQuantity: 1,
-      lat: 35.666830131447675,
-      lng: 139.3111896514893,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 6,
-      name: 'カップラーメン',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/6.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 50,
-      lat: 35.65874069006734,
-      lng: 139.31839942932132,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-    {
-      id: 7,
-      name: '尾西の炊き込みごはん',
-      user: {
-        id: {
-          name: 'PPS',
-          value: '0390511T'
-        },
-        name: {
-          title: 'mr',
-          first: '太郎',
-          last: '田中',
-        },
-        gender: 'male',
-        picture: {
-          large: 'https://randomuser.me/api/portraits/men/75.jpg',
-          medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-          thumbnail: 'https://randomuser.me/api/portraits/thumb/men/7.jpg'
-        },
-        email: 'brad.gibson@example.com'
-      },
-      stockQuantity: 100,
-      lat: 35.67223840526204,
-      lng: 139.31887149810794,
-      address: '東京都八王子市',
-      registrationDate: registrationDate,
-      expiryDate: registrationDate,
-    },
-  ],
+      lat: 35.666452,
+      lng: 139.31582,  
+      address: '',
+      registrationDate: '',
+      expiryDate: '',  
+    }
+  ]
 };
 
 
@@ -287,7 +75,7 @@ export const StockPileSlice = createSlice({
       })
       .addCase(stockpileSearchAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.stockpiles = action.payload.stockpiles;
+        state.stockpileList = action.payload.data;
       })
       .addCase(stockpileSearchAsync.rejected, (state) => {
         state.status = 'failed';
@@ -296,7 +84,7 @@ export const StockPileSlice = createSlice({
 });
 
 
-export const selectStockPiles = (state: RootState) => state.stockpile.stockpiles;
+export const selectStockPile = (state: RootState) => state.stockpile;
 
 export default StockPileSlice.reducer;
 

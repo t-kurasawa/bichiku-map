@@ -1,37 +1,34 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { search, SearchCondition } from '../apis/opendata-api';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/opendata-api';
+import { OpenData } from 'schema'
 
 const STORE_NAME = 'opendata';
 
-export interface opendatasState {
+export interface opendataState {
   status: 'idle' | 'loading' | 'failed';
-  opendata: opendata
+  opendata: OpenData
 }
 
-export interface opendata{
-  type: string,
-  name: string,
-  crs: any,
-  features: [{
-    type: string,
-    properties: {
-      gid: string,
-      genshoname: string,
-      kubun: string,
-    },
-    geometry: {
-      type: string,
-      coordinates: Array<Array<Array<number>>>
-    }
-  }]
-}
-
-const tokyo_dosekiryu_tokubetsu= require('../mock/data_geoJson/tokyo_dosekiryu_tokubetsu.json')
-
-const initialState: opendatasState = {
+const initialState: opendataState = {
   status: 'idle',
-  opendata: tokyo_dosekiryu_tokubetsu
+  opendata: {
+    type: '',
+    name: '',
+    crs: '',
+    features: [{
+      type: '',
+      properties: {
+        gid: '',
+        genshoname: '',
+        kubun: '',
+      },
+      geometry: {
+        type: '',
+        coordinates: [[[1]]]
+      }
+    }]
+  }
 };
 
 

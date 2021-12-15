@@ -1,54 +1,36 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { search, SearchCondition } from '../apis/randomuser-api';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/user-api';
+import { User } from 'schema';
 
 const STORE_NAME = 'randomuser';
 
-export interface RandomUser {
-  id: {
-    name: string,
-    value: string
-  };
-  name: {
-    title: string,
-    first: string,
-    last: string,
-  };
-  gender: string;
-  picture: {
-    large: string,
-    medium: string,
-    thumbnail: string
-  },
-  email: string;
-}
 
-export interface RandomUserState {
+export interface UserState {
   status: 'idle' | 'loading' | 'failed';
-  users: Array<RandomUser>
+  user: User
 }
 
-const initialState: RandomUserState = {
+const initialState: UserState = {
   status: 'idle',
-  users: [{
+  user: {
     id: {
-      name: 'PPS',
-      value: '0390511T'
+      name: '',
+      value: ''
     },
     name: {
-      title: 'mr',
-      first: 'brad',
-      last: 'gibson',
+      title: '',
+      first: '',
+      last: '',
     },
-    gender: 'male',
+    gender: '',
     picture: {
-      large: 'https://randomuser.me/api/portraits/men/75.jpg',
-      medium: 'https://randomuser.me/api/portraits/med/men/75.jpg',
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/men/75.jpg'
+      large: '',
+      medium: '',
+      thumbnail: ''
     },
-    email: 'brad.gibson@example.com'
-  }]
-
+    email: ''
+  }
 };
 
 
@@ -66,7 +48,7 @@ export const searchAsync = createAsyncThunk(
   }
 );
 
-export const randomUserSlice = createSlice({
+export const userSlice = createSlice({
   name: STORE_NAME,
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -81,7 +63,7 @@ export const randomUserSlice = createSlice({
       })
       .addCase(searchAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.users = action.payload.users;
+        state.user = action.payload.data;
       })
       .addCase(searchAsync.rejected, (state) => {
         state.status = 'failed';
@@ -90,7 +72,7 @@ export const randomUserSlice = createSlice({
 });
 
 
-export const selectUsers = (state: RootState) => state.randomuser.users;
+export const selectUser = (state: RootState) => state.user;
 
-export default randomUserSlice.reducer;
+export default userSlice.reducer;
 

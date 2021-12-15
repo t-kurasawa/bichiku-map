@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { search, SearchCondition } from '../apis/openstreetmap-api';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/openstreetmap-api';
 import { LatLng } from "leaflet";
+
+import { OpenStreetMapElement } from 'schema'
 
 const STORE_NAME = 'openstreetmap';
 
@@ -27,13 +29,6 @@ const initialState: OpenStreetMapState = {
   }]
 };
 
-export interface OpenStreetMapElement {
-  id: number
-  lat: number
-  lon: number
-  tags?: any
-  type: string  
-}
 
 
 // The function below is called a thunk and allows us to perform async logic. It

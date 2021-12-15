@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
 import { useAppSelector } from '../hooks';
-import { selectStockPiles } from '../stores/stockpile-slice';
+import { selectStockPile } from '../stores/stockpile-slice';
 
 function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
@@ -16,7 +16,7 @@ function preventDefault(event: React.MouseEvent) {
 
 export const Stockpile = () => {
 
-  const stockpiles = useAppSelector(selectStockPiles);
+  const stockpile = useAppSelector(selectStockPile);
 
   return (
     <React.Fragment>
@@ -32,7 +32,7 @@ export const Stockpile = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {stockpiles.map((stockpile) => (
+          {stockpile.stockpileList.map((stockpile) => (
             <TableRow key={stockpile.id}>
               <TableCell>{stockpile.name}</TableCell>
               <TableCell>{stockpile.address}</TableCell>
