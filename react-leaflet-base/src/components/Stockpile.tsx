@@ -1,22 +1,21 @@
-import * as React from 'react';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from './Title';
+import React from "react";
+import Link from "@mui/material/Link";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Title from "./Title";
 
-import { useAppSelector } from '../hooks';
-import { selectStockPiles } from '../stores/stockpile-slice';
+import { useAppSelector } from "../hooks";
+import { selectStockPile } from "../stores/stockpile-slice";
 
 function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
 export const Stockpile = () => {
-
-  const stockpiles = useAppSelector(selectStockPiles);
+  const stockpile = useAppSelector(selectStockPile);
 
   return (
     <React.Fragment>
@@ -32,7 +31,7 @@ export const Stockpile = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {stockpiles.map((stockpile) => (
+          {stockpile.stockpileList.map((stockpile) => (
             <TableRow key={stockpile.id}>
               <TableCell>{stockpile.name}</TableCell>
               <TableCell>{stockpile.address}</TableCell>
@@ -48,6 +47,6 @@ export const Stockpile = () => {
       </Link>
     </React.Fragment>
   );
-}
+};
 
-export default Stockpile
+export default Stockpile;
