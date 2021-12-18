@@ -130,7 +130,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
       <Popup>
         <Card sx={{ maxWidth: 345 }}>
           <CardHeader
-            avatar={<Avatar src={sns}  variant="square" />}
+            avatar={<Avatar src={sns} variant="square" />}
             title={stockpile.name || "未登録"}
           />
           <CardMedia
