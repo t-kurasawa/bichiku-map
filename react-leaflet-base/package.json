@@ -1,6 +1,7 @@
 {
   "name": "react-leaflet-base",
   "version": "0.1.0",
+  "license": "MIT License",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -24,7 +25,18 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "all": "run-s fix lint start",
+    "lint": "run-p -l -c --aggregate-output lint:*",
+    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint . --ext .js,.ts,.tsx",
+    "fix": "run-s fix:prettier fix:eslint",
+    "fix:prettier": "npm run lint:prettier -- --write",
+    "fix:eslint": "npm run lint:eslint -- --fix",
+    "prepare": "cd .. && husky install react-leaflet-base/.husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
@@ -52,12 +64,18 @@
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-react": "^7.27.1",
-    "msw": "^0.35.0"
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "msw": "^0.35.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.5.1"
   },
   "msw": {
     "workerDirectory": "public"

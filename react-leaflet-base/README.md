@@ -1,6 +1,6 @@
 # OpenStreetMap は地図の Wikipedia です
 
-OpenStreetMap は、2004年に始まりました。
+OpenStreetMap は、2004 年に始まりました。
 オープンライセンスの下で誰でも自由に地図を使えるよう、みんなで作る地図です。
 まさに現代の伊能忠敬とも言えるプロジェクトですね。
 
@@ -19,3 +19,7 @@ npm run start
 # Qiita に解説記事を掲載しています
 
 https://qiita.com/t-kurasawa/items/03e5bc9c9a07d8ff99b7
+
+
+# Color Schema
+main: #04A040
