@@ -35,6 +35,11 @@
     "fix:eslint": "npm run lint:eslint -- --fix",
     "prepare": "cd .. && husky install react-leaflet-base/.husky"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },  
   "lint-staged": {
     "*.{js,ts,jsx,tsx}":[
       "npm run fix"
