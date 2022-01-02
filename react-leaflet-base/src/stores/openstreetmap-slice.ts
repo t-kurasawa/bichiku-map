@@ -1,14 +1,14 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "store";
-import { search, SearchCondition } from "apis/openstreetmap-api";
-import { LatLng } from "leaflet";
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/openstreetmap-api';
+import { LatLng } from 'leaflet';
 
-import { OpenStreetMapElement } from "schema";
+import { OpenStreetMapElement } from 'schema';
 
-const STORE_NAME = "openstreetmap";
+const STORE_NAME = 'openstreetmap';
 
 export interface OpenStreetMapState {
-  status: "idle" | "loading" | "failed";
+  status: 'idle' | 'loading' | 'failed';
   copyright: string;
   position: LatLng;
   elements: Array<OpenStreetMapElement>;
@@ -17,16 +17,16 @@ export interface OpenStreetMapState {
 const initialPosition = new LatLng(35.666452, 139.31582);
 
 const initialState: OpenStreetMapState = {
-  status: "idle",
-  copyright: "",
+  status: 'idle',
+  copyright: '',
   position: initialPosition,
   elements: [
     {
       id: 1,
       lat: 35.666452,
       lon: 139.31582,
-      tags: "",
-      type: "",
+      tags: '',
+      type: '',
     },
   ],
 };
@@ -37,7 +37,7 @@ const initialState: OpenStreetMapState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const searchAsync = createAsyncThunk(
-  STORE_NAME + "/search",
+  STORE_NAME + '/search',
   async (condition: SearchCondition) => {
     const response = await search(condition);
     // The value we return becomes the `fulfilled` action payload
@@ -63,15 +63,15 @@ export const openstreetmapSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(searchAsync.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(searchAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.status = 'idle';
         state.copyright = action.payload.copyright;
         state.elements = action.payload.elements;
       })
       .addCase(searchAsync.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
       });
   },
 });

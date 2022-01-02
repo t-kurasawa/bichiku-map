@@ -1,5 +1,5 @@
-import axios from "axios";
-import { LatLng } from "leaflet";
+import axios from 'axios';
+import { LatLng } from 'leaflet';
 
 export interface SearchCondition {
   query: string;
@@ -8,7 +8,7 @@ export interface SearchCondition {
 
 export const search = (condition: SearchCondition) => {
   const baseURL =
-    "https://overpass-api.de/api/interpreter?data=[out:json][timeout:30];";
+    'https://overpass-api.de/api/interpreter?data=[out:json][timeout:30];';
 
   const south: number = condition.location.lat - 0.1;
   const west: number = condition.location.lng - 0.1;
@@ -34,5 +34,5 @@ export const search = (condition: SearchCondition) => {
     `;
 
   const url = baseURL + query;
-  return axios.get(url.replace(/\s+/g, ""));
+  return axios.get(url.replace(/\s+/g, ''));
 };
