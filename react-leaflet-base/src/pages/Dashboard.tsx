@@ -11,7 +11,7 @@ import Copyright from 'components/Copyright';
 
 import OpenStreetMap from 'components/OpenStreetMap';
 
-import {UpSpeedDial} from 'components/SpeedDial';
+import { UpSpeedDial } from 'components/SpeedDial';
 
 const mdTheme = createTheme();
 

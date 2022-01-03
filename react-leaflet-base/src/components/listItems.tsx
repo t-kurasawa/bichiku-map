@@ -4,7 +4,6 @@ import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
-
 export const mainListItems = (
   <div>
     <ListItem button component="a" href="/">
@@ -19,7 +18,6 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="分け合う備蓄" />
     </ListItem>
-
   </div>
 );
 
