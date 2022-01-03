@@ -9,9 +9,8 @@ import Paper from '@mui/material/Paper';
 import Header from 'components/Header';
 import Copyright from 'components/Copyright';
 
-import OpenStreetMap from 'components/OpenStreetMap';
+import Stockpile from 'components/Stockpile';
 
-import {UpSpeedDial} from 'components/SpeedDial';
 
 const mdTheme = createTheme();
 
@@ -36,14 +35,14 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* OpenStreetMap */}
+              {/* Contribution */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <OpenStreetMap />
-                  <UpSpeedDial />
+                  <Stockpile />
                 </Paper>
               </Grid>
             </Grid>
+
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>

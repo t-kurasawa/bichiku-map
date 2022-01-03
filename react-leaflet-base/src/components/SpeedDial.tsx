@@ -4,10 +4,12 @@ import Box from '@mui/material/Box';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import SaveIcon from '@mui/icons-material/Save';
-import PrintIcon from '@mui/icons-material/Print';
-import ShareIcon from '@mui/icons-material/Share';
+
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import WarningIcon from '@mui/icons-material/Warning';
+import NavigationIcon from '@mui/icons-material/Navigation';
 
 const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   position: 'absolute',
@@ -22,31 +24,61 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 }));
 
 const actions = [
-  { icon: <FileCopyIcon />, name: 'Copy' },
-  { icon: <SaveIcon />, name: 'Save' },
-  { icon: <PrintIcon />, name: 'Print' },
-  { icon: <ShareIcon />, name: 'Share' },
+  { icon: <NavigationIcon />, key:'Navigation', name: '現在地周辺を探す' },
+  { icon: <VolunteerActivismIcon />, key:'Volunteer', name: '分け合う備蓄' },
+  { icon: <HealthAndSafetyIcon />, key:'HealthAndSafety', name: '避難所' },
+  { icon: <LocalDrinkIcon />, key:'LocalDrink', name: '給水拠点施設' },
+  { icon: <WarningIcon />, key:'Warning', name: 'ハザードマップ' },
 ];
 
-const direction = 'left';
+export const UpSpeedDial = (props:any) =>{
 
-export default function BasicSpeedDial() {
+  const handleAction = (key: string) => {
+    switch (key) {
+      case 'Navigation':
+        console.log(key)
+        break;
+      case 'Volunteer':
+        console.log(key)
+        break;
+      case 'HealthAndSafety':
+        console.log(key)
+        break;
+      case 'LocalDrink':
+        console.log(key)
+        break;
+      case 'Warning':      
+        console.log(key)
+        break;
+      default:
+        console.error('something wrong')
+        break;
+    }
+    return undefined
+  }
+
+  
   return (
-    <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1}}>
+    <Box sx={{ height: 'auto', transform: 'translateZ(0px)', flexGrow: 1, zIndex: 1050 }}>
       <StyledSpeedDial
         ariaLabel="SpeedDial basic example"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
         icon={<SpeedDialIcon />}
-        direction={direction}
+        direction={'up'}
       >
         {actions.map((action) => (
           <SpeedDialAction
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
+            tooltipOpen={true}
+            onClick={()=> handleAction(action.key)}
           />
         ))}
       </StyledSpeedDial>
     </Box>
   );
 }
+
+
+export default {UpSpeedDial};
