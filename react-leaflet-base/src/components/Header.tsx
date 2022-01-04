@@ -4,14 +4,13 @@ import Divider from '@mui/material/Divider';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
-import { mainListItems, secondaryListItems } from './listItems';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-import SearchForm from '../components/SearchForm';
+import SideMenu from 'components/SideMenu';
+import SearchForm from 'components/SearchForm';
 
 const drawerWidth: number = 240;
 
@@ -115,9 +114,7 @@ export default function Header() {
           </IconButton>
         </Toolbar>
         <Divider />
-        <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
+        <SideMenu />
       </Drawer>
     </>
   );
