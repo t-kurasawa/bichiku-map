@@ -1,5 +1,5 @@
-describe("画面テスト", () => {
-  test("Dashboard", () => {
+describe('画面テスト', () => {
+  test('Dashboard', () => {
     expect(true).toBeTruthy();
   });
 });

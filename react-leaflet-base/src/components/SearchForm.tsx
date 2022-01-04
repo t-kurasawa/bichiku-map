@@ -1,58 +1,58 @@
-import Paper from "@mui/material/Paper";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
-import Divider from "@mui/material/Divider";
-import InputBase from "@mui/material/InputBase";
-import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
+import Paper from '@mui/material/Paper';
+import IconButton from '@mui/material/IconButton';
+import SearchIcon from '@mui/icons-material/Search';
+import Divider from '@mui/material/Divider';
+import InputBase from '@mui/material/InputBase';
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 
-import { useState } from "react";
-import { useAppDispatch } from "../hooks";
-import { stockpileSearchAsync } from "../stores/stockpile-slice";
+import { useState } from 'react';
+import { useAppDispatch } from '../hooks';
+import { stockpileSearchAsync } from '../stores/stockpile-slice';
 
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import RadioGroup from "@mui/material/RadioGroup";
-import Radio from "@mui/material/Radio";
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import Radio from '@mui/material/Radio';
 
 const SearchForm = () => {
   const dispatch = useAppDispatch();
-  const [address, setAddress] = useState("東京都八王子市元本郷町３丁目２４−１");
+  const [address, setAddress] = useState('東京都八王子市元本郷町３丁目２４−１');
 
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
-    console.log("handleClickOpen");
+    console.log('handleClickOpen');
     setOpen(true);
   };
 
   const handleClose = () => {
-    console.log("handleClose");
+    console.log('handleClose');
     setOpen(false);
   };
 
   return (
     <Paper
       component="form"
-      sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
     >
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="東京都八王子市元本郷町３丁目２４−１"
-        inputProps={{ "aria-label": "search google maps" }}
+        inputProps={{ 'aria-label': 'search google maps' }}
         onChange={(event) => setAddress(event.target.value)}
       />
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
       <IconButton
-        sx={{ p: "10px" }}
+        sx={{ p: '10px' }}
         aria-label="search"
         onClick={() => dispatch(stockpileSearchAsync({ address: address }))}
       >
@@ -60,7 +60,7 @@ const SearchForm = () => {
       </IconButton>
       <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
       <IconButton
-        sx={{ p: "10px" }}
+        sx={{ p: '10px' }}
         aria-label="subscribe"
         onClick={handleClickOpen}
       >

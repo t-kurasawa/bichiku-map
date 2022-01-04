@@ -1,5 +1,5 @@
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 export default function Copyright(props: any) {
   return (
@@ -9,12 +9,12 @@ export default function Copyright(props: any) {
       align="center"
       {...props}
     >
-      {"Copyright © "}
+      {'Copyright © '}
       <Link color="inherit" href="https://www.openstreetmap.org/">
         OpenStreetMap contributors
-      </Link>{" "}
+      </Link>{' '}
       {new Date().getFullYear()}
-      {"."}
+      {'.'}
     </Typography>
   );
 }

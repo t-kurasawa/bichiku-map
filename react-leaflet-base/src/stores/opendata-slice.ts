@@ -1,31 +1,31 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "store";
-import { search, SearchCondition } from "apis/opendata-api";
-import { OpenData } from "schema";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/opendata-api';
+import { OpenData } from 'schema';
 
-const STORE_NAME = "opendata";
+const STORE_NAME = 'opendata';
 
 export interface opendataState {
-  status: "idle" | "loading" | "failed";
+  status: 'idle' | 'loading' | 'failed';
   opendata: OpenData;
 }
 
 const initialState: opendataState = {
-  status: "idle",
+  status: 'idle',
   opendata: {
-    type: "",
-    name: "",
-    crs: "",
+    type: '',
+    name: '',
+    crs: '',
     features: [
       {
-        type: "",
+        type: '',
         properties: {
-          gid: "",
-          genshoname: "",
-          kubun: "",
+          gid: '',
+          genshoname: '',
+          kubun: '',
         },
         geometry: {
-          type: "",
+          type: '',
           coordinates: [[[1]]],
         },
       },
@@ -39,7 +39,7 @@ const initialState: opendataState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const searchOpendataAsync = createAsyncThunk(
-  STORE_NAME + "/searchOpendata",
+  STORE_NAME + '/searchOpendata',
   async (condition: SearchCondition) => {
     const response = await search(condition);
     // The value we return becomes the `fulfilled` action payload
@@ -57,14 +57,14 @@ export const opendataSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(searchOpendataAsync.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(searchOpendataAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.status = 'idle';
         state.opendata = action.payload;
       })
       .addCase(searchOpendataAsync.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
       });
   },
 });

@@ -1,13 +1,13 @@
-import { render, screen } from "@testing-library/react";
-import Stockpile from "components/Stockpile";
+import { render, screen } from '@testing-library/react';
+import Stockpile from 'components/Stockpile';
 
-import { ThemeProvider } from "@mui/material/styles";
-import { store } from "store";
-import theme from "theme";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from '@mui/material/styles';
+import { store } from 'store';
+import theme from 'theme';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
-describe("コンポーネントテスト", () => {
+describe('コンポーネントテスト', () => {
   const TestTarget = () => (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -18,9 +18,9 @@ describe("コンポーネントテスト", () => {
     </Provider>
   );
 
-  test("Stockpile", () => {
+  test('Stockpile', () => {
     render(<TestTarget />);
-    const element = screen.getByText("防災備蓄リスト");
+    const element = screen.getByText('防災備蓄リスト');
     expect(element).toBeTruthy();
   });
 });

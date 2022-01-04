@@ -1,34 +1,34 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "store";
-import { search, SearchCondition } from "apis/user-api";
-import { User } from "schema";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'store';
+import { search, SearchCondition } from 'apis/user-api';
+import { User } from 'schema';
 
-const STORE_NAME = "randomuser";
+const STORE_NAME = 'randomuser';
 
 export interface UserState {
-  status: "idle" | "loading" | "failed";
+  status: 'idle' | 'loading' | 'failed';
   user: User;
 }
 
 const initialState: UserState = {
-  status: "idle",
+  status: 'idle',
   user: {
     id: {
-      name: "",
-      value: "",
+      name: '',
+      value: '',
     },
     name: {
-      title: "",
-      first: "",
-      last: "",
+      title: '',
+      first: '',
+      last: '',
     },
-    gender: "",
+    gender: '',
     picture: {
-      large: "",
-      medium: "",
-      thumbnail: "",
+      large: '',
+      medium: '',
+      thumbnail: '',
     },
-    email: "",
+    email: '',
   },
 };
 
@@ -38,7 +38,7 @@ const initialState: UserState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const searchAsync = createAsyncThunk(
-  STORE_NAME + "/search",
+  STORE_NAME + '/search',
   async (condition: SearchCondition) => {
     const response = await search(condition);
     // The value we return becomes the `fulfilled` action payload
@@ -56,14 +56,14 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(searchAsync.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(searchAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.status = 'idle';
         state.user = action.payload.data;
       })
       .addCase(searchAsync.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
       });
   },
 });
