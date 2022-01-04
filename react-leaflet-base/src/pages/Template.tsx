@@ -9,7 +9,7 @@ import Copyright from 'components/Copyright';
 
 const mdTheme = createTheme();
 
-const Template = (props:any) => {
+const Template = (props: any) => {
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -38,6 +38,6 @@ const Template = (props:any) => {
       </Box>
     </ThemeProvider>
   );
-}
+};
 
 export default Template;

@@ -1,4 +1,4 @@
-import Template from 'pages/Template'
+import Template from 'pages/Template';
 import ContributeStockpile from 'components/ContributeStockpile';
 import Stockpile from 'components/Stockpile';
 
@@ -13,6 +13,6 @@ const Contribution = () => {
       </Grid>
     </Template>
   );
-}
+};
 
 export default Contribution;

@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography';
 import SaveIcon from '@mui/icons-material/Save';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -17,9 +17,9 @@ const ContributeStockpile = () => {
 
   return (
     <Grid item xs={12}>
-      <Paper sx={{ p: 2, display: '', flexDirection: 'column'}} >
+      <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
         <Typography component="h1" variant="h4" align="center">
-            防災備蓄品の登録
+          防災備蓄品の登録
         </Typography>
 
         <Stepper activeStep={1} alternativeLabel sx={{ pt: 3, pb: 5 }}>
@@ -67,7 +67,11 @@ const ContributeStockpile = () => {
             fullWidth
             variant="standard"
           />
-          <Button variant="contained" startIcon={<SaveIcon />} sx={{ mt: 3, ml: 1 }}>
+          <Button
+            variant="contained"
+            startIcon={<SaveIcon />}
+            sx={{ mt: 3, ml: 1 }}
+          >
             登録
           </Button>
         </Grid>
