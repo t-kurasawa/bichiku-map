@@ -18,7 +18,6 @@ import Copyright from 'components/Copyright';
 
 import Stockpile from 'components/Stockpile';
 
-
 const mdTheme = createTheme();
 
 function DashboardContent() {
@@ -47,9 +46,21 @@ function DashboardContent() {
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <FormControl component="fieldset">
                     <FormLabel component="legend"></FormLabel>
-                    <RadioGroup row aria-label="share" name="row-radio-buttons-group">
-                      <FormControlLabel value="yes" control={<Radio />} label="はい" />
-                      <FormControlLabel value="no" control={<Radio />} label="いいえ" />
+                    <RadioGroup
+                      row
+                      aria-label="share"
+                      name="row-radio-buttons-group"
+                    >
+                      <FormControlLabel
+                        value="yes"
+                        control={<Radio />}
+                        label="はい"
+                      />
+                      <FormControlLabel
+                        value="no"
+                        control={<Radio />}
+                        label="いいえ"
+                      />
                     </RadioGroup>
                   </FormControl>
                   <TextField
