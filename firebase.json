@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "react-leaflet-base/build",
+    "public": "frontend/build",
     "ignore": [
       "firebase.json",
       "**/.*",
