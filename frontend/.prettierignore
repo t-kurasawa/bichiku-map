@@ -1,0 +1,7 @@
+# Ignore artifacts:
+build
+coverage
+src/__mock__/data
+
+# Ignore all HTML files:
+*.html
