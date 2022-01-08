@@ -33,7 +33,7 @@
     "fix": "run-s fix:prettier fix:eslint",
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix:eslint": "npm run lint:eslint -- --fix",
-    "prepare": "cd .. && husky install react-leaflet-base/.husky"
+    "prepare": "cd .. && husky install frontend/.husky"
   },
   "eslintConfig": {
     "extends": [
