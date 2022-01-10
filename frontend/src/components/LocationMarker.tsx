@@ -80,7 +80,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
             />
             <CardContent>
               <Typography variant="body1" color="text.primary">
-                学校は避難場所になります。
+                学校は避難場所になります
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 避難場所には備蓄品があります。助けが必要な方は避難場所に来て下さい。
