@@ -12,7 +12,7 @@ import {
   CardActions,
   IconButton,
   Typography,
-  SwipeableDrawer
+  SwipeableDrawer,
 } from '@mui/material';
 
 import { styled } from '@mui/material/styles';
@@ -39,9 +39,7 @@ interface Props {
 const Root = styled('div')(({ theme }) => ({
   height: '100%',
   backgroundColor:
-    theme.palette.mode === 'light'
-      ? '#fff'
-      : theme.palette.background.default,
+    theme.palette.mode === 'light' ? '#fff' : theme.palette.background.default,
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -80,7 +78,9 @@ const SwipeableEdgeDrawer = (props: Props) => {
           },
         }}
       />
-      <Button variant="outlined" onClick={toggleDrawer(true)}>詳細を見る</Button>
+      <Button variant="outlined" onClick={toggleDrawer(true)}>
+        詳細を見る
+      </Button>
       <SwipeableDrawer
         container={container}
         anchor="bottom"
@@ -117,46 +117,45 @@ const SwipeableEdgeDrawer = (props: Props) => {
             overflow: 'auto',
           }}
         >
+          <Card sx={{ maxWidth: 'auto' }}>
+            <CardHeader
+              avatar={<Avatar src={sns} variant="square" />}
+              title={value.name || '未登録'}
+            />
+            <CardMedia
+              component="img"
+              height="auto"
+              width="301"
+              image={rice}
+              alt="rice"
+            />
+            <CardContent>
+              <Typography variant="body1" color="text.primary">
+                災害の備え、ありがとうございます
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                この備蓄品は災害時に近隣住民の方と分け合うことができます。
+              </Typography>
 
-        <Card sx={{ maxWidth: 'auto'}} >
-          <CardHeader
-            avatar={<Avatar src={sns} variant="square" />}
-            title={value.name || '未登録'}
-          />
-          <CardMedia
-            component="img"
-            height="auto"
-            width="301"
-            image={rice}
-            alt="rice"
-          />
-          <CardContent>
-            <Typography variant="body1" color="text.primary">
-              災害の備え、ありがとうございます
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              この備蓄品は災害時に近隣住民の方と分け合うことができます。
-            </Typography>
-
-            <Typography variant="inherit" color="text.secondary">
-              備蓄品: {value.name || '未登録'}
-            </Typography>
-            <Typography variant="inherit" color="text.secondary">
-              備蓄数: {value.stockQuantity || '未登録'}
-            </Typography>
-            <Typography variant="inherit" color="text.secondary">
-              賞味期限: {value.expiryDate || '未登録'}
-            </Typography>
-          </CardContent>
-          <CardActions disableSpacing={true}>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-            <IconButton aria-label="delete">
-              <DeleteForeverIcon />
-            </IconButton>
-          </CardActions>
-        </Card>          
+              <Typography variant="inherit" color="text.secondary">
+                備蓄品: {value.name || '未登録'}
+              </Typography>
+              <Typography variant="inherit" color="text.secondary">
+                備蓄数: {value.stockQuantity || '未登録'}
+              </Typography>
+              <Typography variant="inherit" color="text.secondary">
+                賞味期限: {value.expiryDate || '未登録'}
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing={true}>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+              <IconButton aria-label="delete">
+                <DeleteForeverIcon />
+              </IconButton>
+            </CardActions>
+          </Card>
         </StyledBox>
       </SwipeableDrawer>
     </Root>
