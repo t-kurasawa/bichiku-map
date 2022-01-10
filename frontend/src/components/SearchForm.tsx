@@ -6,8 +6,8 @@ import InputBase from '@mui/material/InputBase';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 
 import { useState } from 'react';
-import { useAppDispatch } from '../hooks';
-import { stockpileSearchAsync } from '../stores/stockpile-slice';
+import { useAppDispatch } from 'hooks';
+import { fetchStockpile } from 'stores/stockpile-slice';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -54,7 +54,7 @@ const SearchForm = () => {
       <IconButton
         sx={{ p: '10px' }}
         aria-label="search"
-        onClick={() => dispatch(stockpileSearchAsync({ address: address }))}
+        onClick={() => dispatch(fetchStockpile({ address: address }))}
       >
         <SearchIcon />
       </IconButton>

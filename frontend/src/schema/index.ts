@@ -49,10 +49,10 @@ export interface OpenData {
   ];
 }
 
-export interface OpenStreetMapElement {
+export interface MapElement {
   id: number;
   lat: number;
-  lon: number;
+  lon: number; // TODO: OpenStreetMap API は lon
   tags?: any;
   type: string;
 }
