@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { LatLng } from 'leaflet';
+import { LatLngLiteral } from 'leaflet';
 
 export interface SearchCondition {
   query: string;
-  location: LatLng;
+  location: LatLngLiteral;
 }
 
 export const search = (condition: SearchCondition) => {

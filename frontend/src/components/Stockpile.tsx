@@ -9,15 +9,15 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from 'components/Title';
 
-import { useAppSelector } from '../hooks';
-import { selectStockPile } from '../stores/stockpile-slice';
+import { useAppSelector } from 'hooks';
+import { selectStockpileList } from 'stores/stockpile-slice';
 
 function preventDefault(event: React.MouseEvent) {
   event.preventDefault();
 }
 
 export const Stockpile = () => {
-  const stockpile = useAppSelector(selectStockPile);
+  const stockpileList = useAppSelector(selectStockpileList);
 
   return (
     <Grid item xs={12}>
@@ -34,7 +34,7 @@ export const Stockpile = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {stockpile.stockpileList.map((stockpile) => (
+            {stockpileList.map((stockpile) => (
               <TableRow key={stockpile.id}>
                 <TableCell>{stockpile.name}</TableCell>
                 <TableCell>{stockpile.address}</TableCell>
