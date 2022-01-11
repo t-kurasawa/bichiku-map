@@ -25,5 +25,5 @@ const fetchEvacuationArea = () => {
 export default {
   search,
   fetchEvacuationCenter,
-  fetchEvacuationArea
+  fetchEvacuationArea,
 };

@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { stockpiles } from './data/stockpiles';
-import { evacuationCenters } from './data/evacuationCenters'
-import { evacuationAreas } from './data/evacuationAreas'
+import { evacuationCenters } from './data/evacuationCenters';
+import { evacuationAreas } from './data/evacuationAreas';
 
 const tokyoDosekiryuTokubetsu = require('./data/tokyo_dosekiryu_tokubetsu.json');
 // const tokyo_dosekiryu= require('./data/tokyo_dosekiryu.json')
@@ -14,11 +14,11 @@ export const handlers = [
     return res(ctx.status(200), ctx.json(stockpiles));
   }),
 
-  rest.get('/evacuation/center', async(req, res, ctx) => {
+  rest.get('/evacuation/center', async (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(evacuationCenters));
   }),
 
-  rest.get('/evacuation/area', async(req, res, ctx) => {
+  rest.get('/evacuation/area', async (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(evacuationAreas));
   }),
 

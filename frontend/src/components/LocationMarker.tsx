@@ -35,7 +35,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
 
   const currentLocation = useAppSelector(selectCurrentLocation);
   const mapElements = useAppSelector(selectMapElements);
-  const evacuationAreas = useAppSelector(selectEvacuationAreas)
+  const evacuationAreas = useAppSelector(selectEvacuationAreas);
   const stockpileList = useAppSelector(selectStockpileList);
   const opendata = useAppSelector(selectOpendata);
 
@@ -59,52 +59,43 @@ export const LocationMarker = (props: FeatureGroupProps) => {
     ) : null
   );
 
-
-  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea,index) =>
-      <Circle
-        key={index}
-        pathOptions={{ color: 'red' }}
-        center={new LatLng(evacuationArea.緯度 , evacuationArea.経度)}
-        radius={50}
-      >
-        <Popup>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardHeader
-              avatar={<Avatar src={escape} variant="square" />}
-              title={evacuationArea.避難場所_名称 || '未登録'}
-            />
-            <CardMedia
-              component="img"
-              height="194"
-              image={escape}
-              alt="School"
-            />
-            <CardContent>
-              <Typography variant="body1" color="text.primary">
-                {evacuationArea.避難場所_名称}は避難場所になります
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                避難場所には備蓄品があります。助けが必要な方は避難場所に来て下さい。
-              </Typography>
-              <Typography variant="inherit" color="text.secondary">
-                {evacuationArea.住所}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-              <IconButton aria-label="delete">
-                <DeleteForeverIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        </Popup>
-      </Circle>
-  );
-
-
-
+  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => (
+    <Circle
+      key={index}
+      pathOptions={{ color: 'red' }}
+      center={new LatLng(evacuationArea.緯度, evacuationArea.経度)}
+      radius={50}
+    >
+      <Popup>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardHeader
+            avatar={<Avatar src={escape} variant="square" />}
+            title={evacuationArea.避難場所_名称 || '未登録'}
+          />
+          <CardMedia component="img" height="194" image={escape} alt="School" />
+          <CardContent>
+            <Typography variant="body1" color="text.primary">
+              {evacuationArea.避難場所_名称}は避難場所になります
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              避難場所には備蓄品があります。助けが必要な方は避難場所に来て下さい。
+            </Typography>
+            <Typography variant="inherit" color="text.secondary">
+              {evacuationArea.住所}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+            <IconButton aria-label="delete">
+              <DeleteForeverIcon />
+            </IconButton>
+          </CardActions>
+        </Card>
+      </Popup>
+    </Circle>
+  ));
 
   const SchoolCircle = mapElements.map((mapElement) =>
     mapElement.type === 'node' ? (

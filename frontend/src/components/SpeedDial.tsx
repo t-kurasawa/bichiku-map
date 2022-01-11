@@ -57,7 +57,7 @@ export const UpSpeedDial = (props: any) => {
         dispatch(fetchEvacuationArea());
         break;
       }
-      case 'LocalDrink':{
+      case 'LocalDrink': {
         console.log(key);
         const condition = {
           query: 'amenity=school',

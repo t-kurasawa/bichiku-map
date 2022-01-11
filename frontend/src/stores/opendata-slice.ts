@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
-import { opendataApi } from 'apis'
-import { SearchCondition } from 'apis/opendata-api'
-import { EvacuationArea,EvacuationCenter, OpenData } from 'schema';
+import { opendataApi } from 'apis';
+import { SearchCondition } from 'apis/opendata-api';
+import { EvacuationArea, EvacuationCenter, OpenData } from 'schema';
 
 const STORE_NAME = 'opendata';
 
@@ -17,25 +17,25 @@ const initialState: opendataState = {
   status: 'idle',
   evacuationAreas: [
     {
-      '避難場所_名称': '',
-      '地方公共団体コード': 0,
-      '都道府県': '',
-      '指定区市町村名': '',
-      '住所': '',
-      '緯度': 0,
-      '経度': 0
-    }
+      避難場所_名称: '',
+      地方公共団体コード: 0,
+      都道府県: '',
+      指定区市町村名: '',
+      住所: '',
+      緯度: 0,
+      経度: 0,
+    },
   ],
   evacuationCenters: [
     {
-      '避難所_名称': '',
-      '地方公共団体コード': 0,
-      '都道府県': '',
-      '指定区市町村名': '',
-      '住所': '',
-      '緯度': 0,
-      '経度': 0
-    }
+      避難所_名称: '',
+      地方公共団体コード: 0,
+      都道府県: '',
+      指定区市町村名: '',
+      住所: '',
+      緯度: 0,
+      経度: 0,
+    },
   ],
   opendata: {
     type: '',
@@ -71,7 +71,6 @@ export const fetchOpendata = createAsyncThunk(
     return response.data;
   }
 );
-
 
 export const fetchEvacuationCenter = createAsyncThunk(
   STORE_NAME + '/evacuation/center',
@@ -128,12 +127,13 @@ export const opendataSlice = createSlice({
       .addCase(fetchEvacuationArea.rejected, (state) => {
         state.status = 'failed';
       });
-
   },
 });
 
 export const selectOpendata = (state: RootState) => state.opendata.opendata;
-export const selectEvacuationAreas = (state: RootState) => state.opendata.evacuationAreas;
-export const selectEvacuationCenters = (state: RootState) => state.opendata.evacuationCenters;
+export const selectEvacuationAreas = (state: RootState) =>
+  state.opendata.evacuationAreas;
+export const selectEvacuationCenters = (state: RootState) =>
+  state.opendata.evacuationCenters;
 
 export default opendataSlice.reducer;
