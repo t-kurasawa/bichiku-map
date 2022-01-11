@@ -1,17 +1,42 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
-import { search, SearchCondition } from 'apis/opendata-api';
-import { OpenData } from 'schema';
+import { opendataApi } from 'apis'
+import { SearchCondition } from 'apis/opendata-api'
+import { EvacuationArea,EvacuationCenter, OpenData } from 'schema';
 
 const STORE_NAME = 'opendata';
 
 export interface opendataState {
   status: 'idle' | 'loading' | 'failed';
+  evacuationAreas: Array<EvacuationArea>;
+  evacuationCenters: Array<EvacuationCenter>;
   opendata: OpenData;
 }
 
 const initialState: opendataState = {
   status: 'idle',
+  evacuationAreas: [
+    {
+      '避難場所_名称': '',
+      '地方公共団体コード': 0,
+      '都道府県': '',
+      '指定区市町村名': '',
+      '住所': '',
+      '緯度': 0,
+      '経度': 0
+    }
+  ],
+  evacuationCenters: [
+    {
+      '避難所_名称': '',
+      '地方公共団体コード': 0,
+      '都道府県': '',
+      '指定区市町村名': '',
+      '住所': '',
+      '緯度': 0,
+      '経度': 0
+    }
+  ],
   opendata: {
     type: '',
     name: '',
@@ -41,8 +66,25 @@ const initialState: opendataState = {
 export const fetchOpendata = createAsyncThunk(
   STORE_NAME + '/searchOpendata',
   async (condition: SearchCondition) => {
-    const response = await search(condition);
+    const response = await opendataApi.search(condition);
     // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
+
+
+export const fetchEvacuationCenter = createAsyncThunk(
+  STORE_NAME + '/evacuation/center',
+  async () => {
+    const response = await opendataApi.fetchEvacuationCenter();
+    return response.data;
+  }
+);
+
+export const fetchEvacuationArea = createAsyncThunk(
+  STORE_NAME + '/evacuation/area',
+  async () => {
+    const response = await opendataApi.fetchEvacuationArea();
     return response.data;
   }
 );
@@ -65,10 +107,33 @@ export const opendataSlice = createSlice({
       })
       .addCase(fetchOpendata.rejected, (state) => {
         state.status = 'failed';
+      })
+      .addCase(fetchEvacuationCenter.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchEvacuationCenter.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.evacuationCenters = action.payload;
+      })
+      .addCase(fetchEvacuationCenter.rejected, (state) => {
+        state.status = 'failed';
+      })
+      .addCase(fetchEvacuationArea.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchEvacuationArea.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.evacuationAreas = action.payload;
+      })
+      .addCase(fetchEvacuationArea.rejected, (state) => {
+        state.status = 'failed';
       });
+
   },
 });
 
 export const selectOpendata = (state: RootState) => state.opendata.opendata;
+export const selectEvacuationAreas = (state: RootState) => state.opendata.evacuationAreas;
+export const selectEvacuationCenters = (state: RootState) => state.opendata.evacuationCenters;
 
 export default opendataSlice.reducer;

@@ -3,7 +3,7 @@ import {
   fetchOpenStreetMap,
   selectMapCenterPosition,
 } from 'stores/openstreetmap-slice';
-import { fetchOpendata } from 'stores/opendata-slice';
+import { fetchOpendata, fetchEvacuationArea } from 'stores/opendata-slice';
 import { fetchStockpile } from 'stores/stockpile-slice';
 
 import { styled } from '@mui/material/styles';
@@ -54,6 +54,11 @@ export const UpSpeedDial = (props: any) => {
         break;
       case 'HealthAndSafety': {
         console.log(key);
+        dispatch(fetchEvacuationArea());
+        break;
+      }
+      case 'LocalDrink':{
+        console.log(key);
         const condition = {
           query: 'amenity=school',
           location: {
@@ -64,9 +69,6 @@ export const UpSpeedDial = (props: any) => {
         dispatch(fetchOpenStreetMap(condition));
         break;
       }
-      case 'LocalDrink':
-        console.log(key);
-        break;
       case 'Warning':
         console.log(key);
         dispatch(fetchOpendata({ path: 'tokyo_dosekiryu_tokubetsu' }));
