@@ -10,17 +10,17 @@ export const OpenStreetMap = (props: MapContainerProps) => {
   const initialPosition = {
     lat: 35.666452,
     lng: 139.31582,
-  }
+  };
   return (
     <MapContainer
       center={initialPosition}
       zoom={15}
       scrollWheelZoom={true}
       whenReady={() => {
-        console.log("This function will fire once the map is created")
+        console.log('This function will fire once the map is created');
       }}
       whenCreated={(map) => {
-        console.log("The underlying leaflet map instance:", map)
+        console.log('The underlying leaflet map instance:', map);
         map.locate();
       }}
     >

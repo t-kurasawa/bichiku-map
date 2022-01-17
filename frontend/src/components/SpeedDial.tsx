@@ -1,5 +1,9 @@
 import { useAppDispatch } from 'hooks';
-import { fetchOpendata, fetchEvacuationArea, fetchEvacuationCenter } from 'stores/opendata-slice';
+import {
+  fetchOpendata,
+  fetchEvacuationArea,
+  fetchEvacuationCenter,
+} from 'stores/opendata-slice';
 import { fetchStockpile } from 'stores/stockpile-slice';
 
 import { styled } from '@mui/material/styles';

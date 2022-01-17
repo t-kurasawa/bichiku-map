@@ -97,9 +97,7 @@ const EvacuationDrawer = (props: Props) => {
           }}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}>
-            避難所
-          </Typography>
+          <Typography sx={{ p: 2, color: 'text.secondary' }}>避難所</Typography>
         </StyledBox>
         <StyledBox
           sx={{

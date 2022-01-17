@@ -28,17 +28,16 @@ export const openstreetmapSlice = createSlice({
   reducers: {
     setCurrentLocation: (state, action: PayloadAction<LatLngLiteral>) => {
       state.currentLocation = action.payload;
-      console.log('setCurrentLocation')
-      console.log(action.payload)
+      console.log('setCurrentLocation');
+      console.log(action.payload);
     },
     setMapCenterPosition: (state, action: PayloadAction<LatLngLiteral>) => {
       state.mapCenterPosition = action.payload;
-      console.log('setMapCenterPosition')
-      console.log(action.payload)
+      console.log('setMapCenterPosition');
+      console.log(action.payload);
     },
   },
-  extraReducers: (builder) => {
-  },
+  extraReducers: (builder) => {},
 });
 
 export const selectCurrentLocation = (state: RootState) =>
