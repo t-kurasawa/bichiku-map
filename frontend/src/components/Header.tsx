@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 import SideMenu from 'components/SideMenu';
-import SearchForm from 'components/SearchForm';
+// import SearchForm from 'components/SearchForm';
 
 const drawerWidth: number = 240;
 
@@ -97,7 +97,7 @@ export default function Header() {
           >
             みんなで備える防災備蓄マップ
           </Typography>
-          <SearchForm />
+          {/* <SearchForm /> */}
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

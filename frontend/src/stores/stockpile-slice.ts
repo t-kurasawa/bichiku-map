@@ -17,24 +17,6 @@ const initialState: StockpilesState = {
     {
       id: 1,
       name: '',
-      user: {
-        id: {
-          name: '',
-          value: '',
-        },
-        name: {
-          title: '',
-          first: '',
-          last: '',
-        },
-        gender: '',
-        picture: {
-          large: '',
-          medium: '',
-          thumbnail: '',
-        },
-        email: '',
-      },
       stockQuantity: 1,
       lat: 35.666452,
       lng: 139.31582,

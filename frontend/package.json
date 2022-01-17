@@ -19,10 +19,12 @@
     "react-scripts": "4.0.3",
     "recharts": "^2.1.6",
     "typescript": "^4.1.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:https": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test  --silent --watchAll=false",
     "eject": "react-scripts eject",
@@ -58,6 +60,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-leaflet": "^2.8.2",
     "@types/react-redux": "^7.1.7",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^7.32.0",

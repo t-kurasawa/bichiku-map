@@ -1,47 +1,32 @@
 import { useAppSelector } from 'hooks';
-import {
-  selectMapElements,
-  selectCurrentLocation,
-} from 'stores/openstreetmap-slice';
+import { selectCurrentLocation } from 'stores/openstreetmap-slice';
 import { selectStockpileList } from 'stores/stockpile-slice';
-import { selectOpendata } from 'stores/opendata-slice';
+import {
+  selectOpendata,
+  selectEvacuationAreas,
+  selectEvacuationCenters,
+} from 'stores/opendata-slice';
 
 import { LatLng } from 'leaflet';
-import { FeatureGroup, Popup, Circle, FeatureGroupProps } from 'react-leaflet';
+import { Circle, FeatureGroup, FeatureGroupProps, Popup } from 'react-leaflet';
 
-import {
-  Avatar,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  CardActions,
-  IconButton,
-  Typography,
-} from '@mui/material';
-
-import ShareIcon from '@mui/icons-material/Share';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-
-import SwipeableEdgeDrawer from 'components/SwipeableDrawer';
-
-import sns from 'assets/img/sns-20x20px-04A040.svg';
-import school from 'assets/img/school-20x20px-04A040.svg';
-import escape from 'assets/img/escape-301x194px-04A040.svg';
-// import rice from 'assets/img/rice-301x194px-04A040.svg';
+import StockpileDrawer from 'components/StockpileDrawer';
+import EvacuationCenterDrawer from 'components/EvacuationCenterDrawer';
+import EvacuationAreaDrawer from 'components/EvacuationAreaDrawer';
 
 export const LocationMarker = (props: FeatureGroupProps) => {
   const fillBlueOptions = { fillColor: 'blue' };
 
   const currentLocation = useAppSelector(selectCurrentLocation);
-  const mapElements = useAppSelector(selectMapElements);
+  const evacuationAreas = useAppSelector(selectEvacuationAreas);
+  const evacuationCenters = useAppSelector(selectEvacuationCenters);
   const stockpileList = useAppSelector(selectStockpileList);
   const opendata = useAppSelector(selectOpendata);
 
-  const OpendataCircle = opendata.features.map((feature) =>
+  const OpendataCircle = opendata.features.map((feature, index) =>
     feature.geometry.type === 'Polygon' ? (
       <Circle
-        key={feature.properties.gid}
+        key={index.toString()}
         pathOptions={{ color: 'red' }}
         center={
           new LatLng(
@@ -58,77 +43,74 @@ export const LocationMarker = (props: FeatureGroupProps) => {
     ) : null
   );
 
-  const SchoolCircle = mapElements.map((mapElement) =>
-    mapElement.type === 'node' ? (
+  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => {
+    return (
       <Circle
-        key={mapElement.id}
-        pathOptions={{ color: 'orange' }}
-        center={new LatLng(mapElement.lat, mapElement.lon)}
+        key={index.toString()}
+        pathOptions={{ color: 'red' }}
+        center={new LatLng(evacuationArea.緯度, evacuationArea.経度)}
         radius={50}
+        eventHandlers={{
+          click: () => {
+            console.log('Circle clicked');
+          },
+        }}
       >
         <Popup>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardHeader
-              avatar={<Avatar src={school} variant="square" />}
-              title={mapElement.tags.name || '未登録'}
-            />
-            <CardMedia
-              component="img"
-              height="194"
-              image={escape}
-              alt="School"
-            />
-            <CardContent>
-              <Typography variant="body1" color="text.primary">
-                学校は避難場所になります
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                避難場所には備蓄品があります。助けが必要な方は避難場所に来て下さい。
-              </Typography>
-              <Typography variant="inherit" color="text.secondary">
-                ※正確な情報は各自治体の情報をご覧ください。
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-              <IconButton aria-label="delete">
-                <DeleteForeverIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
+          <EvacuationAreaDrawer value={evacuationArea} isOpen={true} />
         </Popup>
       </Circle>
-    ) : null
+    );
+  });
+
+  const EvacuationCenterCircle = evacuationCenters.map(
+    (evacuationCenter, index) => {
+      return (
+        <Circle
+          key={index.toString()}
+          pathOptions={{ color: 'orange' }}
+          center={new LatLng(evacuationCenter.緯度, evacuationCenter.経度)}
+          radius={50}
+          eventHandlers={{
+            click: () => {
+              console.log('Circle clicked');
+            },
+          }}
+        >
+          <Popup>
+            <EvacuationCenterDrawer value={evacuationCenter} isOpen={true} />
+          </Popup>
+        </Circle>
+      );
+    }
   );
 
-  const StockpileCircle = stockpileList.map((stockpile) => (
-    <Circle
-      key={stockpile.id}
-      pathOptions={{ color: 'green' }}
-      center={new LatLng(stockpile.lat, stockpile.lng)}
-      radius={50}
-    >
-      <Popup>
-        <Card sx={{ maxWidth: 300 }}>
-          <CardHeader
-            avatar={<Avatar src={sns} variant="square" />}
-            title={stockpile.name || '未登録'}
-          />
-          <CardContent>
-            <SwipeableEdgeDrawer value={stockpile} />
-          </CardContent>
-        </Card>
-      </Popup>
-    </Circle>
-  ));
+  const StockpileCircle = stockpileList.map((stockpile, index) => {
+    return (
+      <Circle
+        key={index.toString()}
+        pathOptions={{ color: 'green' }}
+        center={new LatLng(stockpile.lat, stockpile.lng)}
+        radius={50}
+        eventHandlers={{
+          click: () => {
+            console.log('Circle clicked');
+          },
+        }}
+      >
+        <Popup>
+          <StockpileDrawer value={stockpile} isOpen={true} />
+        </Popup>
+      </Circle>
+    );
+  });
 
   return currentLocation === null ? null : (
     <FeatureGroup pathOptions={fillBlueOptions}>
-      {SchoolCircle}
       {StockpileCircle}
       {OpendataCircle}
+      {EvacuationAreaCircle}
+      {EvacuationCenterCircle}
     </FeatureGroup>
   );
 };

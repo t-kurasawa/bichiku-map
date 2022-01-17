@@ -4,26 +4,17 @@ import { Global } from '@emotion/react';
 import {
   Avatar,
   Box,
-  Button,
   Card,
   CardHeader,
-  CardMedia,
   CardContent,
-  CardActions,
-  IconButton,
   Typography,
   SwipeableDrawer,
 } from '@mui/material';
 
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
-import ShareIcon from '@mui/icons-material/Share';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-import sns from 'assets/img/sns-20x20px-04A040.svg';
-// import school from 'assets/img/school-20x20px-04A040.svg';
-// import escape from 'assets/img/escape-301x194px-04A040.svg';
-import rice from 'assets/img/rice-301x194px-04A040.svg';
+import escape from 'assets/img/escape-301x194px-04A040.svg';
 
 const drawerBleeding = 56;
 
@@ -34,6 +25,7 @@ interface Props {
    */
   window?: () => Window;
   value?: any;
+  isOpen: boolean;
 }
 
 const Root = styled('div')(({ theme }) => ({
@@ -56,9 +48,9 @@ const Puller = styled(Box)(({ theme }) => ({
   left: 'calc(50% - 15px)',
 }));
 
-const SwipeableEdgeDrawer = (props: Props) => {
-  const { window, value } = props;
-  const [open, setOpen] = useState(false);
+const EvacuationDrawer = (props: Props) => {
+  const { window, value, isOpen } = props;
+  const [open, setOpen] = useState(isOpen);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -78,9 +70,7 @@ const SwipeableEdgeDrawer = (props: Props) => {
           },
         }}
       />
-      <Button variant="outlined" onClick={toggleDrawer(true)}>
-        詳細を見る
-      </Button>
+      <Avatar src={escape} variant="square" />
       <SwipeableDrawer
         container={container}
         anchor="bottom"
@@ -106,7 +96,7 @@ const SwipeableEdgeDrawer = (props: Props) => {
         >
           <Puller />
           <Typography sx={{ p: 2, color: 'text.secondary' }}>
-            {value.address || '未登録'}
+            避難場所
           </Typography>
         </StyledBox>
         <StyledBox
@@ -119,42 +109,14 @@ const SwipeableEdgeDrawer = (props: Props) => {
         >
           <Card sx={{ maxWidth: 'auto' }}>
             <CardHeader
-              avatar={<Avatar src={sns} variant="square" />}
-              title={value.name || '未登録'}
-            />
-            <CardMedia
-              component="img"
-              height="auto"
-              width="301"
-              image={rice}
-              alt="rice"
+              avatar={<Avatar src={escape} variant="square" />}
+              title={value.避難場所_名称}
             />
             <CardContent>
               <Typography variant="body1" color="text.primary">
-                災害の備え、ありがとうございます
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                この備蓄品は災害時に近隣住民の方と分け合うことができます。
-              </Typography>
-
-              <Typography variant="inherit" color="text.secondary">
-                備蓄品: {value.name || '未登録'}
-              </Typography>
-              <Typography variant="inherit" color="text.secondary">
-                備蓄数: {value.stockQuantity || '未登録'}
-              </Typography>
-              <Typography variant="inherit" color="text.secondary">
-                賞味期限: {value.expiryDate || '未登録'}
+                {value.住所}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing={true}>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-              <IconButton aria-label="delete">
-                <DeleteForeverIcon />
-              </IconButton>
-            </CardActions>
           </Card>
         </StyledBox>
       </SwipeableDrawer>
@@ -162,4 +124,4 @@ const SwipeableEdgeDrawer = (props: Props) => {
   );
 };
 
-export default SwipeableEdgeDrawer;
+export default EvacuationDrawer;

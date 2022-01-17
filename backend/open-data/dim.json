@@ -1,13 +1,6 @@
 {
   "contents": [
     {
-      "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv",
-      "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップ避難所一覧データ",
-      "preprocesses": [
-        "encoding-utf-8"
-      ]
-    },
-    {
       "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_area.csv",
       "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップ避難場所一覧データ",
       "preprocesses": [
