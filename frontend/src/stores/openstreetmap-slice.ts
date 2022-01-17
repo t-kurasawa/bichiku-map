@@ -24,17 +24,12 @@ const initialState: OpenStreetMapState = {
 export const openstreetmapSlice = createSlice({
   name: STORE_NAME,
   initialState,
-  // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     setCurrentLocation: (state, action: PayloadAction<LatLngLiteral>) => {
       state.currentLocation = action.payload;
-      console.log('setCurrentLocation');
-      console.log(action.payload);
     },
     setMapCenterPosition: (state, action: PayloadAction<LatLngLiteral>) => {
       state.mapCenterPosition = action.payload;
-      console.log('setMapCenterPosition');
-      console.log(action.payload);
     },
   },
   extraReducers: (builder) => {},

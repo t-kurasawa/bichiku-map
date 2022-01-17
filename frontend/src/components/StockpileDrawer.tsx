@@ -4,26 +4,16 @@ import { Global } from '@emotion/react';
 import {
   Avatar,
   Box,
-  Button,
   Card,
-  CardHeader,
-  CardMedia,
   CardContent,
-  CardActions,
-  IconButton,
   Typography,
   SwipeableDrawer,
 } from '@mui/material';
 
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
-import ShareIcon from '@mui/icons-material/Share';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
-import sns from 'assets/img/sns-20x20px-04A040.svg';
-// import school from 'assets/img/school-20x20px-04A040.svg';
-// import escape from 'assets/img/escape-301x194px-04A040.svg';
-import rice from 'assets/img/rice-301x194px-04A040.svg';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 
 const drawerBleeding = 56;
 
@@ -34,6 +24,7 @@ interface Props {
    */
   window?: () => Window;
   value?: any;
+  isOpen: boolean;
 }
 
 const Root = styled('div')(({ theme }) => ({
@@ -57,8 +48,8 @@ const Puller = styled(Box)(({ theme }) => ({
 }));
 
 const StockpileDrawer = (props: Props) => {
-  const { window, value } = props;
-  const [open, setOpen] = useState(false);
+  const { window, value, isOpen } = props;
+  const [open, setOpen] = useState(isOpen);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -78,9 +69,7 @@ const StockpileDrawer = (props: Props) => {
           },
         }}
       />
-      <Button variant="outlined" onClick={toggleDrawer(true)}>
-        詳細を見る
-      </Button>
+      <Avatar component={VolunteerActivismIcon} variant="square" />
       <SwipeableDrawer
         container={container}
         anchor="bottom"
@@ -118,17 +107,6 @@ const StockpileDrawer = (props: Props) => {
           }}
         >
           <Card sx={{ maxWidth: 'auto' }}>
-            <CardHeader
-              avatar={<Avatar src={sns} variant="square" />}
-              title={value.name || '未登録'}
-            />
-            <CardMedia
-              component="img"
-              height="auto"
-              width="301"
-              image={rice}
-              alt="rice"
-            />
             <CardContent>
               <Typography variant="body1" color="text.primary">
                 災害の備え、ありがとうございます
@@ -147,14 +125,6 @@ const StockpileDrawer = (props: Props) => {
                 賞味期限: {value.expiryDate || '未登録'}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing={true}>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
-              <IconButton aria-label="delete">
-                <DeleteForeverIcon />
-              </IconButton>
-            </CardActions>
           </Card>
         </StyledBox>
       </SwipeableDrawer>

@@ -24,6 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:https": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test  --silent --watchAll=false",
     "eject": "react-scripts eject",

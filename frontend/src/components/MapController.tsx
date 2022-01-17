@@ -11,12 +11,10 @@ export const MapController = (props: any) => {
 
   const map = useMapEvents({
     locationfound(e) {
-      console.log(e);
       dispatch(setCurrentLocation({ lat: e.latlng.lat, lng: e.latlng.lng }));
       map.flyTo(e.latlng, map.getZoom());
     },
     moveend(e) {
-      console.log(e);
       dispatch(
         setMapCenterPosition({
           lat: e.target._lastCenter.lat,

@@ -4,7 +4,6 @@ import { Global } from '@emotion/react';
 import {
   Avatar,
   Box,
-  Button,
   Card,
   CardHeader,
   CardContent,
@@ -26,6 +25,7 @@ interface Props {
    */
   window?: () => Window;
   value?: any;
+  isOpen: boolean;
 }
 
 const Root = styled('div')(({ theme }) => ({
@@ -49,8 +49,8 @@ const Puller = styled(Box)(({ theme }) => ({
 }));
 
 const EvacuationDrawer = (props: Props) => {
-  const { window, value } = props;
-  const [open, setOpen] = useState(false);
+  const { window, value, isOpen } = props;
+  const [open, setOpen] = useState(isOpen);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -70,9 +70,7 @@ const EvacuationDrawer = (props: Props) => {
           },
         }}
       />
-      <Button variant="outlined" onClick={toggleDrawer(true)}>
-        詳細を見る
-      </Button>
+      <Avatar src={escape} variant="square" />
       <SwipeableDrawer
         container={container}
         anchor="bottom"
@@ -116,9 +114,6 @@ const EvacuationDrawer = (props: Props) => {
             />
             <CardContent>
               <Typography variant="body1" color="text.primary">
-                {value.避難場所_名称}は避難場所になります
-              </Typography>
-              <Typography variant="inherit" color="text.secondary">
                 {value.住所}
               </Typography>
             </CardContent>

@@ -8,16 +8,11 @@ import {
 } from 'stores/opendata-slice';
 
 import { LatLng } from 'leaflet';
-import { FeatureGroup, Popup, Circle, FeatureGroupProps } from 'react-leaflet';
-
-import { Avatar, Card, CardHeader, CardContent } from '@mui/material';
+import { Circle, FeatureGroup, FeatureGroupProps, Popup } from 'react-leaflet';
 
 import StockpileDrawer from 'components/StockpileDrawer';
 import EvacuationCenterDrawer from 'components/EvacuationCenterDrawer';
 import EvacuationAreaDrawer from 'components/EvacuationAreaDrawer';
-
-import sns from 'assets/img/sns-20x20px-04A040.svg';
-import escape from 'assets/img/escape-301x194px-04A040.svg';
 
 export const LocationMarker = (props: FeatureGroupProps) => {
   const fillBlueOptions = { fillColor: 'blue' };
@@ -48,70 +43,67 @@ export const LocationMarker = (props: FeatureGroupProps) => {
     ) : null
   );
 
-  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => (
-    <Circle
-      key={index.toString()}
-      pathOptions={{ color: 'red' }}
-      center={new LatLng(evacuationArea.緯度, evacuationArea.経度)}
-      radius={50}
-    >
-      <Popup>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardHeader
-            avatar={<Avatar src={escape} variant="square" />}
-            title={evacuationArea.避難場所_名称}
-          />
-          <CardContent>
-            <EvacuationAreaDrawer value={evacuationArea} />
-          </CardContent>
-        </Card>
-      </Popup>
-    </Circle>
-  ));
-
-  const EvacuationCenterCircle = evacuationCenters.map(
-    (evacuationCenter, index) => (
+  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => {
+    return (
       <Circle
         key={index.toString()}
-        pathOptions={{ color: 'orange' }}
-        center={new LatLng(evacuationCenter.緯度, evacuationCenter.経度)}
+        pathOptions={{ color: 'red' }}
+        center={new LatLng(evacuationArea.緯度, evacuationArea.経度)}
         radius={50}
+        eventHandlers={{
+          click: () => {
+            console.log('Circle clicked');
+          },
+        }}
       >
         <Popup>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardHeader
-              avatar={<Avatar src={escape} variant="square" />}
-              title={evacuationCenter.避難所_名称}
-            />
-            <CardContent>
-              <EvacuationCenterDrawer value={evacuationCenter} />
-            </CardContent>
-          </Card>
+          <EvacuationAreaDrawer value={evacuationArea} isOpen={true} />
         </Popup>
       </Circle>
-    )
+    );
+  });
+
+  const EvacuationCenterCircle = evacuationCenters.map(
+    (evacuationCenter, index) => {
+      return (
+        <Circle
+          key={index.toString()}
+          pathOptions={{ color: 'orange' }}
+          center={new LatLng(evacuationCenter.緯度, evacuationCenter.経度)}
+          radius={50}
+          eventHandlers={{
+            click: () => {
+              console.log('Circle clicked');
+            },
+          }}
+        >
+          <Popup>
+            <EvacuationCenterDrawer value={evacuationCenter} isOpen={true} />
+          </Popup>
+        </Circle>
+      );
+    }
   );
 
-  const StockpileCircle = stockpileList.map((stockpile, index) => (
-    <Circle
-      key={index.toString()}
-      pathOptions={{ color: 'green' }}
-      center={new LatLng(stockpile.lat, stockpile.lng)}
-      radius={50}
-    >
-      <Popup>
-        <Card sx={{ maxWidth: 300 }}>
-          <CardHeader
-            avatar={<Avatar src={sns} variant="square" />}
-            title={stockpile.name || '未登録'}
-          />
-          <CardContent>
-            <StockpileDrawer value={stockpile} />
-          </CardContent>
-        </Card>
-      </Popup>
-    </Circle>
-  ));
+  const StockpileCircle = stockpileList.map((stockpile, index) => {
+    return (
+      <Circle
+        key={index.toString()}
+        pathOptions={{ color: 'green' }}
+        center={new LatLng(stockpile.lat, stockpile.lng)}
+        radius={50}
+        eventHandlers={{
+          click: () => {
+            console.log('Circle clicked');
+          },
+        }}
+      >
+        <Popup>
+          <StockpileDrawer value={stockpile} isOpen={true} />
+        </Popup>
+      </Circle>
+    );
+  });
 
   return currentLocation === null ? null : (
     <FeatureGroup pathOptions={fillBlueOptions}>
