@@ -56,7 +56,7 @@ const Puller = styled(Box)(({ theme }) => ({
   left: 'calc(50% - 15px)',
 }));
 
-const SwipeableEdgeDrawer = (props: Props) => {
+const StockpileDrawer = (props: Props) => {
   const { window, value } = props;
   const [open, setOpen] = useState(false);
 
@@ -162,4 +162,4 @@ const SwipeableEdgeDrawer = (props: Props) => {
   );
 };
 
-export default SwipeableEdgeDrawer;
+export default StockpileDrawer;

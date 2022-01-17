@@ -1,9 +1,5 @@
-import { useAppSelector, useAppDispatch } from 'hooks';
-import {
-  fetchOpenStreetMap,
-  selectMapCenterPosition,
-} from 'stores/openstreetmap-slice';
-import { fetchOpendata, fetchEvacuationArea } from 'stores/opendata-slice';
+import { useAppDispatch } from 'hooks';
+import { fetchOpendata, fetchEvacuationArea, fetchEvacuationCenter } from 'stores/opendata-slice';
 import { fetchStockpile } from 'stores/stockpile-slice';
 
 import { styled } from '@mui/material/styles';
@@ -13,14 +9,13 @@ import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
+import ParkIcon from '@mui/icons-material/Park';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import WarningIcon from '@mui/icons-material/Warning';
 import NavigationIcon from '@mui/icons-material/Navigation';
 
 export const UpSpeedDial = (props: any) => {
   const dispatch = useAppDispatch();
-  const mapCenterPosition = useAppSelector(selectMapCenterPosition);
 
   const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
     position: 'absolute',
@@ -37,8 +32,8 @@ export const UpSpeedDial = (props: any) => {
   const actions = [
     { icon: <NavigationIcon />, key: 'Navigation', name: '現在地周辺を探す' },
     { icon: <VolunteerActivismIcon />, key: 'Volunteer', name: '分け合う備蓄' },
-    { icon: <HealthAndSafetyIcon />, key: 'HealthAndSafety', name: '避難所' },
-    { icon: <LocalDrinkIcon />, key: 'LocalDrink', name: '給水拠点施設' },
+    { icon: <HealthAndSafetyIcon />, key: 'EvacuationArea', name: '避難所' },
+    { icon: <ParkIcon />, key: 'EvacuationCenter', name: '避難場所' },
     { icon: <WarningIcon />, key: 'Warning', name: 'ハザードマップ' },
   ];
 
@@ -52,21 +47,14 @@ export const UpSpeedDial = (props: any) => {
         console.log(key);
         dispatch(fetchStockpile({ address: '' }));
         break;
-      case 'HealthAndSafety': {
+      case 'EvacuationArea': {
         console.log(key);
         dispatch(fetchEvacuationArea());
         break;
       }
-      case 'LocalDrink': {
+      case 'EvacuationCenter': {
         console.log(key);
-        const condition = {
-          query: 'amenity=school',
-          location: {
-            lat: mapCenterPosition.lat,
-            lng: mapCenterPosition.lng,
-          },
-        };
-        dispatch(fetchOpenStreetMap(condition));
+        dispatch(fetchEvacuationCenter());
         break;
       }
       case 'Warning':
