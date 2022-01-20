@@ -5,14 +5,18 @@ import theme from 'theme';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import Template from 'pages/Template';
 import OpenStreetMap from 'components/OpenStreetMap';
 
+jest.mock('leaflet');
 describe('コンポーネントテスト', () => {
   const TestTarget = () => (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <OpenStreetMap />
+          <Template>
+            <OpenStreetMap />
+          </Template>
         </BrowserRouter>
       </ThemeProvider>
     </Provider>
@@ -20,7 +24,7 @@ describe('コンポーネントテスト', () => {
 
   test('OpenStreetMap', () => {
     render(<TestTarget />);
-    const element = screen.getByText('防災備蓄リスト');
+    const element = screen.getByText('OpenStreetMap contributors');
     expect(element).toBeTruthy();
   });
 });

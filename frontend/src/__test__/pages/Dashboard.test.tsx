@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Dashboard from 'pages/Dashboard';
 
+jest.mock('leaflet');
 describe('画面テスト', () => {
   const TestTarget = () => (
     <Provider store={store}>
@@ -20,7 +21,7 @@ describe('画面テスト', () => {
 
   test('Dashboard', () => {
     render(<TestTarget />);
-    const element = screen.getByText('防災備蓄リスト');
+    const element = screen.getByText('みんなで備える防災備蓄マップ');
     expect(element).toBeTruthy();
   });
 });
