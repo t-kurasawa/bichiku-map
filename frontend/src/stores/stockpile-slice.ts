@@ -7,21 +7,40 @@ const STORE_NAME = 'stockpile';
 
 export interface StockpilesState {
   status: 'idle' | 'loading' | 'failed';
-  stockpileList: Array<Stockpile>;
+  stockpiles: Array<Stockpile>;
 }
 
 const initialState: StockpilesState = {
   status: 'idle',
-  stockpileList: [
+  stockpiles: [
     {
       id: 1,
-      name: '',
-      stockQuantity: 1,
-      lat: 35.666452,
-      lng: 139.31582,
-      address: '',
-      registrationDate: '',
-      expiryDate: '',
+      item_ja: '水',
+      unit_ja: 'L',
+      category_ja: '食品',
+      image:
+        'https://code4fukui.github.io/tokyobichikunavi/src/assets/images/tool/result/stockpile/img-01.png',
+      description_ja:
+        '人が生命を維持するのに必要な水分量は、年齢や体重によって変わってきますが1日1人3リットルが目安量です。',
+      item_en: 'Water (for drinking, cooking, etc.)',
+      unit_en: 'liters',
+      category_en: 'Food',
+      description_en:
+        'The human body needs approximately 3 liters per day to maintain life. Also, the amount differs depending on the age and weight.',
+      infantsMale: 2.4,
+      infantsFemale: 2.4,
+      child1Male: 2.4,
+      child1Female: 2.4,
+      child2Male: 3,
+      child2Female: 3,
+      adultMale: 3,
+      adultFemale: 3,
+      agedMale: 3,
+      agedFemale: 3,
+      pet: '',
+      url_yahoo: 'https://bit.ly/2Nt1CVQ',
+      url_rakuten: 'https://bit.ly/37DfsM3',
+      url_amazon: 'https://amzn.to/37CbHGI',
     },
   ],
 };
@@ -49,7 +68,7 @@ export const StockPileSlice = createSlice({
       })
       .addCase(fetchStockpile.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.stockpileList = action.payload;
+        state.stockpiles = action.payload;
       })
       .addCase(fetchStockpile.rejected, (state) => {
         state.status = 'failed';
@@ -58,6 +77,6 @@ export const StockPileSlice = createSlice({
 });
 
 export const selectStockpileList = (state: RootState) =>
-  state.stockpile.stockpileList;
+  state.stockpile.stockpiles;
 
 export default StockPileSlice.reducer;

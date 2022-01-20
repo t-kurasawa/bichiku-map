@@ -1,6 +1,5 @@
 import { useAppSelector } from 'hooks';
 import { selectCurrentLocation } from 'stores/openstreetmap-slice';
-import { selectStockpileList } from 'stores/stockpile-slice';
 import {
   selectEvacuationAreas,
   selectEvacuationCenters,
@@ -9,7 +8,6 @@ import {
 import { LatLng } from 'leaflet';
 import { Circle, FeatureGroup, FeatureGroupProps, Popup } from 'react-leaflet';
 
-import StockpileDrawer from 'components/StockpileDrawer';
 import EvacuationCenterDrawer from 'components/EvacuationCenterDrawer';
 import EvacuationAreaDrawer from 'components/EvacuationAreaDrawer';
 
@@ -19,7 +17,6 @@ export const LocationMarker = (props: FeatureGroupProps) => {
   const currentLocation = useAppSelector(selectCurrentLocation);
   const evacuationAreas = useAppSelector(selectEvacuationAreas);
   const evacuationCenters = useAppSelector(selectEvacuationCenters);
-  const stockpileList = useAppSelector(selectStockpileList);
 
   const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => {
     return (
@@ -63,29 +60,8 @@ export const LocationMarker = (props: FeatureGroupProps) => {
     }
   );
 
-  const StockpileCircle = stockpileList.map((stockpile, index) => {
-    return (
-      <Circle
-        key={index.toString()}
-        pathOptions={{ color: 'green' }}
-        center={new LatLng(stockpile.lat, stockpile.lng)}
-        radius={50}
-        eventHandlers={{
-          click: () => {
-            console.log('Circle clicked');
-          },
-        }}
-      >
-        <Popup>
-          <StockpileDrawer value={stockpile} isOpen={true} />
-        </Popup>
-      </Circle>
-    );
-  });
-
   return currentLocation === null ? null : (
     <FeatureGroup pathOptions={fillBlueOptions}>
-      {StockpileCircle}
       {EvacuationAreaCircle}
       {EvacuationCenterCircle}
     </FeatureGroup>

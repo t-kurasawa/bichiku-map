@@ -30,7 +30,7 @@ const ContributeStockpile = () => {
           ))}
         </Stepper>
 
-        <Grid item xs={8}>
+        <Grid item xs={12}>
           <TextField
             autoFocus
             margin="dense"

@@ -16,6 +16,8 @@ import { grey } from '@mui/material/colors';
 
 import escape from 'assets/img/escape-301x194px-04A040.svg';
 
+import Stockpile from './Stockpile';
+
 const drawerBleeding = 56;
 
 interface Props {
@@ -114,6 +116,8 @@ const EvacuationDrawer = (props: Props) => {
               <Typography variant="body1" color="text.primary">
                 {value.住所}
               </Typography>
+
+              <Stockpile />
             </CardContent>
           </Card>
         </StyledBox>

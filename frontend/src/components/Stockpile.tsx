@@ -1,54 +1,71 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from 'components/Title';
+import { 
+  Card,
+  CardMedia,
+  CardContent,
+  Grid,
+  Typography
+}from '@mui/material';
 
-import { useAppSelector } from 'hooks';
-import { selectStockpileList } from 'stores/stockpile-slice';
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { fetchStockpile, selectStockpileList } from 'stores/stockpile-slice';
 
-function preventDefault(event: React.MouseEvent) {
-  event.preventDefault();
-}
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useState, useEffect } from 'react'
+
 
 export const Stockpile = () => {
+  const dispatch = useAppDispatch();
+  useEffect(()=>{
+    dispatch(fetchStockpile());
+  })
   const stockpileList = useAppSelector(selectStockpileList);
+
+  const [age, setAge] = useState('');
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };  
 
   return (
     <Grid item xs={12}>
-      <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-        <Title>防災備蓄リスト</Title>
-        <Table size="small">
-          <TableHead>
-            <TableRow>
-              <TableCell>備蓄品名</TableCell>
-              <TableCell>保管場所</TableCell>
-              <TableCell>備蓄数</TableCell>
-              <TableCell>登録日</TableCell>
-              <TableCell>賞味期限</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {stockpileList.map((stockpile) => (
-              <TableRow key={stockpile.id}>
-                <TableCell>{stockpile.name}</TableCell>
-                <TableCell>{stockpile.address}</TableCell>
-                <TableCell>{stockpile.registrationDate}</TableCell>
-                <TableCell>{stockpile.expiryDate}</TableCell>
-                <TableCell>{stockpile.stockQuantity}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-          See more orders
-        </Link>
-      </Paper>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          {stockpileList.map((stockpile) => (
+            <MenuItem key={stockpile.id.toString()} value={stockpile.id.toString()}>{stockpile.item_ja}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>          
+
+
+      {stockpileList.map((stockpile) => (
+        <Grid item xs={4} key={stockpile.id.toString()}>
+          <Card key={stockpile.id.toString()} sx={{ maxWidth: 'auto' }}>
+            <CardMedia
+              component="img"
+              height="400"
+              image={stockpile.image}
+              alt={stockpile.item_en}
+            />          
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                {stockpile.item_ja}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {stockpile.description_ja}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
     </Grid>
   );
 };
