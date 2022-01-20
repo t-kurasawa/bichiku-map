@@ -1,3 +1,4 @@
-import opendataApi from 'apis/opendata-api';
+import evacuationApi from 'apis/evacuation-api';
+import stockpileApi from 'apis/stockpile-api';
 
-export { opendataApi };
+export { evacuationApi, stockpileApi };

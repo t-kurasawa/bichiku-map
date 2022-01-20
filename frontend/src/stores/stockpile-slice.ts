@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
-import { search, SearchCondition } from 'apis/stockpile-api';
-
+import { stockpileApi } from 'apis';
 import { Stockpile } from 'schema';
 
 const STORE_NAME = 'stockpile';
@@ -27,15 +26,10 @@ const initialState: StockpilesState = {
   ],
 };
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
-// typically used to make async requests.
 export const fetchStockpile = createAsyncThunk(
-  STORE_NAME + '/search',
-  async (condition: SearchCondition) => {
-    const response = await search(condition);
+  STORE_NAME + '/stockpiles',
+  async () => {
+    const response = await stockpileApi.fetchStockpile();
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }

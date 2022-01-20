@@ -1,15 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import openstreetmapReducer from 'stores/openstreetmap-slice';
-import userReducer from 'stores/user-slice';
 import stockpileReducer from 'stores/stockpile-slice';
-import opendataReducer from 'stores/opendata-slice';
+import evacuationReducer from 'stores/evacuation-slice';
 
 export const store = configureStore({
   reducer: {
     openstreetmap: openstreetmapReducer,
-    user: userReducer,
     stockpile: stockpileReducer,
-    opendata: opendataReducer,
+    evacuation: evacuationReducer,
   },
 });
 

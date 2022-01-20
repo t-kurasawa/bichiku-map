@@ -2,10 +2,9 @@ import { useAppSelector } from 'hooks';
 import { selectCurrentLocation } from 'stores/openstreetmap-slice';
 import { selectStockpileList } from 'stores/stockpile-slice';
 import {
-  selectOpendata,
   selectEvacuationAreas,
   selectEvacuationCenters,
-} from 'stores/opendata-slice';
+} from 'stores/evacuation-slice';
 
 import { LatLng } from 'leaflet';
 import { Circle, FeatureGroup, FeatureGroupProps, Popup } from 'react-leaflet';
@@ -21,27 +20,6 @@ export const LocationMarker = (props: FeatureGroupProps) => {
   const evacuationAreas = useAppSelector(selectEvacuationAreas);
   const evacuationCenters = useAppSelector(selectEvacuationCenters);
   const stockpileList = useAppSelector(selectStockpileList);
-  const opendata = useAppSelector(selectOpendata);
-
-  const OpendataCircle = opendata.features.map((feature, index) =>
-    feature.geometry.type === 'Polygon' ? (
-      <Circle
-        key={index.toString()}
-        pathOptions={{ color: 'red' }}
-        center={
-          new LatLng(
-            feature.geometry.coordinates?.[0]?.[0]?.[1],
-            feature.geometry.coordinates?.[0]?.[0]?.[0]
-          )
-        }
-        radius={25}
-      >
-        <Popup>
-          {feature.properties.genshoname} {feature.properties.kubun}
-        </Popup>
-      </Circle>
-    ) : null
-  );
 
   const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => {
     return (
@@ -108,7 +86,6 @@ export const LocationMarker = (props: FeatureGroupProps) => {
   return currentLocation === null ? null : (
     <FeatureGroup pathOptions={fillBlueOptions}>
       {StockpileCircle}
-      {OpendataCircle}
       {EvacuationAreaCircle}
       {EvacuationCenterCircle}
     </FeatureGroup>
