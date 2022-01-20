@@ -11,3 +11,8 @@ https://hackmd.io/PpOy59twQMuFybN5ZcHtQg?view
 ### Backend
 - open-data
 - shp2Json
+
+# Licence Check
+```
+npx license-checker --production --json
+```

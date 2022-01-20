@@ -19,4 +19,3 @@ npm run start
 # Qiita に解説記事を掲載しています
 
 https://qiita.com/t-kurasawa/items/03e5bc9c9a07d8ff99b7
-
