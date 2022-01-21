@@ -76,7 +76,7 @@ export const StockPileSlice = createSlice({
   },
 });
 
-export const selectStockpileList = (state: RootState) =>
+export const selectStockpiles = (state: RootState) =>
   state.stockpile.stockpiles;
 
 export default StockPileSlice.reducer;

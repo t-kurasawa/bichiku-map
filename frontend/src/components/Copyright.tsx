@@ -10,11 +10,24 @@ export default function Copyright(props: any) {
       {...props}
     >
       {'Copyright © '}
+      <Link color="inherit" href="/">
+        みんなで備える備蓄マップ
+      </Link>
+      {' | '}
+      <Link color="inherit" href="https://www.bichiku.metro.tokyo.lg.jp/">
+        東京備蓄ナビ
+      </Link>
+      {' | '}
+      <Link
+        color="inherit"
+        href="https://github.com/code4fukui/fukui-bichiku-navi/"
+      >
+        福井備蓄ナビ
+      </Link>
+      {' | '}
       <Link color="inherit" href="https://www.openstreetmap.org/">
         OpenStreetMap contributors
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      </Link>
     </Typography>
   );
 }

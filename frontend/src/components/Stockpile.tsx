@@ -1,68 +1,75 @@
-import { Card, CardMedia, CardContent, Grid, Typography } from '@mui/material';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+
+import Title from './Title';
 
 import { useAppDispatch, useAppSelector } from 'hooks';
-import { fetchStockpile, selectStockpileList } from 'stores/stockpile-slice';
+import { fetchStockpile, selectStockpiles } from 'stores/stockpile-slice';
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export const Stockpile = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchStockpile());
-  });
-  const stockpileList = useAppSelector(selectStockpileList);
-
-  const [age, setAge] = useState('');
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
+  }, []);
+  const stockpiles = useAppSelector(selectStockpiles);
 
   return (
     <Grid item xs={12}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          {stockpileList.map((stockpile) => (
-            <MenuItem
-              key={stockpile.id.toString()}
-              value={stockpile.id.toString()}
-            >
-              {stockpile.item_ja}
-            </MenuItem>
+      <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+        <Title>防災備蓄品リスト</Title>
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+          {stockpiles.map((stockpile, i, row) => (
+            <>
+              <ListItem key={stockpile.id.toString()} alignItems="flex-start">
+                <ListItemAvatar>
+                  <Avatar alt={stockpile.item_en} src={stockpile.image} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <>
+                      <Typography
+                        sx={{ display: 'inline' }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {stockpile.item_ja}
+                      </Typography>
+                      {'（分類:'}
+                      {stockpile.category_ja}
+                      {'）'}
+                    </>
+                  }
+                  secondary={
+                    <>
+                      <Typography
+                        sx={{ display: 'inline' }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {stockpile.description_ja}
+                      </Typography>
+                    </>
+                  }
+                />
+              </ListItem>
+              {i + 1 === row.length ? null : (
+                <Divider variant="inset" component="li" />
+              )}
+            </>
           ))}
-        </Select>
-      </FormControl>
-
-      {stockpileList.map((stockpile) => (
-        <Grid item xs={4} key={stockpile.id.toString()}>
-          <Card key={stockpile.id.toString()} sx={{ maxWidth: 'auto' }}>
-            <CardMedia
-              component="img"
-              height="400"
-              image={stockpile.image}
-              alt={stockpile.item_en}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {stockpile.item_ja}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {stockpile.description_ja}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      ))}
+        </List>
+      </Paper>
     </Grid>
   );
 };
