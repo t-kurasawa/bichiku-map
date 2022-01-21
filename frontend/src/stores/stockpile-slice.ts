@@ -1,41 +1,54 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
-import { search, SearchCondition } from 'apis/stockpile-api';
-
+import { stockpileApi } from 'apis';
 import { Stockpile } from 'schema';
 
 const STORE_NAME = 'stockpile';
 
 export interface StockpilesState {
   status: 'idle' | 'loading' | 'failed';
-  stockpileList: Array<Stockpile>;
+  stockpiles: Array<Stockpile>;
 }
 
 const initialState: StockpilesState = {
   status: 'idle',
-  stockpileList: [
+  stockpiles: [
     {
       id: 1,
-      name: '',
-      stockQuantity: 1,
-      lat: 35.666452,
-      lng: 139.31582,
-      address: '',
-      registrationDate: '',
-      expiryDate: '',
+      item_ja: '水',
+      unit_ja: 'L',
+      category_ja: '食品',
+      image:
+        'https://code4fukui.github.io/tokyobichikunavi/src/assets/images/tool/result/stockpile/img-01.png',
+      description_ja:
+        '人が生命を維持するのに必要な水分量は、年齢や体重によって変わってきますが1日1人3リットルが目安量です。',
+      item_en: 'Water (for drinking, cooking, etc.)',
+      unit_en: 'liters',
+      category_en: 'Food',
+      description_en:
+        'The human body needs approximately 3 liters per day to maintain life. Also, the amount differs depending on the age and weight.',
+      infantsMale: 2.4,
+      infantsFemale: 2.4,
+      child1Male: 2.4,
+      child1Female: 2.4,
+      child2Male: 3,
+      child2Female: 3,
+      adultMale: 3,
+      adultFemale: 3,
+      agedMale: 3,
+      agedFemale: 3,
+      pet: '',
+      url_yahoo: 'https://bit.ly/2Nt1CVQ',
+      url_rakuten: 'https://bit.ly/37DfsM3',
+      url_amazon: 'https://amzn.to/37CbHGI',
     },
   ],
 };
 
-// The function below is called a thunk and allows us to perform async logic. It
-// can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This
-// will call the thunk with the `dispatch` function as the first argument. Async
-// code can then be executed and other actions can be dispatched. Thunks are
-// typically used to make async requests.
 export const fetchStockpile = createAsyncThunk(
-  STORE_NAME + '/search',
-  async (condition: SearchCondition) => {
-    const response = await search(condition);
+  STORE_NAME + '/stockpiles',
+  async () => {
+    const response = await stockpileApi.fetchStockpile();
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
@@ -55,7 +68,7 @@ export const StockPileSlice = createSlice({
       })
       .addCase(fetchStockpile.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.stockpileList = action.payload;
+        state.stockpiles = action.payload;
       })
       .addCase(fetchStockpile.rejected, (state) => {
         state.status = 'failed';
@@ -63,7 +76,7 @@ export const StockPileSlice = createSlice({
   },
 });
 
-export const selectStockpileList = (state: RootState) =>
-  state.stockpile.stockpileList;
+export const selectStockpiles = (state: RootState) =>
+  state.stockpile.stockpiles;
 
 export default StockPileSlice.reducer;

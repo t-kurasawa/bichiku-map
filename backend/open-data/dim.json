@@ -10,8 +10,7 @@
     {
       "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center-area_spec.xlsx",
       "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップデータ項目定義書",
-      "preprocesses": [
-      ]
+      "preprocesses": []
     },
     {
       "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/H26fusuigai_093.csv",
@@ -145,6 +144,11 @@
       "preprocesses": [
         "encoding-utf-8"
       ]
+    },
+    {
+      "url": "https://code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv",
+      "name": "東京備蓄ナビ_福井備蓄ナビ_MIT_License",
+      "preprocesses": []
     }
   ]
 }

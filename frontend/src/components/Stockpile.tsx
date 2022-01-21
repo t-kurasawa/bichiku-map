@@ -1,53 +1,74 @@
-import React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Title from 'components/Title';
+import Typography from '@mui/material/Typography';
 
-import { useAppSelector } from 'hooks';
-import { selectStockpileList } from 'stores/stockpile-slice';
+import Title from './Title';
 
-function preventDefault(event: React.MouseEvent) {
-  event.preventDefault();
-}
+import { useAppDispatch, useAppSelector } from 'hooks';
+import { fetchStockpile, selectStockpiles } from 'stores/stockpile-slice';
+
+import { useEffect } from 'react';
 
 export const Stockpile = () => {
-  const stockpileList = useAppSelector(selectStockpileList);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchStockpile());
+  }, []);
+  const stockpiles = useAppSelector(selectStockpiles);
 
   return (
     <Grid item xs={12}>
-      <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-        <Title>防災備蓄リスト</Title>
-        <Table size="small">
-          <TableHead>
-            <TableRow>
-              <TableCell>備蓄品名</TableCell>
-              <TableCell>保管場所</TableCell>
-              <TableCell>備蓄数</TableCell>
-              <TableCell>登録日</TableCell>
-              <TableCell>賞味期限</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {stockpileList.map((stockpile) => (
-              <TableRow key={stockpile.id}>
-                <TableCell>{stockpile.name}</TableCell>
-                <TableCell>{stockpile.address}</TableCell>
-                <TableCell>{stockpile.registrationDate}</TableCell>
-                <TableCell>{stockpile.expiryDate}</TableCell>
-                <TableCell>{stockpile.stockQuantity}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-        <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
-          See more orders
-        </Link>
+      <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+        <Title>防災備蓄品リスト</Title>
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+          {stockpiles.map((stockpile, i, row) => (
+            <>
+              <ListItem key={stockpile.id.toString()} alignItems="flex-start">
+                <ListItemAvatar>
+                  <Avatar alt={stockpile.item_en} src={stockpile.image} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <>
+                      <Typography
+                        sx={{ display: 'inline' }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {stockpile.item_ja}
+                      </Typography>
+                      {'（分類:'}
+                      {stockpile.category_ja}
+                      {'）'}
+                    </>
+                  }
+                  secondary={
+                    <>
+                      <Typography
+                        sx={{ display: 'inline' }}
+                        component="span"
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {stockpile.description_ja}
+                      </Typography>
+                    </>
+                  }
+                />
+              </ListItem>
+              {i + 1 === row.length ? null : (
+                <Divider variant="inset" component="li" />
+              )}
+            </>
+          ))}
+        </List>
       </Paper>
     </Grid>
   );

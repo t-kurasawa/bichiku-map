@@ -1,9 +1,8 @@
 import { useAppDispatch } from 'hooks';
 import {
-  fetchOpendata,
   fetchEvacuationArea,
   fetchEvacuationCenter,
-} from 'stores/opendata-slice';
+} from 'stores/evacuation-slice';
 import { fetchStockpile } from 'stores/stockpile-slice';
 
 import { styled } from '@mui/material/styles';
@@ -15,7 +14,6 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import ParkIcon from '@mui/icons-material/Park';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import WarningIcon from '@mui/icons-material/Warning';
 import NavigationIcon from '@mui/icons-material/Navigation';
 
 export const UpSpeedDial = (props: any) => {
@@ -38,7 +36,6 @@ export const UpSpeedDial = (props: any) => {
     { icon: <VolunteerActivismIcon />, key: 'Volunteer', name: '分け合う備蓄' },
     { icon: <HealthAndSafetyIcon />, key: 'EvacuationArea', name: '避難所' },
     { icon: <ParkIcon />, key: 'EvacuationCenter', name: '避難場所' },
-    { icon: <WarningIcon />, key: 'Warning', name: 'ハザードマップ' },
   ];
 
   const handleAction = (key: string) => {
@@ -49,7 +46,7 @@ export const UpSpeedDial = (props: any) => {
       }
       case 'Volunteer':
         console.log(key);
-        dispatch(fetchStockpile({ address: '' }));
+        dispatch(fetchStockpile());
         break;
       case 'EvacuationArea': {
         console.log(key);
@@ -61,10 +58,6 @@ export const UpSpeedDial = (props: any) => {
         dispatch(fetchEvacuationCenter());
         break;
       }
-      case 'Warning':
-        console.log(key);
-        dispatch(fetchOpendata({ path: 'tokyo_dosekiryu_tokubetsu' }));
-        break;
       default:
         console.error('something wrong');
         break;
