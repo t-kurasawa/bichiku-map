@@ -1,0 +1,161 @@
+{
+  "contents": [
+    {
+      "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv",
+      "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップ避難所一覧データ",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_area.csv",
+      "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップ避難場所一覧データ",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center-area_spec.xlsx",
+      "name": "東京都総務局_東京都防災マップ避難所・避難場所_東京都防災マップデータ項目定義書",
+      "preprocesses": []
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/H26fusuigai_093.csv",
+      "name": "東京都総務局_東京都地域防災計画_風水害編_別冊資料_資料第168都備蓄倉庫一覧（都福祉保健局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_094.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第56指定拠点一覧表（各防災機関）_4-5-4主要初動対応－医療－保健所",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/H26fusuigai_101.csv",
+      "name": "東京都総務局_東京都地域防災計画_風水害編_別冊資料_別表（第２条関係）_東京都災害備蓄倉庫",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_141.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_東京都災害備蓄倉庫",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_174.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第131一時滞在施設候補一覧 (都総務局)",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_175.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料132災害時帰宅支援ステーション一覧（都総務局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_226.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第136避難所及び二次避難所（福祉避難所）区市町村別一覧表（都福祉保健局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_227.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第137多摩・島しょ地域の避難場所（都総務局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_228.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第138食料等の備蓄状況（都福祉保健局）_①食の備蓄状況",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_225_1.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第134区別避難場所一覧表及び地区割当計画（都都市整備局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_229.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第138食料等の備蓄状況（都福祉保健局）_②調製粉乳の備蓄状況",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_230.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第138食料等の備蓄状況（都福祉保健局）_③生活必需品等の備蓄状況",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_236.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第144給水拠点となる施設一覧表（都水道局、都都市整備局等）_（１）区部の給水拠点（応急給水槽、浄水場、給水所等）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_237.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第144給水拠点となる施設一覧表（都水道局、都都市整備局等）_（２）多摩地区の給水拠点（応急給水槽、浄水場、給水所等）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_239.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第146輸送拠点一覧（各防災機関）_１広域輸送基地",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_240.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第146輸送拠点一覧（各防災機関）_２水上輸送基地（河川等船着場63箇所）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_241.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第146 輸送拠点一覧（各防災機関）_３ 地域内輸送拠点（91箇所）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_242.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第147都備蓄倉庫一覧（都福祉保健局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://www.bousai.metro.tokyo.lg.jp/content/opendata/csv/bessatsu_246.csv",
+      "name": "東京都総務局_東京都地域防災計画_震災編（平成26年修正）別冊資料_資料第154災害用トイレの分類と備蓄等状況 （都総務局）",
+      "preprocesses": [
+        "encoding-utf-8"
+      ]
+    },
+    {
+      "url": "https://code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv",
+      "name": "東京備蓄ナビ_福井備蓄ナビ_MIT_License",
+      "preprocesses": []
+    }
+  ]
+}

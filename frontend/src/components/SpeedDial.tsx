@@ -34,8 +34,8 @@ export const UpSpeedDial = (props: any) => {
   const actions = [
     { icon: <NavigationIcon />, key: 'Navigation', name: '現在地周辺を探す' },
     { icon: <VolunteerActivismIcon />, key: 'Volunteer', name: '分け合う備蓄' },
-    { icon: <HealthAndSafetyIcon />, key: 'EvacuationArea', name: '避難所' },
-    { icon: <ParkIcon />, key: 'EvacuationCenter', name: '避難場所' },
+    { icon: <HealthAndSafetyIcon />, key: 'EvacuationCenter', name: '避難所' },
+    { icon: <ParkIcon />, key: 'EvacuationArea', name: '避難場所' },
   ];
 
   const handleAction = (key: string) => {

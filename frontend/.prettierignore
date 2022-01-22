@@ -2,6 +2,7 @@
 build
 coverage
 src/__mock__/data
+src/open-data
 
 # Ignore all HTML files:
 *.html
