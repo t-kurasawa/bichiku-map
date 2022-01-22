@@ -24,7 +24,7 @@ describe('コンポーネントテスト', () => {
 
   test('OpenStreetMap', () => {
     render(<TestTarget />);
-    const element = screen.getByText('OpenStreetMap contributors');
+    const element = screen.getByText('みんなで備える備蓄マップ / CC BY 4.0 / MIT Licence');
     expect(element).toBeTruthy();
   });
 });

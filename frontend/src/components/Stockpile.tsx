@@ -1,3 +1,4 @@
+import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
@@ -27,9 +28,9 @@ export const Stockpile = () => {
       <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
         <Title>防災備蓄品リスト</Title>
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-          {stockpiles.map((stockpile, i, row) => (
-            <>
-              <ListItem key={stockpile.id.toString()} alignItems="flex-start">
+          {stockpiles.map((stockpile, index, row) => (
+            <React.Fragment key={index.toString()}>
+              <ListItem key={index.toString()} alignItems="flex-start">
                 <ListItemAvatar>
                   <Avatar alt={stockpile.item_en} src={stockpile.image} />
                 </ListItemAvatar>
@@ -63,10 +64,10 @@ export const Stockpile = () => {
                   }
                 />
               </ListItem>
-              {i + 1 === row.length ? null : (
+              {index + 1 === row.length ? null : (
                 <Divider variant="inset" component="li" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </List>
       </Paper>

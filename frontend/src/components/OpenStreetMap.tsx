@@ -8,8 +8,8 @@ import 'assets/css/OpenStreetMap.css';
 
 export const OpenStreetMap = (props: MapContainerProps) => {
   const initialPosition = {
-    lat: 35.666452,
-    lng: 139.31582,
+    lat: 35.6809591,
+    lng: 139.7673068,
   };
   return (
     <MapContainer

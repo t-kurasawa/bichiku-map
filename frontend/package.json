@@ -27,7 +27,6 @@
   },
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
-    "start:https": "env-cmd -f .env.development HTTPS=true react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test  --silent --watchAll=false",
     "eject": "react-scripts eject",
