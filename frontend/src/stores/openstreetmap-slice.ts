@@ -11,8 +11,8 @@ export interface OpenStreetMapState {
 }
 
 const initialPosition: LatLngLiteral = {
-  lat: 35.666452,
-  lng: 139.31582,
+  lat: 35.6809591,
+  lng: 139.7673068,
 };
 
 const initialState: OpenStreetMapState = {

@@ -1,8 +1,8 @@
 import axios from 'axios';
+const baseURL = process.env.REACT_APP_BASE_URL;
 
 const fetchStockpile = () => {
-  const baseURL = 'http://localhost:3000/stockpiles';
-  const url = baseURL;
+  const url = baseURL + '/stockpiles';
   return axios.get(url);
 };
 

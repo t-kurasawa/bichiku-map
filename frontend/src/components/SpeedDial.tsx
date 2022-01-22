@@ -3,7 +3,6 @@ import {
   fetchEvacuationArea,
   fetchEvacuationCenter,
 } from 'stores/evacuation-slice';
-import { fetchStockpile } from 'stores/stockpile-slice';
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -13,8 +12,6 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
 import ParkIcon from '@mui/icons-material/Park';
-import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
-import NavigationIcon from '@mui/icons-material/Navigation';
 
 export const UpSpeedDial = (props: any) => {
   const dispatch = useAppDispatch();
@@ -32,22 +29,12 @@ export const UpSpeedDial = (props: any) => {
   }));
 
   const actions = [
-    { icon: <NavigationIcon />, key: 'Navigation', name: '現在地周辺を探す' },
-    { icon: <VolunteerActivismIcon />, key: 'Volunteer', name: '分け合う備蓄' },
     { icon: <HealthAndSafetyIcon />, key: 'EvacuationCenter', name: '避難所' },
     { icon: <ParkIcon />, key: 'EvacuationArea', name: '避難場所' },
   ];
 
   const handleAction = (key: string) => {
     switch (key) {
-      case 'Navigation': {
-        console.log(key);
-        break;
-      }
-      case 'Volunteer':
-        console.log(key);
-        dispatch(fetchStockpile());
-        break;
       case 'EvacuationArea': {
         console.log(key);
         dispatch(fetchEvacuationArea());
