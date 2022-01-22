@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const fetchEvacuationCenter = () => {
-  const baseURL = 'http://localhost:3000/evacuation/center';
-  const url = baseURL;
+const baseURL = process.env.REACT_APP_BASE_URL;
+
+const fetchEvacuationCenter = async () => {
+  const url = baseURL + '/evacuation/center';
   return axios.get(url);
 };
 
 const fetchEvacuationArea = () => {
-  const baseURL = 'http://localhost:3000/evacuation/area';
-  const url = baseURL;
+  const url = baseURL + '/evacuation/area';
   return axios.get(url);
 };
 
