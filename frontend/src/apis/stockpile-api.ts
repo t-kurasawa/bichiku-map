@@ -12,5 +12,6 @@ const fetchStockpileStatusEC = () => {
 };
 
 export default {
-  fetchStockpileType,fetchStockpileStatusEC
+  fetchStockpileType,
+  fetchStockpileStatusEC,
 };
