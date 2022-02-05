@@ -1,5 +1,6 @@
-export interface Stockpile {
-  id: number | string;
+// 防災備蓄品種類
+export interface StockpileType {
+  id: number;
   // eslint-disable-next-line camelcase
   item_ja: string;
   // eslint-disable-next-line camelcase
@@ -29,11 +30,11 @@ export interface Stockpile {
   agedFemale: number | string;
   pet: number | string;
   // eslint-disable-next-line camelcase
-  url_yahoo: number | string;
+  url_yahoo: string;
   // eslint-disable-next-line camelcase
-  url_rakuten: number | string;
+  url_rakuten: string;
   // eslint-disable-next-line camelcase
-  url_amazon: number | string;
+  url_amazon: string;
 }
 
 export interface ContributeStockpile {
@@ -74,6 +75,7 @@ export interface ContributeStockpile {
   url_amazon: number | string;
 }
 
+// 避難場所
 export interface EvacuationArea {
   避難場所_名称: string;
   地方公共団体コード: number;
@@ -84,6 +86,7 @@ export interface EvacuationArea {
   経度: number;
 }
 
+// 避難所
 export interface EvacuationCenter {
   避難所_名称: string;
   地方公共団体コード: number;

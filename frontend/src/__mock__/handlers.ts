@@ -1,18 +1,22 @@
 import { rest } from 'msw';
-import { stockpiles } from './data/stockpiles';
-import { evacuationCenters } from './data/evacuationCenters';
-import { evacuationAreas } from './data/evacuationAreas';
+import { EvacuationArea, EvacuationCenter, StockpileType } from 'schema';
+import stockpileType from './data/stockpileType.json';
+import evacuationCenter from './data/evacuationCenter.json';
+import evacuationArea from './data/evacuationArea.json';
 
 export const handlers = [
-  rest.get('/stockpiles', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(stockpiles));
+  rest.get('/stockpile/type', (req, res, ctx) => {
+    const data: Array<StockpileType> = stockpileType;
+    return res(ctx.status(200), ctx.json(data));
   }),
 
   rest.get('/evacuation/center', async (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(evacuationCenters));
+    const data: Array<EvacuationCenter> = evacuationCenter;
+    return res(ctx.status(200), ctx.json(data));
   }),
 
   rest.get('/evacuation/area', async (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(evacuationAreas));
+    const data: Array<EvacuationArea> = evacuationArea;
+    return res(ctx.status(200), ctx.json(data));
   }),
 ];

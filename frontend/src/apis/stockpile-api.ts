@@ -1,11 +1,11 @@
 import axios from 'axios';
 const baseURL = process.env.REACT_APP_BASE_URL;
 
-const fetchStockpile = () => {
-  const url = baseURL + '/stockpiles';
+const fetchStockpileType = () => {
+  const url = baseURL + '/stockpile/type';
   return axios.get(url);
 };
 
 export default {
-  fetchStockpile,
+  fetchStockpileType,
 };
