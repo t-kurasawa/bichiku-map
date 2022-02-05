@@ -1,7 +1,7 @@
 [
   {
     "evacuationCenter": "番町小学校_131016_東京都_千代田区_東京都千代田区六番町8",
-    "stockpile": [
+    "stockpileStatus": [
       {
         "id": 1,
         "item_ja": "水",
@@ -27,8 +27,8 @@
         "url_yahoo": "https://bit.ly/2Nt1CVQ",
         "url_rakuten": "https://bit.ly/37DfsM3",
         "url_amazon": "https://amzn.to/37CbHGI",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 2,
@@ -55,8 +55,8 @@
         "url_yahoo": "https://bit.ly/2MjXtmC",
         "url_rakuten": "https://bit.ly/3aIFCPz",
         "url_amazon": "https://amzn.to/37zEImE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 3,
@@ -83,8 +83,8 @@
         "url_yahoo": "https://bit.ly/3uz15T4",
         "url_rakuten": "https://bit.ly/2NlpPNX",
         "url_amazon": "https://amzn.to/3umnuTy",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 4,
@@ -111,8 +111,8 @@
         "url_yahoo": "https://bit.ly/2P4hFda",
         "url_rakuten": "https://bit.ly/3bpsGOZ",
         "url_amazon": "https://amzn.to/3dzJFPU",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 5,
@@ -139,8 +139,8 @@
         "url_yahoo": "https://bit.ly/2ZG5JQL",
         "url_rakuten": "https://bit.ly/2NPiohw",
         "url_amazon": "https://amzn.to/3kbsKoc",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 6,
@@ -167,8 +167,8 @@
         "url_yahoo": "https://bit.ly/3c7WrmB",
         "url_rakuten": "https://bit.ly/3dvmgPM",
         "url_amazon": "https://amzn.to/2Nll72J",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 7,
@@ -195,8 +195,8 @@
         "url_yahoo": "https://bit.ly/3pRfEhi",
         "url_rakuten": "https://bit.ly/30nYCwW",
         "url_amazon": "https://amzn.to/3kcpB7N",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 8,
@@ -223,8 +223,8 @@
         "url_yahoo": "https://bit.ly/2NSeF2M",
         "url_rakuten": "https://bit.ly/3kbt1Y6",
         "url_amazon": "https://amzn.to/2NrnJvG",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 9,
@@ -251,8 +251,8 @@
         "url_yahoo": "https://bit.ly/3bydBcv",
         "url_rakuten": "https://bit.ly/37AhMDA",
         "url_amazon": "https://amzn.to/3k9rvGd",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 10,
@@ -279,8 +279,8 @@
         "url_yahoo": "http://bit.ly/37Enbtf",
         "url_rakuten": "http://bit.ly/3qKhkKI",
         "url_amazon": "http://amzn.to/2P4TZFB",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 11,
@@ -307,8 +307,8 @@
         "url_yahoo": "https://bit.ly/3unFi0u",
         "url_rakuten": "https://bit.ly/3bs8KK1",
         "url_amazon": "https://amzn.to/3aEBTm7",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 12,
@@ -335,8 +335,8 @@
         "url_yahoo": "http://bit.ly/3bw0ubZ",
         "url_rakuten": "https://bit.ly/2ZGHUbE",
         "url_amazon": "http://amzn.to/3dCp2Tc",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 13,
@@ -363,8 +363,8 @@
         "url_yahoo": "http://bit.ly/2NQAyj4",
         "url_rakuten": "https://bit.ly/3se4nc8",
         "url_amazon": "http://amzn.to/2P4BTU8",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 14,
@@ -391,8 +391,8 @@
         "url_yahoo": "http://bit.ly/3siDfc7",
         "url_rakuten": "https://bit.ly/3ulh3Qu",
         "url_amazon": "http://amzn.to/3bx8E3H",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 15,
@@ -419,8 +419,8 @@
         "url_yahoo": "https://bit.ly/3aJAiLE",
         "url_rakuten": "https://bit.ly/3kbxSIY",
         "url_amazon": "https://amzn.to/2ZGKTRg",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 16,
@@ -447,8 +447,8 @@
         "url_yahoo": "https://bit.ly/3ke9ZAw",
         "url_rakuten": "https://bit.ly/3pKeaVT",
         "url_amazon": "https://amzn.to/3ulqoYz",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 17,
@@ -475,8 +475,8 @@
         "url_yahoo": "https://bit.ly/3kfA5TM",
         "url_rakuten": "https://bit.ly/3pH5H5T",
         "url_amazon": "https://amzn.to/3sbuEb2",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 18,
@@ -503,8 +503,8 @@
         "url_yahoo": "https://bit.ly/3dETPyS",
         "url_rakuten": "https://bit.ly/3ugkEPT",
         "url_amazon": "https://amzn.to/3aIB1Ng",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 19,
@@ -531,8 +531,8 @@
         "url_yahoo": "https://bit.ly/2NuBw4N",
         "url_rakuten": "https://bit.ly/2Nm0iEk",
         "url_amazon": "https://amzn.to/3qKpmTE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 20,
@@ -559,8 +559,8 @@
         "url_yahoo": "",
         "url_rakuten": "",
         "url_amazon": "",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 21,
@@ -587,8 +587,8 @@
         "url_yahoo": "https://bit.ly/3dzDI5H",
         "url_rakuten": "https://bit.ly/3kbNKLu",
         "url_amazon": "https://amzn.to/3pFlUIF",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 22,
@@ -615,8 +615,8 @@
         "url_yahoo": "https://bit.ly/3kdzthr",
         "url_rakuten": "https://bit.ly/3dBMy2Y",
         "url_amazon": "https://amzn.to/37zFgsI",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 23,
@@ -643,8 +643,8 @@
         "url_yahoo": "https://bit.ly/3bw8MR5",
         "url_rakuten": "https://bit.ly/3aHM1KJ",
         "url_amazon": "https://amzn.to/3k8i49W",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 24,
@@ -671,8 +671,8 @@
         "url_yahoo": "https://bit.ly/3aHObu0",
         "url_rakuten": "https://bit.ly/3uwJ6g2",
         "url_amazon": "https://amzn.to/3si2jjq",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 25,
@@ -699,8 +699,8 @@
         "url_yahoo": "https://bit.ly/2NRCHv3",
         "url_rakuten": "https://bit.ly/2ZARiO2",
         "url_amazon": "https://amzn.to/3kauUUY",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 26,
@@ -727,8 +727,8 @@
         "url_yahoo": "https://bit.ly/2NVaQd9",
         "url_rakuten": "https://bit.ly/3pFrlr3",
         "url_amazon": "https://amzn.to/3skyiiS",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 27,
@@ -755,8 +755,8 @@
         "url_yahoo": "https://bit.ly/2P4iGlu",
         "url_rakuten": "https://bit.ly/3shOdP0",
         "url_amazon": "https://amzn.to/3ughvj3",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 28,
@@ -783,8 +783,8 @@
         "url_yahoo": "https://bit.ly/3pKxAKc",
         "url_rakuten": "https://bit.ly/3sjErfA",
         "url_amazon": "https://amzn.to/3aJBQ8J",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 29,
@@ -811,8 +811,8 @@
         "url_yahoo": "https://bit.ly/3buHFFZ",
         "url_rakuten": "https://bit.ly/3sjEw2S",
         "url_amazon": "https://amzn.to/37ANsZJ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 30,
@@ -839,8 +839,8 @@
         "url_yahoo": "https://bit.ly/2ZG4ocH",
         "url_rakuten": "https://bit.ly/2ZDqPzh",
         "url_amazon": "https://amzn.to/3sdls6f",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 31,
@@ -867,8 +867,8 @@
         "url_yahoo": "https://bit.ly/3aMfGCN",
         "url_rakuten": "https://bit.ly/3bxpH5K",
         "url_amazon": "https://amzn.to/3shYV8s",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 32,
@@ -895,8 +895,8 @@
         "url_yahoo": "https://bit.ly/3unPOor",
         "url_rakuten": "https://bit.ly/3kf2s4C",
         "url_amazon": "https://amzn.to/3bsmmov",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 33,
@@ -923,8 +923,8 @@
         "url_yahoo": "https://bit.ly/3sbpVGy",
         "url_rakuten": "https://bit.ly/37xjSUT",
         "url_amazon": "https://amzn.to/3k9FX0T",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 34,
@@ -951,8 +951,8 @@
         "url_yahoo": "http://bit.ly/2NyMZjR",
         "url_rakuten": "http://bit.ly/3umczsN",
         "url_amazon": "https://amzn.to/3qQjWqk",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 35,
@@ -979,8 +979,8 @@
         "url_yahoo": "https://bit.ly/3bxGg1s",
         "url_rakuten": "https://bit.ly/3vbLl8X",
         "url_amazon": "https://amzn.to/3bvl2RQ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 36,
@@ -1007,8 +1007,8 @@
         "url_yahoo": "https://bit.ly/37FzdCJ",
         "url_rakuten": "https://bit.ly/37BXlpW",
         "url_amazon": "https://amzn.to/2MhjfHE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 37,
@@ -1035,8 +1035,8 @@
         "url_yahoo": "https://bit.ly/3qRGNC4",
         "url_rakuten": "https://bit.ly/2NMscJt",
         "url_amazon": "https://amzn.to/2ZKftJH",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 38,
@@ -1063,8 +1063,8 @@
         "url_yahoo": "https://bit.ly/3aMfVxH",
         "url_rakuten": "https://bit.ly/3qJKTvU",
         "url_amazon": "https://amzn.to/2ZBAxCn",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 39,
@@ -1091,8 +1091,8 @@
         "url_yahoo": "https://bit.ly/3qH8sW2",
         "url_rakuten": "https://bit.ly/2NxfG0p",
         "url_amazon": "https://amzn.to/3bsvklQ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 40,
@@ -1119,8 +1119,8 @@
         "url_yahoo": "https://bit.ly/3aONPC1",
         "url_rakuten": "https://bit.ly/3dAooWp",
         "url_amazon": "https://amzn.to/3sep3Rq",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 41,
@@ -1147,8 +1147,8 @@
         "url_yahoo": "https://bit.ly/37GX8BI",
         "url_rakuten": "https://bit.ly/3slwaYv",
         "url_amazon": "https://amzn.to/2NsdJm1",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 42,
@@ -1175,8 +1175,8 @@
         "url_yahoo": "https://bit.ly/3dDS8lm",
         "url_rakuten": "https://bit.ly/3uiKiDw",
         "url_amazon": "https://amzn.to/3shZ2ko",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 43,
@@ -1203,8 +1203,8 @@
         "url_yahoo": "https://bit.ly/3bzrXJE",
         "url_rakuten": "https://bit.ly/3aJFVd3",
         "url_amazon": "https://amzn.to/2NwhAP1",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 44,
@@ -1231,8 +1231,8 @@
         "url_yahoo": "https://bit.ly/3uqOMYX",
         "url_rakuten": "https://bit.ly/2ZGOpv7",
         "url_amazon": "https://amzn.to/2NsVhK2",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 45,
@@ -1259,8 +1259,8 @@
         "url_yahoo": "http://bit.ly/3qXSOpe",
         "url_rakuten": "http://bit.ly/3sjr4M9",
         "url_amazon": "http://amzn.to/3uoTGFK",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 46,
@@ -1287,8 +1287,8 @@
         "url_yahoo": "https://bit.ly/3ur8gfI",
         "url_rakuten": "https://bit.ly/3ulvXGr",
         "url_amazon": "https://amzn.to/3aFnjus",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 47,
@@ -1315,8 +1315,8 @@
         "url_yahoo": "http://bit.ly/3unR6zQ",
         "url_rakuten": "http://bit.ly/2MmaNXG",
         "url_amazon": "http://amzn.to/3pMolZW",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 48,
@@ -1343,8 +1343,8 @@
         "url_yahoo": "https://bit.ly/3aLhD2d",
         "url_rakuten": "https://bit.ly/3qMozSf",
         "url_amazon": "https://amzn.to/2MeacqX",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 49,
@@ -1371,8 +1371,8 @@
         "url_yahoo": "https://bit.ly/3dHmGCD",
         "url_rakuten": "http://bit.ly/2ZAXw0g",
         "url_amazon": "http://amzn.to/2ZCi7Bx",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 50,
@@ -1399,8 +1399,8 @@
         "url_yahoo": "https://bit.ly/3aLhDzf",
         "url_rakuten": "http://bit.ly/3aHBakc",
         "url_amazon": "http://amzn.to/3bryWEx",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 51,
@@ -1427,8 +1427,8 @@
         "url_yahoo": "http://bit.ly/3uzdPJo",
         "url_rakuten": "http://bit.ly/3kdO4JL",
         "url_amazon": "http://amzn.to/2NLZBDX",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 52,
@@ -1455,8 +1455,8 @@
         "url_yahoo": "https://bit.ly/3dEwkFZ",
         "url_rakuten": "https://bit.ly/3qECfi6",
         "url_amazon": "http://amzn.to/3boH5cW",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 53,
@@ -1483,8 +1483,8 @@
         "url_yahoo": "",
         "url_rakuten": "",
         "url_amazon": "",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 54,
@@ -1511,8 +1511,8 @@
         "url_yahoo": "https://bit.ly/3pK71oG",
         "url_rakuten": "http://bit.ly/3boLPiK",
         "url_amazon": "http://amzn.to/37BxWge",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 55,
@@ -1539,8 +1539,8 @@
         "url_yahoo": "https://bit.ly/3pJHzj3",
         "url_rakuten": "http://bit.ly/3pByM2A",
         "url_amazon": "http://amzn.to/3pODyKk",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 56,
@@ -1567,8 +1567,8 @@
         "url_yahoo": "https://bit.ly/3bBwrzQ",
         "url_rakuten": "https://bit.ly/3qMzrzq",
         "url_amazon": "http://amzn.to/2McyilM",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 57,
@@ -1595,8 +1595,8 @@
         "url_yahoo": "https://bit.ly/2NxfZbx",
         "url_rakuten": "http://bit.ly/3qMCKa6",
         "url_amazon": "http://amzn.to/3uoZcIg",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 58,
@@ -1623,8 +1623,8 @@
         "url_yahoo": "http://bit.ly/3qMeO6F",
         "url_rakuten": "http://bit.ly/2ZGgHG1",
         "url_amazon": "http://amzn.to/3btwYDL",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 59,
@@ -1651,8 +1651,8 @@
         "url_yahoo": "https://bit.ly/3qLubfn",
         "url_rakuten": "https://bit.ly/2NJLkro",
         "url_amazon": "http://amzn.to/2ZBLIL5",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 60,
@@ -1679,8 +1679,8 @@
         "url_yahoo": "https://bit.ly/3bxqTpW",
         "url_rakuten": "https://bit.ly/2NT8ifW",
         "url_amazon": "http://amzn.to/2ZDtgll",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 61,
@@ -1707,8 +1707,8 @@
         "url_yahoo": "https://bit.ly/3qLug2F",
         "url_rakuten": "http://bit.ly/37yHHvh",
         "url_amazon": "http://amzn.to/3pIaZ0W",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 62,
@@ -1735,8 +1735,8 @@
         "url_yahoo": "https://bit.ly/3ul3ZKW",
         "url_rakuten": "http://bit.ly/3pHDImz",
         "url_amazon": "http://amzn.to/3bwPcnV",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 63,
@@ -1763,8 +1763,8 @@
         "url_yahoo": "http://bit.ly/3qKQPVf",
         "url_rakuten": "http://bit.ly/3qLX0Zm",
         "url_amazon": "http://amzn.to/3pGCqs5",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 64,
@@ -1791,8 +1791,8 @@
         "url_yahoo": "https://bit.ly/2Nt1CVQ",
         "url_rakuten": "http://bit.ly/3aI2TRA",
         "url_amazon": "http://amzn.to/3aHBHm7",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 65,
@@ -1819,8 +1819,8 @@
         "url_yahoo": "http://bit.ly/3uiaBJY",
         "url_rakuten": "http://bit.ly/3qKfM3m",
         "url_amazon": "http://amzn.to/3swFwAP",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 66,
@@ -1847,8 +1847,8 @@
         "url_yahoo": "http://bit.ly/3bw2zVl",
         "url_rakuten": "http://bit.ly/2P5REKv",
         "url_amazon": "http://amzn.to/2ZGnZth",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 67,
@@ -1875,14 +1875,14 @@
         "url_yahoo": "http://bit.ly/3dAYulh",
         "url_rakuten": "http://bit.ly/3qNfx7p",
         "url_amazon": "http://amzn.to/37EsGIm",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       }
     ]
   },
   {
     "evacuationCenter": "麹町小学校_131016_東京都_千代田区_東京都千代田区麹町2-8",
-    "stockpile": [
+    "stockpileStatus": [
       {
         "id": 1,
         "item_ja": "水",
@@ -1908,8 +1908,8 @@
         "url_yahoo": "https://bit.ly/2Nt1CVQ",
         "url_rakuten": "https://bit.ly/37DfsM3",
         "url_amazon": "https://amzn.to/37CbHGI",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 2,
@@ -1936,8 +1936,8 @@
         "url_yahoo": "https://bit.ly/2MjXtmC",
         "url_rakuten": "https://bit.ly/3aIFCPz",
         "url_amazon": "https://amzn.to/37zEImE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 3,
@@ -1964,8 +1964,8 @@
         "url_yahoo": "https://bit.ly/3uz15T4",
         "url_rakuten": "https://bit.ly/2NlpPNX",
         "url_amazon": "https://amzn.to/3umnuTy",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 4,
@@ -1992,8 +1992,8 @@
         "url_yahoo": "https://bit.ly/2P4hFda",
         "url_rakuten": "https://bit.ly/3bpsGOZ",
         "url_amazon": "https://amzn.to/3dzJFPU",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 5,
@@ -2020,8 +2020,8 @@
         "url_yahoo": "https://bit.ly/2ZG5JQL",
         "url_rakuten": "https://bit.ly/2NPiohw",
         "url_amazon": "https://amzn.to/3kbsKoc",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 6,
@@ -2048,8 +2048,8 @@
         "url_yahoo": "https://bit.ly/3c7WrmB",
         "url_rakuten": "https://bit.ly/3dvmgPM",
         "url_amazon": "https://amzn.to/2Nll72J",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 7,
@@ -2076,8 +2076,8 @@
         "url_yahoo": "https://bit.ly/3pRfEhi",
         "url_rakuten": "https://bit.ly/30nYCwW",
         "url_amazon": "https://amzn.to/3kcpB7N",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 8,
@@ -2104,8 +2104,8 @@
         "url_yahoo": "https://bit.ly/2NSeF2M",
         "url_rakuten": "https://bit.ly/3kbt1Y6",
         "url_amazon": "https://amzn.to/2NrnJvG",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 9,
@@ -2132,8 +2132,8 @@
         "url_yahoo": "https://bit.ly/3bydBcv",
         "url_rakuten": "https://bit.ly/37AhMDA",
         "url_amazon": "https://amzn.to/3k9rvGd",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 10,
@@ -2160,8 +2160,8 @@
         "url_yahoo": "http://bit.ly/37Enbtf",
         "url_rakuten": "http://bit.ly/3qKhkKI",
         "url_amazon": "http://amzn.to/2P4TZFB",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 11,
@@ -2188,8 +2188,8 @@
         "url_yahoo": "https://bit.ly/3unFi0u",
         "url_rakuten": "https://bit.ly/3bs8KK1",
         "url_amazon": "https://amzn.to/3aEBTm7",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 12,
@@ -2216,8 +2216,8 @@
         "url_yahoo": "http://bit.ly/3bw0ubZ",
         "url_rakuten": "https://bit.ly/2ZGHUbE",
         "url_amazon": "http://amzn.to/3dCp2Tc",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 13,
@@ -2244,8 +2244,8 @@
         "url_yahoo": "http://bit.ly/2NQAyj4",
         "url_rakuten": "https://bit.ly/3se4nc8",
         "url_amazon": "http://amzn.to/2P4BTU8",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 14,
@@ -2272,8 +2272,8 @@
         "url_yahoo": "http://bit.ly/3siDfc7",
         "url_rakuten": "https://bit.ly/3ulh3Qu",
         "url_amazon": "http://amzn.to/3bx8E3H",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 15,
@@ -2300,8 +2300,8 @@
         "url_yahoo": "https://bit.ly/3aJAiLE",
         "url_rakuten": "https://bit.ly/3kbxSIY",
         "url_amazon": "https://amzn.to/2ZGKTRg",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 16,
@@ -2328,8 +2328,8 @@
         "url_yahoo": "https://bit.ly/3ke9ZAw",
         "url_rakuten": "https://bit.ly/3pKeaVT",
         "url_amazon": "https://amzn.to/3ulqoYz",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 17,
@@ -2356,8 +2356,8 @@
         "url_yahoo": "https://bit.ly/3kfA5TM",
         "url_rakuten": "https://bit.ly/3pH5H5T",
         "url_amazon": "https://amzn.to/3sbuEb2",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 18,
@@ -2384,8 +2384,8 @@
         "url_yahoo": "https://bit.ly/3dETPyS",
         "url_rakuten": "https://bit.ly/3ugkEPT",
         "url_amazon": "https://amzn.to/3aIB1Ng",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 19,
@@ -2412,8 +2412,8 @@
         "url_yahoo": "https://bit.ly/2NuBw4N",
         "url_rakuten": "https://bit.ly/2Nm0iEk",
         "url_amazon": "https://amzn.to/3qKpmTE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 20,
@@ -2440,8 +2440,8 @@
         "url_yahoo": "",
         "url_rakuten": "",
         "url_amazon": "",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 21,
@@ -2468,8 +2468,8 @@
         "url_yahoo": "https://bit.ly/3dzDI5H",
         "url_rakuten": "https://bit.ly/3kbNKLu",
         "url_amazon": "https://amzn.to/3pFlUIF",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 22,
@@ -2496,8 +2496,8 @@
         "url_yahoo": "https://bit.ly/3kdzthr",
         "url_rakuten": "https://bit.ly/3dBMy2Y",
         "url_amazon": "https://amzn.to/37zFgsI",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 23,
@@ -2524,8 +2524,8 @@
         "url_yahoo": "https://bit.ly/3bw8MR5",
         "url_rakuten": "https://bit.ly/3aHM1KJ",
         "url_amazon": "https://amzn.to/3k8i49W",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 24,
@@ -2552,8 +2552,8 @@
         "url_yahoo": "https://bit.ly/3aHObu0",
         "url_rakuten": "https://bit.ly/3uwJ6g2",
         "url_amazon": "https://amzn.to/3si2jjq",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 25,
@@ -2580,8 +2580,8 @@
         "url_yahoo": "https://bit.ly/2NRCHv3",
         "url_rakuten": "https://bit.ly/2ZARiO2",
         "url_amazon": "https://amzn.to/3kauUUY",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 26,
@@ -2608,8 +2608,8 @@
         "url_yahoo": "https://bit.ly/2NVaQd9",
         "url_rakuten": "https://bit.ly/3pFrlr3",
         "url_amazon": "https://amzn.to/3skyiiS",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 27,
@@ -2636,8 +2636,8 @@
         "url_yahoo": "https://bit.ly/2P4iGlu",
         "url_rakuten": "https://bit.ly/3shOdP0",
         "url_amazon": "https://amzn.to/3ughvj3",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 28,
@@ -2664,8 +2664,8 @@
         "url_yahoo": "https://bit.ly/3pKxAKc",
         "url_rakuten": "https://bit.ly/3sjErfA",
         "url_amazon": "https://amzn.to/3aJBQ8J",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 29,
@@ -2692,8 +2692,8 @@
         "url_yahoo": "https://bit.ly/3buHFFZ",
         "url_rakuten": "https://bit.ly/3sjEw2S",
         "url_amazon": "https://amzn.to/37ANsZJ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 30,
@@ -2720,8 +2720,8 @@
         "url_yahoo": "https://bit.ly/2ZG4ocH",
         "url_rakuten": "https://bit.ly/2ZDqPzh",
         "url_amazon": "https://amzn.to/3sdls6f",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 31,
@@ -2748,8 +2748,8 @@
         "url_yahoo": "https://bit.ly/3aMfGCN",
         "url_rakuten": "https://bit.ly/3bxpH5K",
         "url_amazon": "https://amzn.to/3shYV8s",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 32,
@@ -2776,8 +2776,8 @@
         "url_yahoo": "https://bit.ly/3unPOor",
         "url_rakuten": "https://bit.ly/3kf2s4C",
         "url_amazon": "https://amzn.to/3bsmmov",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 33,
@@ -2804,8 +2804,8 @@
         "url_yahoo": "https://bit.ly/3sbpVGy",
         "url_rakuten": "https://bit.ly/37xjSUT",
         "url_amazon": "https://amzn.to/3k9FX0T",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 34,
@@ -2832,8 +2832,8 @@
         "url_yahoo": "http://bit.ly/2NyMZjR",
         "url_rakuten": "http://bit.ly/3umczsN",
         "url_amazon": "https://amzn.to/3qQjWqk",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 35,
@@ -2860,8 +2860,8 @@
         "url_yahoo": "https://bit.ly/3bxGg1s",
         "url_rakuten": "https://bit.ly/3vbLl8X",
         "url_amazon": "https://amzn.to/3bvl2RQ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 36,
@@ -2888,8 +2888,8 @@
         "url_yahoo": "https://bit.ly/37FzdCJ",
         "url_rakuten": "https://bit.ly/37BXlpW",
         "url_amazon": "https://amzn.to/2MhjfHE",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 37,
@@ -2916,8 +2916,8 @@
         "url_yahoo": "https://bit.ly/3qRGNC4",
         "url_rakuten": "https://bit.ly/2NMscJt",
         "url_amazon": "https://amzn.to/2ZKftJH",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 38,
@@ -2944,8 +2944,8 @@
         "url_yahoo": "https://bit.ly/3aMfVxH",
         "url_rakuten": "https://bit.ly/3qJKTvU",
         "url_amazon": "https://amzn.to/2ZBAxCn",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 39,
@@ -2972,8 +2972,8 @@
         "url_yahoo": "https://bit.ly/3qH8sW2",
         "url_rakuten": "https://bit.ly/2NxfG0p",
         "url_amazon": "https://amzn.to/3bsvklQ",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 40,
@@ -3000,8 +3000,8 @@
         "url_yahoo": "https://bit.ly/3aONPC1",
         "url_rakuten": "https://bit.ly/3dAooWp",
         "url_amazon": "https://amzn.to/3sep3Rq",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 41,
@@ -3028,8 +3028,8 @@
         "url_yahoo": "https://bit.ly/37GX8BI",
         "url_rakuten": "https://bit.ly/3slwaYv",
         "url_amazon": "https://amzn.to/2NsdJm1",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 42,
@@ -3056,8 +3056,8 @@
         "url_yahoo": "https://bit.ly/3dDS8lm",
         "url_rakuten": "https://bit.ly/3uiKiDw",
         "url_amazon": "https://amzn.to/3shZ2ko",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 43,
@@ -3084,8 +3084,8 @@
         "url_yahoo": "https://bit.ly/3bzrXJE",
         "url_rakuten": "https://bit.ly/3aJFVd3",
         "url_amazon": "https://amzn.to/2NwhAP1",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 44,
@@ -3112,8 +3112,8 @@
         "url_yahoo": "https://bit.ly/3uqOMYX",
         "url_rakuten": "https://bit.ly/2ZGOpv7",
         "url_amazon": "https://amzn.to/2NsVhK2",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 45,
@@ -3140,8 +3140,8 @@
         "url_yahoo": "http://bit.ly/3qXSOpe",
         "url_rakuten": "http://bit.ly/3sjr4M9",
         "url_amazon": "http://amzn.to/3uoTGFK",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 46,
@@ -3168,8 +3168,8 @@
         "url_yahoo": "https://bit.ly/3ur8gfI",
         "url_rakuten": "https://bit.ly/3ulvXGr",
         "url_amazon": "https://amzn.to/3aFnjus",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 47,
@@ -3196,8 +3196,8 @@
         "url_yahoo": "http://bit.ly/3unR6zQ",
         "url_rakuten": "http://bit.ly/2MmaNXG",
         "url_amazon": "http://amzn.to/3pMolZW",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 48,
@@ -3224,8 +3224,8 @@
         "url_yahoo": "https://bit.ly/3aLhD2d",
         "url_rakuten": "https://bit.ly/3qMozSf",
         "url_amazon": "https://amzn.to/2MeacqX",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 49,
@@ -3252,8 +3252,8 @@
         "url_yahoo": "https://bit.ly/3dHmGCD",
         "url_rakuten": "http://bit.ly/2ZAXw0g",
         "url_amazon": "http://amzn.to/2ZCi7Bx",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 50,
@@ -3280,8 +3280,8 @@
         "url_yahoo": "https://bit.ly/3aLhDzf",
         "url_rakuten": "http://bit.ly/3aHBakc",
         "url_amazon": "http://amzn.to/3bryWEx",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 51,
@@ -3308,8 +3308,8 @@
         "url_yahoo": "http://bit.ly/3uzdPJo",
         "url_rakuten": "http://bit.ly/3kdO4JL",
         "url_amazon": "http://amzn.to/2NLZBDX",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 52,
@@ -3336,8 +3336,8 @@
         "url_yahoo": "https://bit.ly/3dEwkFZ",
         "url_rakuten": "https://bit.ly/3qECfi6",
         "url_amazon": "http://amzn.to/3boH5cW",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 53,
@@ -3364,8 +3364,8 @@
         "url_yahoo": "",
         "url_rakuten": "",
         "url_amazon": "",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 54,
@@ -3392,8 +3392,8 @@
         "url_yahoo": "https://bit.ly/3pK71oG",
         "url_rakuten": "http://bit.ly/3boLPiK",
         "url_amazon": "http://amzn.to/37BxWge",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 55,
@@ -3420,8 +3420,8 @@
         "url_yahoo": "https://bit.ly/3pJHzj3",
         "url_rakuten": "http://bit.ly/3pByM2A",
         "url_amazon": "http://amzn.to/3pODyKk",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 56,
@@ -3448,8 +3448,8 @@
         "url_yahoo": "https://bit.ly/3bBwrzQ",
         "url_rakuten": "https://bit.ly/3qMzrzq",
         "url_amazon": "http://amzn.to/2McyilM",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 57,
@@ -3476,8 +3476,8 @@
         "url_yahoo": "https://bit.ly/2NxfZbx",
         "url_rakuten": "http://bit.ly/3qMCKa6",
         "url_amazon": "http://amzn.to/3uoZcIg",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 58,
@@ -3504,8 +3504,8 @@
         "url_yahoo": "http://bit.ly/3qMeO6F",
         "url_rakuten": "http://bit.ly/2ZGgHG1",
         "url_amazon": "http://amzn.to/3btwYDL",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 59,
@@ -3532,8 +3532,8 @@
         "url_yahoo": "https://bit.ly/3qLubfn",
         "url_rakuten": "https://bit.ly/2NJLkro",
         "url_amazon": "http://amzn.to/2ZBLIL5",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 60,
@@ -3560,8 +3560,8 @@
         "url_yahoo": "https://bit.ly/3bxqTpW",
         "url_rakuten": "https://bit.ly/2NT8ifW",
         "url_amazon": "http://amzn.to/2ZDtgll",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 61,
@@ -3588,8 +3588,8 @@
         "url_yahoo": "https://bit.ly/3qLug2F",
         "url_rakuten": "http://bit.ly/37yHHvh",
         "url_amazon": "http://amzn.to/3pIaZ0W",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 62,
@@ -3616,8 +3616,8 @@
         "url_yahoo": "https://bit.ly/3ul3ZKW",
         "url_rakuten": "http://bit.ly/3pHDImz",
         "url_amazon": "http://amzn.to/3bwPcnV",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 63,
@@ -3644,8 +3644,8 @@
         "url_yahoo": "http://bit.ly/3qKQPVf",
         "url_rakuten": "http://bit.ly/3qLX0Zm",
         "url_amazon": "http://amzn.to/3pGCqs5",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 64,
@@ -3672,8 +3672,8 @@
         "url_yahoo": "https://bit.ly/2Nt1CVQ",
         "url_rakuten": "http://bit.ly/3aI2TRA",
         "url_amazon": "http://amzn.to/3aHBHm7",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 65,
@@ -3700,8 +3700,8 @@
         "url_yahoo": "http://bit.ly/3uiaBJY",
         "url_rakuten": "http://bit.ly/3qKfM3m",
         "url_amazon": "http://amzn.to/3swFwAP",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 66,
@@ -3728,8 +3728,8 @@
         "url_yahoo": "http://bit.ly/3bw2zVl",
         "url_rakuten": "http://bit.ly/2P5REKv",
         "url_amazon": "http://amzn.to/2ZGnZth",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       },
       {
         "id": 67,
@@ -3756,8 +3756,8 @@
         "url_yahoo": "http://bit.ly/3dAYulh",
         "url_rakuten": "http://bit.ly/3qNfx7p",
         "url_amazon": "http://amzn.to/37EsGIm",
-        "currentQuantity": "0",
-        "shortQuantity": "100"
+        "currentQuantity": 0,
+        "shortQuantity": 100
       }
     ]
   }

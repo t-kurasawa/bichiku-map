@@ -72,8 +72,8 @@ const merge = async () => {
             tmp.push(
               {
                 ...t,
-                currentQuantity: s.現在備蓄量,
-                shortQuantity: s.不足備蓄量
+                currentQuantity: parseInt(s.現在備蓄量),
+                shortQuantity: parseInt(s.不足備蓄量)
               }
             )
           }
@@ -82,7 +82,7 @@ const merge = async () => {
       
       merged.push({
         evacuationCenter: name,
-        stockpile: tmp
+        stockpileStatus: tmp
       })
 
       if(files.length-1 === index){
@@ -94,7 +94,7 @@ const merge = async () => {
   result.then((res:any)=>{
     console.log(res)
     fs.writeFileSync(
-      path.join(__dirname, "../../frontend/src/__mock__/data/stockpileStatusOfEachEvacuationCenter.json"),
+      path.join(__dirname, "../../frontend/src/__mock__/data/evacuationCenterStockpileStatus.json"),
       res
     ); 
   })
