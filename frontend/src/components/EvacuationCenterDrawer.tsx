@@ -14,6 +14,8 @@ import {
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 
+import { StockpileStatus } from 'components/StockpileStatus';
+
 import escape from 'assets/images/icons/escape-301x194px-04A040.svg';
 
 const drawerBleeding = 56;
@@ -115,6 +117,7 @@ const EvacuationDrawer = (props: Props) => {
               <Typography variant="body1" color="text.primary">
                 {value.住所}
               </Typography>
+              <StockpileStatus ec={value} />
             </CardContent>
           </Card>
         </StyledBox>

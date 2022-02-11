@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "extract": "./dim-lib/bin/x86_64-unknown-linux-gnu/dim install",
-    "transform-load": "ts-node merge.ts && ts-node convert-csv-to-json.ts"
+    "transform": "ts-node job.ts",
+    "load": "cd ../../frontend && npm run fix",
+    "etl": "run-s extract transform load"
   },
   "license": "MIT",
   "dependencies": {
@@ -14,5 +16,8 @@
     "process": "^0.11.10",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

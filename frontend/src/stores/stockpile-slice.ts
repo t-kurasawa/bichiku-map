@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
 import { stockpileApi } from 'apis';
-import { StockpileType, EvacuationCenterStockpileStatus } from 'schema';
+import { StockpileType, StockpileStatusEC } from 'schema';
 
 const STORE_NAME = 'stockpile';
 
 export interface StockpileState {
   status: 'idle' | 'loading' | 'failed';
   stockpileTypes: Array<StockpileType>;
-  stockpileStatusEC: Array<EvacuationCenterStockpileStatus>;
+  stockpileStatusEC: Array<StockpileStatusEC>;
 }
 
 const initialState: StockpileState = {

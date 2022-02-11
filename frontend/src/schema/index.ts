@@ -43,8 +43,8 @@ export interface StockpileStatus extends StockpileType {
   shortQuantity: number;
 }
 
-// 避難所毎の防災備蓄状況
-export interface EvacuationCenterStockpileStatus {
+// 避難所の防災備蓄状況
+export interface StockpileStatusEC {
   evacuationCenter: string;
   stockpileStatus: Array<StockpileStatus>;
 }

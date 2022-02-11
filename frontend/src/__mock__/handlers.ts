@@ -2,11 +2,11 @@ import { rest } from 'msw';
 import {
   EvacuationArea,
   EvacuationCenter,
-  EvacuationCenterStockpileStatus,
+  StockpileStatusEC,
   StockpileType,
 } from 'schema';
 import stockpileType from './data/stockpileType.json';
-import evacuationCenterStockpileStatus from './data/evacuationCenterStockpileStatus.json';
+import stockpileStatusEC from './data/stockpileStatusEC.json';
 import evacuationCenter from './data/evacuationCenter.json';
 import evacuationArea from './data/evacuationArea.json';
 
@@ -17,8 +17,7 @@ export const handlers = [
   }),
 
   rest.get('/stockpile/status/ec', (req, res, ctx) => {
-    const data: Array<EvacuationCenterStockpileStatus> =
-      evacuationCenterStockpileStatus;
+    const data: Array<StockpileStatusEC> = stockpileStatusEC;
     return res(ctx.status(200), ctx.json(data));
   }),
 

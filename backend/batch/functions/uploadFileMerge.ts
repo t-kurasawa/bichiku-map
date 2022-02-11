@@ -2,16 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import csvtojson from 'csvtojson'
 
-const convertCSVtoJSON = async (csvFilePath:string, colParser:any) => {
-  const json = await csvtojson({
-    colParser: colParser,
-    checkType:true
-  }).fromFile(csvFilePath);
-  return json
-}
-
-const merge = async () => {
-  const result = new Promise((resolve)=>{
+const uploadFileMerge = async () => {
+  const merge = new Promise((resolve)=>{
     const files = fs.readdirSync(path.join(__dirname, "../upload"));
     const fileNameRegexp = /^(\d+-)?(?<name>.*)/
     let merged:any[] = []
@@ -46,10 +38,11 @@ const merge = async () => {
         "url_amazon": "string"
       }
 
-      const stockpileType = await convertCSVtoJSON(
-        path.join(__dirname, `./data_files/code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv`),
-        stockpileTypeColParser
-      )
+      const stockpileType = await csvtojson({
+        colParser: stockpileTypeColParser,
+        checkType:true
+      }).fromFile(path.join(__dirname, `../data_files/code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv`));
+
 
       const stockpileStatusColParser = {
         "id": "number",
@@ -59,11 +52,10 @@ const merge = async () => {
         "不足備蓄量": "string"
       }
 
-      const stockpileStatus = await convertCSVtoJSON(
-        path.join(__dirname, `../upload/${name}.csv`),
-        stockpileStatusColParser
-      )
-
+      const stockpileStatus = await csvtojson({
+        colParser: stockpileStatusColParser,
+        checkType:true
+      }).fromFile(path.join(__dirname, `../upload/${name}.csv`));
 
       let tmp:any[] = []
       stockpileType.map((t) => {
@@ -91,14 +83,14 @@ const merge = async () => {
     })
   })
 
-  result.then((res:any)=>{
+  merge.then((res:any)=>{
     console.log(res)
     fs.writeFileSync(
-      path.join(__dirname, "../../frontend/src/__mock__/data/evacuationCenterStockpileStatus.json"),
+      path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileStatusEC.json"),
       res
-    ); 
+    );
   })
 
 }
 
-merge()
+export default uploadFileMerge;
