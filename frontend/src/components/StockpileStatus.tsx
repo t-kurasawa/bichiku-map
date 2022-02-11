@@ -15,6 +15,8 @@ import { useAppDispatch, useAppSelector } from 'hooks';
 import {
   fetchStockpileStatusEC,
   selectStockpileStatusEC,
+  fetchStockpileType,
+  selectStockpileTypes,
 } from 'stores/stockpile-slice';
 
 import { useEffect } from 'react';
@@ -26,11 +28,12 @@ interface Props {
 export const StockpileStatus = (props: Props) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
+    dispatch(fetchStockpileType());
     dispatch(fetchStockpileStatusEC());
-    console.log('fetchStockpileStatusEC');
   }, []);
+  const stockpileTypes = useAppSelector(selectStockpileTypes);
   const stockpileStatusEC = useAppSelector(selectStockpileStatusEC);
-  const ecname = `${props.ec.避難所_名称}_${props.ec.住所}`;
+  const ecname = `${props.ec.避難所_名称}（${props.ec.住所}）`;
   console.log(ecname);
   console.log(stockpileStatusEC);
   const filtered = stockpileStatusEC.filter(
@@ -64,8 +67,8 @@ export const StockpileStatus = (props: Props) => {
                         {'（分類:'}
                         {stockpile.category_ja}
                         {'）'}
-                        備蓄数: {stockpile.currentQuantity} / 不足数:{' '}
-                        {stockpile.shortQuantity}
+                        【備蓄数: {stockpile.currentQuantity} / 不足数:{' '}
+                        {stockpile.shortQuantity}】
                       </>
                     }
                     secondary={
@@ -96,7 +99,53 @@ export const StockpileStatus = (props: Props) => {
     return (
       <Grid item xs={12}>
         <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-          <Title>防災備蓄状況が登録されていません</Title>
+          <Title>防災備蓄状況（未登録）</Title>
+          <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+            {stockpileTypes.map((stockpileType, index, row) => (
+              <React.Fragment key={index.toString()}>
+                <ListItem key={index.toString()} alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar
+                      alt={stockpileType.item_en}
+                      src={stockpileType.image}
+                    />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={
+                      <>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {stockpileType.item_ja}
+                        </Typography>
+                        {'（分類:'}
+                        {stockpileType.category_ja}
+                        {'）'}
+                      </>
+                    }
+                    secondary={
+                      <>
+                        <Typography
+                          sx={{ display: 'inline' }}
+                          component="span"
+                          variant="body2"
+                          color="text.primary"
+                        >
+                          {stockpileType.description_ja}
+                        </Typography>
+                      </>
+                    }
+                  />
+                </ListItem>
+                {index + 1 === row.length ? null : (
+                  <Divider variant="inset" component="li" />
+                )}
+              </React.Fragment>
+            ))}
+          </List>
         </Paper>
       </Grid>
     );

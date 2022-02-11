@@ -1,6 +1,6 @@
 import { useAppDispatch } from 'hooks';
 import {
-  fetchEvacuationArea,
+  // fetchEvacuationArea,
   fetchEvacuationCenter,
 } from 'stores/evacuation-slice';
 
@@ -11,7 +11,7 @@ import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
 import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
-import ParkIcon from '@mui/icons-material/Park';
+// import ParkIcon from '@mui/icons-material/Park';
 
 export const UpSpeedDial = (props: any) => {
   const dispatch = useAppDispatch();
@@ -30,18 +30,19 @@ export const UpSpeedDial = (props: any) => {
 
   const actions = [
     { icon: <HealthAndSafetyIcon />, key: 'EvacuationCenter', name: '避難所' },
-    { icon: <ParkIcon />, key: 'EvacuationArea', name: '避難場所' },
+    // { icon: <ParkIcon />, key: 'EvacuationArea', name: '避難場所' },
   ];
 
+  // 避難場所は表示しない
   const handleAction = (key: string) => {
     switch (key) {
-      case 'EvacuationArea': {
-        console.log(key);
-        dispatch(fetchEvacuationArea());
-        break;
-      }
+      // case 'EvacuationArea': {
+      //   console.log(key);
+      //   dispatch(fetchEvacuationArea());
+      //   break;
+      // }
       case 'EvacuationCenter': {
-        console.log(key);
+        // console.log(key);
         dispatch(fetchEvacuationCenter());
         break;
       }
