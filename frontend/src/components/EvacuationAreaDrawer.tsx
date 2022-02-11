@@ -110,13 +110,9 @@ const EvacuationDrawer = (props: Props) => {
           <Card sx={{ maxWidth: 'auto' }}>
             <CardHeader
               avatar={<Avatar src={escape} variant="square" />}
-              title={value.避難場所_名称}
+              title={value.避難場所_名称 + '（' + value.住所 + '）'}
             />
-            <CardContent>
-              <Typography variant="body1" color="text.primary">
-                {value.住所}
-              </Typography>
-            </CardContent>
+            <CardContent></CardContent>
           </Card>
         </StyledBox>
       </SwipeableDrawer>

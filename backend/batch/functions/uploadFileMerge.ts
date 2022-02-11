@@ -4,10 +4,11 @@ import csvtojson from 'csvtojson'
 
 const uploadFileMerge = async () => {
   const merge = new Promise((resolve)=>{
-    const files = fs.readdirSync(path.join(__dirname, "../upload"));
+    const files = fs.readdirSync(path.join(__dirname, "../../upload"));
     const fileNameRegexp = /^(\d+-)?(?<name>.*)/
     let merged:any[] = []
     files.map( async (file,index) =>{
+      console.log(file)
       const name:string | undefined = path?.parse(file)?.name?.match(fileNameRegexp)?.groups?.name
 
       //防災備蓄品種類
@@ -55,7 +56,7 @@ const uploadFileMerge = async () => {
       const stockpileStatus = await csvtojson({
         colParser: stockpileStatusColParser,
         checkType:true
-      }).fromFile(path.join(__dirname, `../upload/${name}.csv`));
+      }).fromFile(path.join(__dirname, `../../upload/${name}.csv`));
 
       let tmp:any[] = []
       stockpileType.map((t) => {
@@ -84,7 +85,7 @@ const uploadFileMerge = async () => {
   })
 
   merge.then((res:any)=>{
-    console.log(res)
+    // console.log(res)
     fs.writeFileSync(
       path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileStatusEC.json"),
       res

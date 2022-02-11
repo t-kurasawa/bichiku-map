@@ -46,8 +46,7 @@ const initialState: StockpileState = {
   ],
   stockpileStatusEC: [
     {
-      evacuationCenter:
-        '番町小学校_131016_東京都_千代田区_東京都千代田区六番町8',
+      evacuationCenter: '泰明小学校_東京都中央区銀座5-1-13',
       stockpileStatus: [
         {
           id: 1,
@@ -99,6 +98,7 @@ export const fetchStockpileStatusEC = createAsyncThunk(
   async () => {
     const response = await stockpileApi.fetchStockpileStatusEC();
     // The value we return becomes the `fulfilled` action payload
+    console.log(response.data);
     return response.data;
   }
 );

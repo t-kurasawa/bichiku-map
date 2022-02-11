@@ -39,7 +39,8 @@
     "fix": "run-s fix:prettier fix:eslint",
     "fix:prettier": "npm run lint:prettier -- --write",
     "fix:eslint": "npm run lint:eslint -- --fix",
-    "prepare": "cd .. && husky install frontend/.husky"
+    "prepare": "cd .. && husky install frontend/.husky",
+    "etl": "cd ../backend/batch && npm run etl"
   },
   "eslintConfig": {
     "extends": [

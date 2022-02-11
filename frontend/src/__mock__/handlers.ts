@@ -18,6 +18,7 @@ export const handlers = [
 
   rest.get('/stockpile/status/ec', (req, res, ctx) => {
     const data: Array<StockpileStatusEC> = stockpileStatusEC;
+    console.log(data);
     return res(ctx.status(200), ctx.json(data));
   }),
 

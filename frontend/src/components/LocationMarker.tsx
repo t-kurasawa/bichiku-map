@@ -12,7 +12,7 @@ import EvacuationCenterDrawer from 'components/EvacuationCenterDrawer';
 import EvacuationAreaDrawer from 'components/EvacuationAreaDrawer';
 
 export const LocationMarker = (props: FeatureGroupProps) => {
-  const fillBlueOptions = { fillColor: 'blue' };
+  const fillBlueOptions = { fillColor: '' };
 
   const currentLocation = useAppSelector(selectCurrentLocation);
   const evacuationAreas = useAppSelector(selectEvacuationAreas);
