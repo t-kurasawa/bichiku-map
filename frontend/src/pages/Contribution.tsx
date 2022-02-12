@@ -9,7 +9,7 @@ const Contribution = () => {
     <Template>
       <Grid container spacing={3}>
         <ContributeStockpile />
-        <StockpileType />
+        <StockpileType title={'防災備蓄品種類'} />
       </Grid>
     </Template>
   );

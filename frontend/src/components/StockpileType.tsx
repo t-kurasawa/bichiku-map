@@ -19,7 +19,11 @@ import {
 
 import { useEffect } from 'react';
 
-export const StockpileType = () => {
+interface Props {
+  title: string;
+}
+
+export const StockpileType = (props: Props) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchStockpileType());
@@ -29,7 +33,7 @@ export const StockpileType = () => {
   return (
     <Grid item xs={12}>
       <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-        <Title>防災備蓄品種類</Title>
+        <Title>{props.title}</Title>
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {stockpileTypes.map((stockpileType, index, row) => (
             <React.Fragment key={index.toString()}>

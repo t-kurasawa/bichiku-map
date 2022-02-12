@@ -25,7 +25,7 @@ interface Props {
   ec?: any;
 }
 
-export const StockpileStatus = (props: Props) => {
+export const StockpileStatusEC = (props: Props) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchStockpileType());
@@ -152,4 +152,4 @@ export const StockpileStatus = (props: Props) => {
   }
 };
 
-export default StockpileStatus;
+export default StockpileStatusEC;

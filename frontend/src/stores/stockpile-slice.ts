@@ -98,7 +98,6 @@ export const fetchStockpileStatusEC = createAsyncThunk(
   async () => {
     const response = await stockpileApi.fetchStockpileStatusEC();
     // The value we return becomes the `fulfilled` action payload
-    console.log(response.data);
     return response.data;
   }
 );

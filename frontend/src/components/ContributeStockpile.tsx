@@ -223,7 +223,7 @@ const ContributeStockpile = () => {
                   value={evacuationCenter.避難所_名称}
                 >
                   {evacuationCenter.避難所_名称}
-                  {'（住所:'}
+                  {'（'}
                   {evacuationCenter.住所}
                   {'）'}
                 </MenuItem>
