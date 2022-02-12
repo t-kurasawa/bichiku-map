@@ -42,6 +42,10 @@ npm install
 npm run start
 ```
 
+#### GitHub pages の注意点
+https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
+https://github.com/rafgraph/spa-github-pages
+
 ### Backend
 - open-data
 - shp2Json

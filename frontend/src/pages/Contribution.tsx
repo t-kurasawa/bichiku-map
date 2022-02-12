@@ -1,6 +1,6 @@
 import Template from 'pages/Template';
 import ContributeStockpile from 'components/ContributeStockpile';
-import Stockpile from 'components/Stockpile';
+import StockpileType from 'components/StockpileType';
 
 import Grid from '@mui/material/Grid';
 
@@ -9,7 +9,7 @@ const Contribution = () => {
     <Template>
       <Grid container spacing={3}>
         <ContributeStockpile />
-        <Stockpile />
+        <StockpileType title={'防災備蓄品種類'} />
       </Grid>
     </Template>
   );

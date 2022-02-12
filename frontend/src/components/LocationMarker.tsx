@@ -1,42 +1,18 @@
 import { useAppSelector } from 'hooks';
 import { selectCurrentLocation } from 'stores/openstreetmap-slice';
-import {
-  selectEvacuationAreas,
-  selectEvacuationCenters,
-} from 'stores/evacuation-slice';
-
+import { selectEvacuationCenters } from 'stores/evacuation-slice';
 import { LatLng } from 'leaflet';
-import { Circle, FeatureGroup, FeatureGroupProps, Popup } from 'react-leaflet';
+import { Circle, FeatureGroup, Popup } from 'react-leaflet';
 
-import EvacuationCenterDrawer from 'components/EvacuationCenterDrawer';
-import EvacuationAreaDrawer from 'components/EvacuationAreaDrawer';
+// import { Link } from 'react-router-dom'
+import { Avatar, Button, Card, CardActions, CardHeader } from '@mui/material';
+import DirectionsIcon from '@mui/icons-material/Directions';
+import escape from 'assets/images/icons/escape-301x194px-04A040.svg';
 
-export const LocationMarker = (props: FeatureGroupProps) => {
-  const fillBlueOptions = { fillColor: 'blue' };
-
+export const LocationMarker = () => {
+  const fillOptions = { fillColor: '' };
   const currentLocation = useAppSelector(selectCurrentLocation);
-  const evacuationAreas = useAppSelector(selectEvacuationAreas);
   const evacuationCenters = useAppSelector(selectEvacuationCenters);
-
-  const EvacuationAreaCircle = evacuationAreas.map((evacuationArea, index) => {
-    return (
-      <Circle
-        key={index.toString()}
-        pathOptions={{ color: 'red' }}
-        center={new LatLng(evacuationArea.緯度, evacuationArea.経度)}
-        radius={50}
-        eventHandlers={{
-          click: () => {
-            console.log('Circle clicked');
-          },
-        }}
-      >
-        <Popup>
-          <EvacuationAreaDrawer value={evacuationArea} isOpen={true} />
-        </Popup>
-      </Circle>
-    );
-  });
 
   const EvacuationCenterCircle = evacuationCenters.map(
     (evacuationCenter, index) => {
@@ -52,8 +28,33 @@ export const LocationMarker = (props: FeatureGroupProps) => {
             },
           }}
         >
-          <Popup>
-            <EvacuationCenterDrawer value={evacuationCenter} isOpen={true} />
+          <Popup closeButton={false}>
+            <Card sx={{ maxWidth: 'auto' }}>
+              <CardHeader
+                avatar={<Avatar src={escape} variant="square" />}
+                title={
+                  evacuationCenter.避難所_名称 +
+                  '（' +
+                  evacuationCenter.住所 +
+                  '）'
+                }
+              />
+              <CardActions>
+                <Button
+                  variant="outlined"
+                  startIcon={<DirectionsIcon />}
+                  href={
+                    '/evacuationcenter?ec=' +
+                    evacuationCenter.避難所_名称 +
+                    '（' +
+                    evacuationCenter.住所 +
+                    '）'
+                  }
+                >
+                  避難所
+                </Button>
+              </CardActions>
+            </Card>
           </Popup>
         </Circle>
       );
@@ -61,8 +62,7 @@ export const LocationMarker = (props: FeatureGroupProps) => {
   );
 
   return currentLocation === null ? null : (
-    <FeatureGroup pathOptions={fillBlueOptions}>
-      {EvacuationAreaCircle}
+    <FeatureGroup pathOptions={fillOptions}>
       {EvacuationCenterCircle}
     </FeatureGroup>
   );

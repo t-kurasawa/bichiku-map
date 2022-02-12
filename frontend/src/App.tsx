@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 import Dashboard from 'pages/Dashboard';
 import Contribution from 'pages/Contribution';
+import EvacuationCenter from 'pages/EvacuationCenter';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/contribution" element={<Contribution />} />
+        <Route path="/evacuationcenter" element={<EvacuationCenter />} />
       </Routes>
     </BrowserRouter>
   );

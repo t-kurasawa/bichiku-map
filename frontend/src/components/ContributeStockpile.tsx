@@ -28,7 +28,10 @@ import Title from './Title';
 
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'hooks';
-import { fetchStockpile, selectStockpiles } from 'stores/stockpile-slice';
+import {
+  fetchStockpileType,
+  selectStockpileTypes,
+} from 'stores/stockpile-slice';
 import {
   fetchEvacuationCenter,
   selectEvacuationCenters,
@@ -39,10 +42,10 @@ import escape from 'assets/images/icons/escape-301x194px-04A040.svg';
 const ContributeStockpile = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(fetchStockpile());
+    dispatch(fetchStockpileType());
     dispatch(fetchEvacuationCenter());
   }, []);
-  const stockpiles = useAppSelector(selectStockpiles);
+  const stockpiles = useAppSelector(selectStockpileTypes);
   const evacuationCenters = useAppSelector(selectEvacuationCenters);
 
   const steps = [
@@ -220,7 +223,7 @@ const ContributeStockpile = () => {
                   value={evacuationCenter.避難所_名称}
                 >
                   {evacuationCenter.避難所_名称}
-                  {'（住所:'}
+                  {'（'}
                   {evacuationCenter.住所}
                   {'）'}
                 </MenuItem>

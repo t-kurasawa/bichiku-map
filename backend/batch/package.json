@@ -1,0 +1,23 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "scripts": {
+    "extract": "./dim-lib/bin/x86_64-unknown-linux-gnu/dim install",
+    "transform": "ts-node job.ts",
+    "load": "cd ../../frontend && npm run fix",
+    "etl": "run-s extract transform load"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "process": "^0.11.10",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -97,7 +97,6 @@ export default function Header() {
           >
             みんなで備える防災備蓄マップ
           </Typography>
-          {/* <SearchForm /> */}
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>

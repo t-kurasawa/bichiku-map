@@ -14,18 +14,15 @@ import {
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 
+import { StockpileStatusEC } from 'components/StockpileStatusEC';
+
 import escape from 'assets/images/icons/escape-301x194px-04A040.svg';
 
 const drawerBleeding = 56;
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
   value?: any;
-  isOpen: boolean;
+  open: boolean;
 }
 
 const Root = styled('div')(({ theme }) => ({
@@ -49,16 +46,7 @@ const Puller = styled(Box)(({ theme }) => ({
 }));
 
 const EvacuationDrawer = (props: Props) => {
-  const { window, value, isOpen } = props;
-  const [open, setOpen] = useState(isOpen);
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
-
-  // This is used only for the example
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  const [open, setOpen] = useState(false);
 
   return (
     <Root>
@@ -72,11 +60,14 @@ const EvacuationDrawer = (props: Props) => {
       />
       <Avatar src={escape} variant="square" />
       <SwipeableDrawer
-        container={container}
         anchor="bottom"
         open={open}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
+        onClose={() => {
+          setOpen(false);
+        }}
+        onOpen={() => {
+          setOpen(true);
+        }}
         swipeAreaWidth={drawerBleeding}
         disableSwipeToOpen={false}
         ModalProps={{
@@ -86,17 +77,16 @@ const EvacuationDrawer = (props: Props) => {
         <StyledBox
           sx={{
             position: 'absolute',
-            top: -drawerBleeding,
+            top: -32,
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
             visibility: 'visible',
             right: 0,
             left: 0,
           }}
-          onClick={toggleDrawer(true)}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}>避難所</Typography>
+          <Typography sx={{ p: 2, color: 'text.secondary' }} />
         </StyledBox>
         <StyledBox
           sx={{
@@ -109,12 +99,10 @@ const EvacuationDrawer = (props: Props) => {
           <Card sx={{ maxWidth: 'auto' }}>
             <CardHeader
               avatar={<Avatar src={escape} variant="square" />}
-              title={value.避難所_名称}
+              title={props.value.避難所_名称 + '（' + props.value.住所 + '）'}
             />
             <CardContent>
-              <Typography variant="body1" color="text.primary">
-                {value.住所}
-              </Typography>
+              <StockpileStatusEC ec={props.value} />
             </CardContent>
           </Card>
         </StyledBox>

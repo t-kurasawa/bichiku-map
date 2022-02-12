@@ -12,7 +12,7 @@ const SideMenu = () => {
         <ListItemIcon>
           <MapIcon />
         </ListItemIcon>
-        <ListItemText primary="避難所・避難場所" />
+        <ListItemText primary="避難所" />
       </ListItem>
       <ListItem button component="a" href="/contribution">
         <ListItemIcon>
