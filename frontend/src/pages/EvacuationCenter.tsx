@@ -4,7 +4,6 @@ import {
   Avatar,
   Card,
   CardHeader,
-  CardContent,
   Divider,
   Grid,
   List,
@@ -58,21 +57,11 @@ const EvacuationCenter = () => {
                 avatar={<Avatar src={escape} variant="square" />}
                 title={query.get('ec')}
               />
-              <CardContent>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  この避難所の防災備蓄に貢献する方はこちら
-                </Typography>
-              </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12}>
             <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-              <Title>防災備蓄状況</Title>
+              <Title>防災備蓄状況（{stockpileStatus[0].updateDate}）</Title>
               <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 {stockpileStatus.map((stockpile, index, row) => (
                   <React.Fragment key={index.toString()}>
@@ -133,20 +122,10 @@ const EvacuationCenter = () => {
                 avatar={<Avatar src={escape} variant="square" />}
                 title={query.get('ec')}
               />
-              <CardContent>
-                <Typography
-                  sx={{ display: 'inline' }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  避難所にいる方は、こちらから防災備蓄状況を登録してください
-                </Typography>
-              </CardContent>
             </Card>
           </Grid>
           <Grid item xs={12}>
-            <StockpileType title={'防災備蓄状況は未登録です'} />
+            <StockpileType title={'防災備蓄状況（未登録）'} />
           </Grid>
         </Grid>
       </Template>

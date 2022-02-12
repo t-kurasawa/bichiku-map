@@ -46,7 +46,7 @@ const initialState: StockpileState = {
   ],
   stockpileStatusEC: [
     {
-      evacuationCenter: '泰明小学校_東京都中央区銀座5-1-13',
+      evacuationCenter: '佃島小学校（東京都中央区佃2-3-1）',
       stockpileStatus: [
         {
           id: 1,
@@ -77,7 +77,8 @@ const initialState: StockpileState = {
           url_rakuten: 'https://bit.ly/37DfsM3',
           url_amazon: 'https://amzn.to/37CbHGI',
           currentQuantity: 0,
-          shortQuantity: 100,
+          shortQuantity: 0,
+          updateDate: '2022/03/11',
         },
       ],
     },

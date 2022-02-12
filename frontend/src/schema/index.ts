@@ -41,6 +41,7 @@ export interface StockpileType {
 export interface StockpileStatus extends StockpileType {
   currentQuantity: number;
   shortQuantity: number;
+  updateDate: string;
 }
 
 // 避難所の防災備蓄状況

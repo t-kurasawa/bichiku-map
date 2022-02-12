@@ -50,7 +50,8 @@ const uploadFileMerge = async () => {
         "備蓄品名": "string",
         "カテゴリー名": "string",
         "現在備蓄量": "string",
-        "不足備蓄量": "string"
+        "不足備蓄量": "string",
+        "更新日": "string"
       }
 
       const stockpileStatus = await csvtojson({
@@ -66,7 +67,8 @@ const uploadFileMerge = async () => {
               {
                 ...t,
                 currentQuantity: parseInt(s.現在備蓄量),
-                shortQuantity: parseInt(s.不足備蓄量)
+                shortQuantity: parseInt(s.不足備蓄量),
+                updateDate: s.更新日
               }
             )
           }
