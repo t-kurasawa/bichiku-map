@@ -1,56 +1,30 @@
-# bichiku-map
-みんなで備える防災備蓄マップ
+# みんなで備える防災備蓄マップ
+
+避難所の防災備蓄状況を可視化する防災備蓄マップテンプレートです。
+
+## サンプルサイト
+
 https://bichiku-map.web.app/
 
-- 災害時に避難所で不足している物資の備蓄状況を可視化するツールです。
+## テンプレート利用方法
 
-## ライセンス
-本ソフトウェアは、MITライセンスのもと提供されています。
+### 避難所の防災備蓄データの登録
 
-### MIT License
+- 避難所名称（住所）.csv のフォーマットで upload フォルダに格納してください。避難所や住所は[東京都防災マップ避難所](https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093)に合わせてください。
+- 避難所の防災備蓄状況データを更新するバッチ処理を動かします。
 
-Copyright (c) 2021 Takaaki Kurasawa
+```
+cd backend
+npm install
+npm run etl
+```
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### サイト公開
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-
-## プロジェクト概要
-https://hackmd.io/PpOy59twQMuFybN5ZcHtQg?view
-
-### Frontend
-- React web application
+- React web application をビルドし Firebase 等にホスティングしてください
 
 ```
 cd frontend
 npm install
-npm run start
-```
-
-#### GitHub pages の注意点
-https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
-https://github.com/rafgraph/spa-github-pages
-
-### Backend
-- open-data
-- shp2Json
-
-# Licence Check
-```
-npx license-checker --production --json
+npm run build
 ```
