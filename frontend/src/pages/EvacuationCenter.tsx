@@ -37,17 +37,15 @@ const EvacuationCenter = () => {
   useEffect(() => {
     dispatch(fetchStockpileStatusEC());
   }, []);
+
   const stockpileStatusEC = useAppSelector(selectStockpileStatusEC);
-  console.log(stockpileStatusEC);
 
   const filtered = stockpileStatusEC.filter(
     (val) => val.evacuationCenter === query.get('ec')
   );
-  console.log(query.get('ec'));
 
   if (filtered.length !== 0) {
     const stockpileStatus: Array<StockpileStatus> = filtered[0].stockpileStatus;
-    console.log(stockpileStatus);
     return (
       <Template>
         <Grid container spacing={3}>

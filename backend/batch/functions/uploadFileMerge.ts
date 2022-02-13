@@ -8,7 +8,6 @@ const uploadFileMerge = async () => {
     const fileNameRegexp = /^(\d+-)?(?<name>.*)/
     let merged:any[] = []
     files.map( async (file,index) =>{
-      console.log(file)
       const name:string | undefined = path?.parse(file)?.name?.match(fileNameRegexp)?.groups?.name
 
       //防災備蓄品種類
@@ -87,7 +86,6 @@ const uploadFileMerge = async () => {
   })
 
   merge.then((res:any)=>{
-    // console.log(res)
     fs.writeFileSync(
       path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileStatusEC.json"),
       res
