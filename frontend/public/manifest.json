@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "備蓄マップ",
+  "name": "みんなで備える防災備蓄マップ",
   "icons": [
     {
       "src": "favicon.ico",
