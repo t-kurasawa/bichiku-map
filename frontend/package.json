@@ -23,8 +23,6 @@
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test  --silent --watchAll=false",
     "eject": "react-scripts eject",
     "all": "run-s fix lint start",

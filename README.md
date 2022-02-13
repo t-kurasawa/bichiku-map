@@ -22,9 +22,12 @@ npm run etl
 ### サイト公開
 
 - React web application をビルドし Firebase 等にホスティングしてください
+    - Production: Firebase 環境は各自でご準備ください。Github Actions でデプロイします。
+    - Development: ローカルPC 環境で起動します。
 
 ```
 cd frontend
 npm install
+npm run start
 npm run build
 ```
