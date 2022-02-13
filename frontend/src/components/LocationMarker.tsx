@@ -24,7 +24,7 @@ export const LocationMarker = () => {
           radius={50}
           eventHandlers={{
             click: () => {
-              console.log('Circle clicked');
+              // console.log('Circle clicked');
             },
           }}
         >

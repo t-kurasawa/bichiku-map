@@ -34,12 +34,9 @@ export const StockpileStatusEC = (props: Props) => {
   const stockpileTypes = useAppSelector(selectStockpileTypes);
   const stockpileStatusEC = useAppSelector(selectStockpileStatusEC);
   const ecname = `${props.ec.避難所_名称}（${props.ec.住所}）`;
-  console.log(ecname);
-  console.log(stockpileStatusEC);
   const filtered = stockpileStatusEC.filter(
     (val) => val.evacuationCenter === ecname
   );
-  console.log(filtered);
   const stockpileStatus = filtered[0]?.stockpileStatus;
   if (filtered.length !== 0) {
     return (
@@ -95,7 +92,7 @@ export const StockpileStatusEC = (props: Props) => {
       </Grid>
     );
   } else {
-    console.log('not match');
+    // console.log('not match');
     return (
       <Grid item xs={12}>
         <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
