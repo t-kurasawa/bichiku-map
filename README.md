@@ -10,10 +10,10 @@ https://bichiku-map.web.app/
 
 ### 避難所の防災備蓄状況ファイルを作成
 
-- upload フォルダのサンプルを参考に避難所の防災備蓄状況を記載してください。
+- backend/upload フォルダのサンプルを参考に避難所の防災備蓄状況ファイルを作成してください。
 - 避難所毎に「避難所名称（住所）.csv」というファイル名で保存して upload フォルダに格納してください。
-- ファイル名の避難所名称と住所は[東京都防災マップ避難所](https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093)に合わせてください。
-- 防災備蓄品種類（67種）は[東京備蓄ナビ](https://www.bichiku.metro.tokyo.lg.jp/)で公開されているリストを利用しています。
+- ファイル名の避難所名称と住所は[東京都防災マップ](https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093)の名称に合わせてください。
+- 防災備蓄品種類（67種）は[東京備蓄ナビ](https://www.bichiku.metro.tokyo.lg.jp/)の公開リストを使用しています。
 - id,備蓄品名,カテゴリー名の列は変更しないでください。
 - 現在備蓄量,不足備蓄量,更新日列を更新してください。
 - 文字コードは UTF-8 にしてください。
@@ -42,7 +42,7 @@ npm run etl
 ### 防災備蓄マップを公開
 
 - React web application をビルドし Firebase にデプロイしてください。
-    - Production: Firebase 環境は各自でご準備ください。本テンプレートでは Github Actions でデプロイします。
+    - Production: Firebase 環境は各自でご準備ください。Github Actions でデプロイします。
     - Development: ローカルPC 環境で起動します。
 
 ```
