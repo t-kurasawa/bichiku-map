@@ -1,5 +1,5 @@
 {
-  "name": "tools",
+  "name": "batch",
   "version": "1.0.0",
   "scripts": {
     "extract": "./dim-lib/bin/x86_64-unknown-linux-gnu/dim install",
@@ -11,7 +11,6 @@
   "dependencies": {
     "csvtojson": "^2.0.10",
     "fs": "^0.0.1-security",
-    "lodash": "^4.17.21",
     "path": "^0.12.7",
     "process": "^0.11.10",
     "ts-node": "^10.4.0",
