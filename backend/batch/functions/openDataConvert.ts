@@ -1,31 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import csvtojson from 'csvtojson'
+// 暫定的にrequireとする
+const enrichment = require('../imi-lib/main.js')
 
 const openDataConvert = async () => {
-
-  /**
-   *  避難場所
-   */
-  const evacuationArea = {
-    "避難場所_名称": "string",
-    "地方公共団体コード": "number",
-    "都道府県": "string",
-    "指定区市町村名": "string",
-    "住所": "string",
-    "緯度":"number",
-    "経度": "number",
-  }
-
-  const evacuationAreaJson = await csvtojson({
-    colParser: evacuationArea,
-    checkType:true
-  }).fromFile(path.join(__dirname, `../data_files/www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_area.csv`));
-
-  fs.writeFileSync(
-    path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationArea.json"),
-    JSON.stringify(evacuationAreaJson)
-  );  
 
   /**
    *  避難所
@@ -45,8 +24,15 @@ const openDataConvert = async () => {
     checkType:true
   }).fromFile(path.join(__dirname, `../data_files/www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv`));
 
+
+  console.log(await enrichment(evacuationCenterJson[0].住所))
+  console.log(await enrichment(evacuationCenterJson[1].住所))
+  console.log(await enrichment(evacuationCenterJson[2].住所))
+  console.log(await enrichment(evacuationCenterJson[3].住所))
+
   fs.writeFileSync(
-    path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationCenter.json"),
+    // path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationCenter.json"),
+    path.join(__dirname, "../transform_files/evacuationCenter.json"),
     JSON.stringify(evacuationCenterJson)
   );  
 
@@ -85,7 +71,8 @@ const openDataConvert = async () => {
   }).fromFile(path.join(__dirname, `../data_files/code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv`));
 
   fs.writeFileSync(
-    path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileType.json"),
+    // path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileType.json"),
+    path.join(__dirname, "../transform_files/stockpileType.json"),
     JSON.stringify(stockpileTypeJson)
   );  
 }

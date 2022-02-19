@@ -1,4 +1,4 @@
 .vscode
-.DS_Store
 data_files
 dim-lock.json
+transform_files/*
