@@ -5,29 +5,6 @@ import csvtojson from 'csvtojson'
 const openDataConvert = async () => {
 
   /**
-   *  避難場所
-   */
-  const evacuationArea = {
-    "避難場所_名称": "string",
-    "地方公共団体コード": "number",
-    "都道府県": "string",
-    "指定区市町村名": "string",
-    "住所": "string",
-    "緯度":"number",
-    "経度": "number",
-  }
-
-  const evacuationAreaJson = await csvtojson({
-    colParser: evacuationArea,
-    checkType:true
-  }).fromFile(path.join(__dirname, `../data_files/www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_area.csv`));
-
-  fs.writeFileSync(
-    path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationArea.json"),
-    JSON.stringify(evacuationAreaJson)
-  );  
-
-  /**
    *  避難所
    */
   const evacuationCenter = {
@@ -48,10 +25,12 @@ const openDataConvert = async () => {
   fs.writeFileSync(
     path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationCenter.json"),
     JSON.stringify(evacuationCenterJson)
-  );  
+  );
 
 
-  //防災備蓄品種類
+  /**
+   *  防災備蓄品種類
+   */
   const stockpileType = {
     "id": "number",
     "item_ja": "string",

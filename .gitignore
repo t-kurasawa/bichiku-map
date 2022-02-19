@@ -64,6 +64,3 @@ node_modules/
 
 # dotenv environment variables file
 .env
-
-# Localhost SSL 証明書
-.pem
