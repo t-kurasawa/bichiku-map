@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "extract": "./dim-lib/bin/x86_64-unknown-linux-gnu/dim install",
-    "transform": "ts-node transform.ts",
-    "load": "cp ./transform_files/* ../../frontend/src/__mock__/data/ && cd ../../frontend && npm run fix",
+    "transform": "ts-node job.ts",
+    "load": "cd ../../frontend && npm run fix",
     "etl": "run-s extract transform load"
   },
   "license": "MIT",

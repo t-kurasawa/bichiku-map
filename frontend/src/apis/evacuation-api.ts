@@ -6,12 +6,6 @@ const fetchEvacuationCenter = async () => {
   return axios.get(url);
 };
 
-const fetchEvacuationArea = () => {
-  const url = baseURL + '/evacuation/area';
-  return axios.get(url);
-};
-
 export default {
   fetchEvacuationCenter,
-  fetchEvacuationArea,
 };

@@ -1,29 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'store';
 import { evacuationApi } from 'apis';
-import { EvacuationArea, EvacuationCenter } from 'schema';
+import { EvacuationCenter } from 'schema';
 
 const STORE_NAME = 'evacuation';
 
 export interface evacuationState {
   status: 'idle' | 'loading' | 'failed';
-  evacuationAreas: Array<EvacuationArea>;
   evacuationCenters: Array<EvacuationCenter>;
 }
 
 const initialState: evacuationState = {
   status: 'idle',
-  evacuationAreas: [
-    {
-      避難場所_名称: '',
-      地方公共団体コード: 0,
-      都道府県: '',
-      指定区市町村名: '',
-      住所: '',
-      緯度: 0,
-      経度: 0,
-    },
-  ],
   evacuationCenters: [
     {
       避難所_名称: '',
@@ -41,14 +29,6 @@ export const fetchEvacuationCenter = createAsyncThunk(
   STORE_NAME + '/evacuation/center',
   async () => {
     const response = await evacuationApi.fetchEvacuationCenter();
-    return response.data;
-  }
-);
-
-export const fetchEvacuationArea = createAsyncThunk(
-  STORE_NAME + '/evacuation/area',
-  async () => {
-    const response = await evacuationApi.fetchEvacuationArea();
     return response.data;
   }
 );
@@ -71,22 +51,10 @@ export const evacuationSlice = createSlice({
       })
       .addCase(fetchEvacuationCenter.rejected, (state) => {
         state.status = 'failed';
-      })
-      .addCase(fetchEvacuationArea.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchEvacuationArea.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.evacuationAreas = action.payload;
-      })
-      .addCase(fetchEvacuationArea.rejected, (state) => {
-        state.status = 'failed';
       });
   },
 });
 
-export const selectEvacuationAreas = (state: RootState) =>
-  state.evacuation.evacuationAreas;
 export const selectEvacuationCenters = (state: RootState) =>
   state.evacuation.evacuationCenters;
 
