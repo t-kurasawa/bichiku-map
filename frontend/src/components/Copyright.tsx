@@ -31,7 +31,7 @@ export default function Copyright(props: any) {
       <IconButton onClick={handleClick}>
         <CopyrightIcon />
       </IconButton>
-      みんなで備える備蓄マップ / CC BY 4.0 / MIT Licence
+      みんなで備える防災備蓄マップ / CC BY 4.0 / MIT Licence
       <Popover
         id={id}
         open={open}
@@ -42,8 +42,11 @@ export default function Copyright(props: any) {
           horizontal: 'left',
         }}
       >
-        <Link color="inherit" href="https://portal.data.metro.tokyo.lg.jp/">
-          東京都オープンデータカタログサイト
+        <Link
+          color="inherit"
+          href="https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093"
+        >
+          東京都提供「避難所、避難場所データ オープンデータ」
         </Link>
         {' | '}
         <Link color="inherit" href="https://www.bichiku.metro.tokyo.lg.jp/">
