@@ -46,8 +46,7 @@ export default function Copyright(props: any) {
           color="inherit"
           href="https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093"
         >
-          東京都オープンデータカタログサイト 避難所、避難場所データ
-          オープンデータ
+          東京都提供「避難所、避難場所データ オープンデータ」
         </Link>
         {' | '}
         <Link color="inherit" href="https://www.bichiku.metro.tokyo.lg.jp/">
