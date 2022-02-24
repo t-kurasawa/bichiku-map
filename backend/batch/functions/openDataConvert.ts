@@ -20,7 +20,7 @@ const openDataConvert = async () => {
   const evacuationCenterJson = await csvtojson({
     colParser: evacuationCenter,
     checkType:true
-  }).fromFile(path.join(__dirname, `../data_files/www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv`));
+  }).fromFile(path.join(__dirname, `../data_files/www.opendata.metro.tokyo.lg.jp/soumu/130001_evacuation_center.csv`));  
 
   fs.writeFileSync(
     path.join(__dirname, "../../../frontend/src/__mock__/data/evacuationCenter.json"),
@@ -61,7 +61,7 @@ const openDataConvert = async () => {
   const stockpileTypeJson = await csvtojson({
     colParser: stockpileType,
     checkType:true
-  }).fromFile(path.join(__dirname, `../data_files/code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv`));
+  }).fromFile(path.join(__dirname, `../data_files/www.bichiku.metro.tokyo.lg.jp/stockpile_list.csv`));
 
   fs.writeFileSync(
     path.join(__dirname, "../../../frontend/src/__mock__/data/stockpileType.json"),
