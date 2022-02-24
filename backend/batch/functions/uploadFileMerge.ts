@@ -41,7 +41,7 @@ const uploadFileMerge = async () => {
       const stockpileType = await csvtojson({
         colParser: stockpileTypeColParser,
         checkType:true
-      }).fromFile(path.join(__dirname, `../data_files/code4fukui.github.io/tokyobichikunavi/csv/stockpile_list.csv`));
+      }).fromFile(path.join(__dirname, `../data_files/www.bichiku.metro.tokyo.lg.jp/stockpile_list.csv`));
 
 
       const stockpileStatusColParser = {
