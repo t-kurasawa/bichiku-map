@@ -158,7 +158,7 @@ const FAQ = () => {
             <SubTitle>▼ 東京備蓄ナビ</SubTitle>
             <TextBody>
               <a href="https://www.bichiku.metro.tokyo.lg.jp/download/">
-                東京備蓄ナビのオープンソース(MIT Licence)
+                東京備蓄ナビのオープンソース(MIT License)
               </a>
               を利用しています。
               <br />

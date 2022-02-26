@@ -25,7 +25,7 @@ describe('コンポーネントテスト', () => {
   test('OpenStreetMap', () => {
     render(<TestTarget />);
     const element = screen.getByText(
-      'みんなで備える防災備蓄マップ / CC BY 4.0 / MIT Licence'
+      'みんなで備える防災備蓄マップ / CC BY 4.0 / MIT License'
     );
     expect(element).toBeTruthy();
   });

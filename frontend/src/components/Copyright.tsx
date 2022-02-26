@@ -31,7 +31,7 @@ export default function Copyright(props: any) {
       <IconButton onClick={handleClick}>
         <CopyrightIcon />
       </IconButton>
-      みんなで備える防災備蓄マップ / CC BY 4.0 / MIT Licence
+      みんなで備える防災備蓄マップ / CC BY 4.0 / MIT License
       <Popover
         id={id}
         open={open}
