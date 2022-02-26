@@ -4,9 +4,9 @@ import { selectEvacuationCenters } from 'stores/evacuation-slice';
 import { LatLng } from 'leaflet';
 import { Circle, FeatureGroup, Popup } from 'react-leaflet';
 
-// import { Link } from 'react-router-dom'
 import { Avatar, Button, Card, CardActions, CardHeader } from '@mui/material';
 import DirectionsIcon from '@mui/icons-material/Directions';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import escape from 'assets/images/icons/escape-301x194px-04A040.svg';
 
 export const LocationMarker = () => {
@@ -52,6 +52,19 @@ export const LocationMarker = () => {
                   }
                 >
                   避難所
+                </Button>
+                <Button
+                  variant="outlined"
+                  startIcon={<VolunteerActivismIcon />}
+                  href={
+                    '/contribution?ec=' +
+                    evacuationCenter.避難所_名称 +
+                    '（' +
+                    evacuationCenter.住所 +
+                    '）'
+                  }
+                >
+                  備蓄に貢献
                 </Button>
               </CardActions>
             </Card>

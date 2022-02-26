@@ -52,7 +52,7 @@ const FAQ = () => {
                 の名称に合わせてください。元データに ID
                 が無いため名称と住所で名寄せしています。
                 <br />
-                ・防災備蓄品種類（67 種）は
+                ・防災備蓄品種類（62 種）は
                 <a href="https://www.bichiku.metro.tokyo.lg.jp/">
                   東京備蓄ナビ(MIT License)
                 </a>
@@ -140,6 +140,28 @@ const FAQ = () => {
                 <br />
                 npm run build
               </TextBody2>
+            </TextBody>
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+            <Title>オープンデータ・オープンソース</Title>
+            <SubTitle>▼ 東京都オープンデータカタログサイト</SubTitle>
+            <TextBody>
+              <a href="https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093">
+                東京都提供の「避難所、避難場所データ オープンデータ」(CC BY 4.0)
+              </a>
+              を利用しています。
+              <br />
+            </TextBody>
+            <br />
+            <SubTitle>▼ 東京備蓄ナビ</SubTitle>
+            <TextBody>
+              <a href="https://www.bichiku.metro.tokyo.lg.jp/download/">
+                東京備蓄ナビのオープンソース(MIT Licence)
+              </a>
+              を利用しています。
+              <br />
             </TextBody>
           </Paper>
         </Grid>
