@@ -50,6 +50,21 @@ const ContributeStockpile = () => {
   const stockpiles = useAppSelector(selectStockpileTypes);
   const evacuationCenters = useAppSelector(selectEvacuationCenters);
 
+  const search = useLocation().search;
+  const query = new URLSearchParams(search);
+  const filtered = evacuationCenters.filter(
+    (evacuationCenter) =>
+      `${evacuationCenter.避難所_名称}（${evacuationCenter.住所}）` ===
+      query.get('ec')
+  );
+
+  let filterdEvacuationCenters
+  if (filtered.length !== 0) {
+    filterdEvacuationCenters = filtered
+  } else {
+    filterdEvacuationCenters = evacuationCenters
+  }
+
   const steps = [
     '防災備蓄品を準備する',
     '支援する避難所を決める',
@@ -165,249 +180,122 @@ const ContributeStockpile = () => {
     window.print();
   };
 
-  const search = useLocation().search;
-  const query = new URLSearchParams(search);
-  const filtered = evacuationCenters.filter(
-    (evacuationCenter) =>
-      `${evacuationCenter.避難所_名称}（${evacuationCenter.住所}）` ===
-      query.get('ec')
-  );
-
-  if (filtered.length !== 0) {
-    return (
-      <>
-        <Grid item xs={12}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Typography component="h1" variant="h4" align="center">
-              防災備蓄に貢献する
-            </Typography>
-            <Stepper activeStep={step} alternativeLabel sx={{ pt: 3, pb: 5 }}>
-              {steps.map((label, index) => (
-                <Step key={index.toString()}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>防災備蓄品を準備する</Title>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">防災備蓄品</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={stockpileId}
-                label="防災備蓄品"
-                onChange={handleChange1}
-              >
-                {stockpiles.map((stockpile, index) => (
-                  <MenuItem
-                    key={index.toString()}
-                    value={stockpile.id.toString()}
-                  >
-                    {stockpile.item_ja}
-                    {'（分類:'}
-                    {stockpile.category_ja}
-                    {'）'}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>支援する避難所を決める</Title>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">避難所</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={evacuationCenterId}
-                label="避難所"
-                onChange={handleChange2}
-              >
-                {filtered.map((evacuationCenter, index) => (
-                  <MenuItem
-                    key={index.toString()}
-                    value={`${evacuationCenter.避難所_名称}（${evacuationCenter.住所}）`}
-                  >
-                    {evacuationCenter.避難所_名称}
-                    {'（'}
-                    {evacuationCenter.住所}
-                    {'）'}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>備蓄品の配送ラベルを印刷</Title>
-            <Button
-              variant="outlined"
-              fullWidth
-              sx={{ height: 56 }}
-              startIcon={<PrintIcon />}
-              onClick={() => {
-                setStep(3);
-                handleClickOpen();
-              }}
+  return (
+    <>
+      <Grid item xs={12}>
+        <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+          <Typography component="h1" variant="h4" align="center">
+            防災備蓄に貢献する
+          </Typography>
+          <Stepper activeStep={step} alternativeLabel sx={{ pt: 3, pb: 5 }}>
+            {steps.map((label, index) => (
+              <Step key={index.toString()}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={4}>
+        <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+          <Title>防災備蓄品を準備する</Title>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">防災備蓄品</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={stockpileId}
+              label="防災備蓄品"
+              onChange={handleChange1}
             >
-              ラベル印刷
-            </Button>
-            <div>
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-              >
-                <DialogTitle id="alert-dialog-title">
-                  {
-                    '１箱に１種類だけ防災備蓄品を入れて品目ラベルを貼ると、避難所でダンボールを開けて中身を仕分ける手間が減ります'
-                  }
-                </DialogTitle>
-                <DialogContent>
-                  <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                    {stockpileItem}
-                    <Divider variant="inset" component="li" />
-                    {evacuationCenterItem}
-                  </List>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleClose}>閉じる</Button>
-                  <Button onClick={handlePrint} autoFocus>
-                    印刷
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </div>
-          </Paper>
-        </Grid>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Grid item xs={12}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Typography component="h1" variant="h4" align="center">
-              防災備蓄に貢献する
-            </Typography>
-            <Stepper activeStep={step} alternativeLabel sx={{ pt: 3, pb: 5 }}>
-              {steps.map((label, index) => (
-                <Step key={index.toString()}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
+              {stockpiles.map((stockpile, index) => (
+                <MenuItem
+                  key={index.toString()}
+                  value={stockpile.id.toString()}
+                >
+                  {stockpile.item_ja}
+                  {'（分類:'}
+                  {stockpile.category_ja}
+                  {'）'}
+                </MenuItem>
               ))}
-            </Stepper>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>防災備蓄品を準備する</Title>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">防災備蓄品</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={stockpileId}
-                label="防災備蓄品"
-                onChange={handleChange1}
-              >
-                {stockpiles.map((stockpile, index) => (
-                  <MenuItem
-                    key={index.toString()}
-                    value={stockpile.id.toString()}
-                  >
-                    {stockpile.item_ja}
-                    {'（分類:'}
-                    {stockpile.category_ja}
-                    {'）'}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>支援する避難所を決める</Title>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">避難所</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={evacuationCenterId}
-                label="避難所"
-                onChange={handleChange2}
-              >
-                {evacuationCenters.map((evacuationCenter, index) => (
-                  <MenuItem
-                    key={index.toString()}
-                    value={`${evacuationCenter.避難所_名称}（${evacuationCenter.住所}）`}
-                  >
-                    {evacuationCenter.避難所_名称}
-                    {'（'}
-                    {evacuationCenter.住所}
-                    {'）'}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
-            <Title>備蓄品の配送ラベルを印刷</Title>
-            <Button
-              variant="outlined"
-              fullWidth
-              sx={{ height: 56 }}
-              startIcon={<PrintIcon />}
-              onClick={() => {
-                setStep(3);
-                handleClickOpen();
-              }}
+            </Select>
+          </FormControl>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={4}>
+        <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+          <Title>支援する避難所を決める</Title>
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">避難所</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={evacuationCenterId}
+              label="避難所"
+              onChange={handleChange2}
             >
-              ラベル印刷
-            </Button>
-            <div>
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-              >
-                <DialogTitle id="alert-dialog-title">
-                  {
-                    '１箱に１種類だけ防災備蓄品を入れて品目ラベルを貼ると、避難所でダンボールを開けて中身を仕分ける手間が減ります'
-                  }
-                </DialogTitle>
-                <DialogContent>
-                  <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                    {stockpileItem}
-                    <Divider variant="inset" component="li" />
-                    {evacuationCenterItem}
-                  </List>
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={handleClose}>閉じる</Button>
-                  <Button onClick={handlePrint} autoFocus>
-                    印刷
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </div>
-          </Paper>
-        </Grid>
-      </>
+              {filterdEvacuationCenters.map((evacuationCenter, index) => (
+                <MenuItem
+                  key={index.toString()}
+                  value={`${evacuationCenter.避難所_名称}（${evacuationCenter.住所}）`}
+                >
+                  {evacuationCenter.避難所_名称}
+                  {'（'}
+                  {evacuationCenter.住所}
+                  {'）'}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={4}>
+        <Paper sx={{ p: 2, display: '', flexDirection: 'column' }}>
+          <Title>備蓄品の配送ラベルを印刷</Title>
+          <Button
+            variant="outlined"
+            fullWidth
+            sx={{ height: 56 }}
+            startIcon={<PrintIcon />}
+            onClick={() => {
+              setStep(3);
+              handleClickOpen();
+            }}
+          >
+            ラベル印刷
+          </Button>
+          <div>
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">
+                {
+                  '１箱に１種類だけ防災備蓄品を入れて品目ラベルを貼ると、避難所でダンボールを開けて中身を仕分ける手間が減ります'
+                }
+              </DialogTitle>
+              <DialogContent>
+                <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                  {stockpileItem}
+                  <Divider variant="inset" component="li" />
+                  {evacuationCenterItem}
+                </List>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>閉じる</Button>
+                <Button onClick={handlePrint} autoFocus>
+                  印刷
+                </Button>
+              </DialogActions>
+            </Dialog>
+          </div>
+        </Paper>
+      </Grid>
+    </>
     );
-  }
 };
 
 export default ContributeStockpile;
