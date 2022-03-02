@@ -1,6 +1,6 @@
 # みんなで備える防災備蓄マップ
 
-避難所の防災備蓄状況を登録・表示できるオープンソーステンプレートです。
+本サイトは避難所の防災備蓄状況を登録・表示できるオープンソーステンプレートです。[Tokyo OSS Party!!](https://tokyo-oss-party.com/) で市民によって開発されました。
 
 ## 想定ユーザー
 
@@ -24,7 +24,7 @@ https://bichiku-map.web.app/
 
   - サンプルは backend/upload フォルダの 佃島小学校（東京都中央区佃 2-3-1）.csv と 京橋築地小学校（東京都中央区築地 2-13-1）.csv です
   - ファイル名の避難所名称と住所は[東京都防災マップ 避難所・避難場所(CC BY 4.0)](https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093)の名称に合わせてください。元データに ID が無いため避難所名称と住所で名寄せしています。
-  - 防災備蓄品種類（62 種）は[東京備蓄ナビ(MIT License)](https://www.bichiku.metro.tokyo.lg.jp/)の公開リストを使用しています。
+  - 防災備蓄品種類（62 種）は[東京備蓄ナビ(MIT License)](https://www.bichiku.metro.tokyo.lg.jp/download/)のリストを使用しています。
   - id,備蓄品名,カテゴリー名の列は変更しないでください。id で東京備蓄ナビのリストと突合しています。
   - 現在備蓄量,不足備蓄量,更新日列を最新化してください。最新のデータのみ表示されます。1 行目の更新日を避難所の更新日として扱っています。
   - 文字コードは UTF-8 にしてください。
@@ -63,3 +63,11 @@ npm install
 npm run start
 npm run build
 ```
+
+## オープンデータ・オープンソース
+
+### 東京都オープンデータカタログサイト
+[東京都提供の「避難所、避難場所データ オープンデータ」(CC BY 4.0)](https://catalog.data.metro.tokyo.lg.jp/dataset/t000003d0000000093)を利用しています。
+
+### 東京備蓄ナビ
+[東京備蓄ナビのオープンソース(MIT License)](https://www.bichiku.metro.tokyo.lg.jp/download/)を利用しています。
