@@ -15,6 +15,12 @@ const FAQ = () => {
             <Title>
               本サイトは避難所の防災備蓄状況を登録・表示することができるオープンソーステンプレートです。
             </Title>
+            <TextBody>
+              <a href="https://tokyo-oss-party.com/">Tokyo OSS Party!!</a>{' '}
+              で市民によって開発されました。
+              <br />
+            </TextBody>
+            <br />
             <SubTitle>▼ 想定ユーザー</SubTitle>
             <TextBody>
               サイト運営者は、避難所の防災備蓄状況ファイルを各所から集め、データを定期的に更新して頂けるシビックテックボランティアの方を想定しています。
@@ -28,8 +34,11 @@ const FAQ = () => {
             <Title>テンプレート利用方法とサイト運営手順</Title>
             <SubTitle>▼ テンプレートを準備</SubTitle>
             <TextBody>
-              GitHub
-              のアカウントを作成し、本リポジトリをフォークしてください。フォークする手順は
+              GitHub のアカウントを作成し、
+              <a href="https://github.com/Tokyo-Metro-Gov/bichiku-map">
+                本リポジトリ
+              </a>
+              をフォークしてください。フォークする手順は
               <a href="https://docs.github.com/ja/get-started/quickstart/fork-a-repo">
                 こちら
               </a>

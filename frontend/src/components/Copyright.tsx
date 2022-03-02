@@ -42,6 +42,10 @@ export default function Copyright(props: any) {
           horizontal: 'left',
         }}
       >
+        <Link color="inherit" href="https://tokyo-oss-party.com/">
+          Tokyo OSS Party!!
+        </Link>
+        {' | '}
         <Link color="inherit" href="https://portal.data.metro.tokyo.lg.jp/">
           東京都オープンデータカタログサイト
         </Link>
