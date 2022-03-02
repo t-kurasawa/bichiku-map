@@ -7,7 +7,7 @@ import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import SearchIcon from '@mui/icons-material/Search';
 
 export const UpSpeedDial = (props: any) => {
   const dispatch = useAppDispatch();
@@ -25,7 +25,7 @@ export const UpSpeedDial = (props: any) => {
   }));
 
   const actions = [
-    { icon: <HealthAndSafetyIcon />, key: 'EvacuationCenter', name: '避難所' },
+    { icon: <SearchIcon />, key: 'EvacuationCenter', name: '避難所' },
   ];
 
   const handleAction = (key: string) => {
