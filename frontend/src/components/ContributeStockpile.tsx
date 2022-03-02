@@ -58,11 +58,11 @@ const ContributeStockpile = () => {
       query.get('ec')
   );
 
-  let filterdEvacuationCenters
+  let filterdEvacuationCenters;
   if (filtered.length !== 0) {
-    filterdEvacuationCenters = filtered
+    filterdEvacuationCenters = filtered;
   } else {
-    filterdEvacuationCenters = evacuationCenters
+    filterdEvacuationCenters = evacuationCenters;
   }
 
   const steps = [
@@ -295,7 +295,7 @@ const ContributeStockpile = () => {
         </Paper>
       </Grid>
     </>
-    );
+  );
 };
 
 export default ContributeStockpile;
